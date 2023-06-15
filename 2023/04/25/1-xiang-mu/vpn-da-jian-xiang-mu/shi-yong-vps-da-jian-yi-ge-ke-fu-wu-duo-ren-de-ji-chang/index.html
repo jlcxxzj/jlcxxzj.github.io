@@ -1,0 +1,1549 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用VPS搭建一个可服务多人的机场 | 将渠道备份, JAVA AI DeepLearning ML  深度学习 AIGC">
+    <meta name="description" content="
+关注公众号【惜学塔】，每日知识干货马上就来！
+
+
+泡芙云（机场）泡芙云（PaofuCloud）机场是一家老牌翻墙机场，成立于2018年，机场主在海外，早先采用IEPL 专线过境，在运营商拔线之后线路调整为隧道中转，协议为流行的Shadow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>使用VPS搭建一个可服务多人的机场 | 将渠道备份 | 泮池5号</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">泮池5号</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">泮池5号</div>
+        <div class="logo-desc">
+            
+            上海大学 | 机械电子工程 | 人工智能与故障诊断
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/architect/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">使用VPS搭建一个可服务多人的机场 | 将渠道备份</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/论坛/">
+                                <span class="chip bg-color">论坛</span>
+                            </a>
+                        
+                            <a href="/tags/后端/">
+                                <span class="chip bg-color">后端</span>
+                            </a>
+                        
+                            <a href="/tags/好玩的技术/">
+                                <span class="chip bg-color">好玩的技术</span>
+                            </a>
+                        
+                            <a href="/tags/技术备份/">
+                                <span class="chip bg-color">技术备份</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/项目/" class="post-category">
+                                项目
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-04-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>关注公众号【惜学塔】，每日知识干货马上就来！</p>
+</blockquote>
+<p><img src="/medias/contact.jpg" alt></p>
+<h1 id="泡芙云（机场）"><a href="#泡芙云（机场）" class="headerlink" title="泡芙云（机场）"></a>泡芙云（机场）</h1><p>泡芙云（PaofuCloud）<strong>机场</strong>是一家老牌翻墙机场，成立于2018年，机场主在海外，早先采用IEPL 专线过境，在运营商拔线之后线路调整为隧道中转，协议为流行的Shadowsocks ，兼容ShadowsocksR（即SSR）</p>
+<p>泡芙云加速由海外华人团队运营，老牌翻墙服务提供商，自2017年成立以来持续为中国大陆网民提供稳定可靠的翻墙服务。泡芙云加速采用的是当下十分流行的 Shadowsocks 翻墙协议，并通过国内服务器接入，IEPL内网专线出境，不经过互联网防火长城（GFW），即使是敏感时期，服务也能保证稳定可靠。IEPL内网专线是比一般IPLC内网专线等级更高的专线，稳定性更上一层楼。泡芙云使用需要搭配第三方开发的软件 Clash（Windows、macOS、安卓） 或 Shadowrocket （iOS）配合使用。</p>
+<p><a href="https://vpnsg.net/paofu-cloud-review/" target="_blank" rel="noopener">泡芙云加速深度评测－最好用的翻墙VPN推荐-VPN时光网 (vpnsg.net)</a><br><a href="https://clashnode.xyz/how-about-paofu-cloud-vpn/" target="_blank" rel="noopener">泡芙云加速怎么样？| 速度测试 | 机场节点国家和地区 | YouTube 测试 | 下载测试-Clash Node</a><br><a href="https://2023vpn.net/ss-v2ray-trojan-providers/" target="_blank" rel="noopener">2023 年 50+ 好用的翻墙机场推荐 (2023vpn.net)</a></p>
+<p><strong>机场VPN区别几何？</strong>正如上面提到的，一般翻墙机场没有自主开发的软件，只能使用第三方翻墙软件，而我们常说的VPN服务商，是将线路和软件是整合到一起的，用户直接再VPN软件中登录账号即可使用，对于新手而言更为方便。<br><a href="https://www.vpn-china.org/the-difference-between-airport-and-vpn/" target="_blank" rel="noopener">https://www.vpn-china.org/the-difference-between-airport-and-vpn/</a><br>我们现在越来越多的听到”<a href="https://www.vpn-china.org/tag/285" title="机场" target="_blank" rel="noopener">机场</a>“这个术语，有的人会感到疑惑，翻墙不是用<a href="https://www.vpn-china.org/tag/19" title="VPN" target="_blank" rel="noopener">VPN</a>软件吗？那么机场是干什么的？机场应该怎么用？机场和VPN的区别是什么？本文将一一进行解释。</p>
+<h2 id="翻墙的概念"><a href="#翻墙的概念" class="headerlink" title="翻墙的概念"></a>翻墙的概念</h2><p>首先我们需要理解翻墙的概念。翻墙的本质就是绕过中国大陆的互联网防火墙，所以叫”翻墙“。因为防火墙（GFW）的作用是阻止人们访问国外的互联网，相当于一堵现实中的墙壁，而通过使用额外的技术和软件，打破防火墙的限制，能够访问国外的网站，这个就是翻墙的本质。</p>
+<p>那么防火墙是（GFW）如何阻止我们的呢？很简单，当ISP服务商发现你的IP是中国国内的IP，而目标访问的地址是国外的网站地址，它就断开你的连接。那么如何破解这一点呢，那就是首先要把自己的IP地址伪装成国外的IP地址，这样防火墙就不会断开你的连接。</p>
+<p>翻墙本身其实是有很多种方式，我们讲一个最简单的方式，那就是租一个境外的Windows服务器，你先连接这个windows服务器，这是合法的，因为类似阿里云等IDC服务商都有境外的windows服务器出租，防火墙并不针对这些非个人的业务进行拦截，所以你是可以连接到境外的服务器的，然后你在境外的windows服务器上打开浏览器，就可以访问境外的网站了，因为境外服务器不受防火墙（GFW）的管辖。</p>
+<p>但是这么做的问题在于，成本太高了，一台境外的服务器，能够让你流畅运行去访问网络的，每个月需要10-50美金，约合人民币60~300元不等，仅仅是用来翻墙，这个成本太高，而且万一你的境外服务器的IP也忽然被列入了拦截名单，那你就要重新租服务器。</p>
+<p>更节约的方法就是使用VPN软件或我们将要提到的机场软件。他们的本质是在境外租了很多服务器，然你可以自由切换不同的境外IP地址，并对你的信息进行加密保护。而每一个服务器不止你一个人使用，所以本质上就是共享境外服务器翻墙，成本平均到每个人头上就会便宜。</p>
+<h2 id="VPN的工作机制和困境"><a href="#VPN的工作机制和困境" class="headerlink" title="VPN的工作机制和困境"></a>VPN的工作机制和困境</h2><p>VPN是专用虚拟网的缩写，就是在你和VPN服务器之间建立一个加密的信道，然后转发你的信息给你要访问的目标网站，并把回传信息加密传输给你。本站之前所做的很多评测，都是针对VPN软件。这些软件大多都是采用一键访问的模式，自动的加密你的数据，自动建立信道，然后由它的VPN服务器进行解析数据和返回数据。</p>
+<p>但是从2021年开始，很多朋友会发现，VPN逐渐在中国国内不太好用了。这是为什么呢，因为每一个VPN都有自己的协议和相对固定的服务器IP，防火墙如果识别了这个VPN的协议，再识别服务器IP，就可以比较轻松的进行拦截。</p>
+<p>这种情况越来越常见了。最早被完全封堵拦截的是NordVPN，这款VPN廉价又快速，但从2020年后就基本无法连接到服务器了，之后就是<a href="https://www.vpn-china.org/chinese-review-and-guide-of-expressvpn/" title="ExpressVPN" target="_blank" rel="noopener">ExpressVPN</a>。本来ExpressVPN素来以速度快而著称，但如果连接不上，速度快又有什么用呢。我们也和ExpressVPN的开发人员讨论过，他们觉得被中国拦截是一件令人精疲力尽的事，所以他们对打破限制没有信心。</p>
+<p>本站在2023年2月也更新了之前测评的几款VPN软件，其中ExpressVPN和PandaVPN已经被列为“无法在中国使用的VPN”。我们的原则是，<strong>如果我们都无法在国内正常使用，那么就不会向读者去推荐</strong>。<strong>我们所推荐的，一定是我们自己也可以正常使用的翻墙工具</strong>。</p>
+<p>您可以关注<a href="https://www.vpn-china.org/update-log/" target="_blank" rel="noopener">本站的更新日志</a>，来获取最新的变化。</p>
+<h2 id="机场又是什么？和VPN有什么区别？"><a href="#机场又是什么？和VPN有什么区别？" class="headerlink" title="机场又是什么？和VPN有什么区别？"></a>机场又是什么？和VPN有什么区别？</h2><p>机场是从2019年以后兴起的新的翻墙技术。它的工作原理和VPN不同。VPN一般是自己有专门开发的软件，和VPN厂商提供的服务器进行配合，来满足用户的需求。而机场则是开源软件和自主搭建的服务器进行配合。</p>
+<p>打个比方，VPN厂商的枪和子弹是配套的，假如枪是VPN软件，那么子弹就是服务器，其他的VPN厂商是无法用别的厂商的服务器的。但是机场的枪是开源的，只要知道密钥，就可以用其他人的子弹（服务器）。</p>
+<p>那么为什么叫机场呢？和飞机有什么关系吗？并不是的，最早的机场服务器商用的开源软件基本上都是Shadowsocks（SS）或者ShadowsocksR（SSR），他们不开发软件，只搭建SS或SSR协议许可的服务器，用户只要获得订阅，就可以更新服务器。如果换一个服务商，甚至都不用重新下载SS或SSR，直接换服务器订阅就好了，非常方便。</p>
+<p>而SS和SSR的图标，就是一个纸飞机logo，那么既然软件是纸飞机，提供给软件的服务商就叫机场了，听起来也非常合理不是吗？</p>
+<p>查看本文《<a href="https://www.vpn-china.org/history-of-several-airport-agreements/" target="_blank" rel="noopener">机场的几种协议的历史</a>》来了解关于机场类代理协议的发展历史。</p>
+<h2 id="机场的现状"><a href="#机场的现状" class="headerlink" title="机场的现状"></a>机场的现状</h2><p>机场经过了几年的发展，一直由开源社区（主要是github）的程序员在维护，本身是非盈利性质的。而服务商则遵循技术标准和规范，给第三方用户搭建服务器，来实现VPN翻墙服务。</p>
+<p>目前Shadowsocks和ShadowsocksR也逐渐被中国识别和拦截，取代SS和SSR的新的V2ray、Clash等开源机场软件，但人们仍然习惯性的把这一类软件都叫做飞机或机场。</p>
+<p>所以我们也注意到这个现象，那就是传统VPN正在中国慢慢消沉，而开源翻墙机场类软件正在崛起，很多传统VPN服务商甚至开始考虑支持机场的SS/SSR/V2ray/Trojan协议。</p>
+<p>机场的协议和主流软件可以看看本文《<a href="https://www.vpn-china.org/history-of-several-airport-agreements/" target="_blank" rel="noopener">机场的几种协议的历史</a>》来了解。当然我们也不需要太多研究，因为主流机场服务商都会提供，这方面的差别不是很大。</p>
+<p>“机场类”翻墙软件从早年的GoAgent，ShadowSocks出现开始就是为了帮助人们FQ，这几年陆续出现各种各样的技术，虽然不少技术开发者都不得不撤下原始代码，但在国内外开源社区的不懈努力下，核心的代码实现仍然被保留下来，目前活跃在FQ人群中的技术有：SSR，V2Ray，Clash，Trojan。这些技术的流量伪装能力更强，能通过GFW较难全局屏蔽的正常网络应用端口如HTTP/HTTPS/SSH端口通信，所以有着不错的连接成功率和稳定性，加上能够灵活地在与中国大陆路由状态较好的地区如香港/台湾/美西/日本/韩国等选择性针对性地部署服务器，能提供充足的带宽和网速，非常受中国国内的IT从业群体欢迎，在这个人群中有着极高的普及率，如果你已是其中之一，大概不需要我多作介绍。</p>
+<h2 id="机场安全吗？"><a href="#机场安全吗？" class="headerlink" title="机场安全吗？"></a>机场安全吗？</h2><p>我们曾经在<a href="https://www.vpn-china.org/what-are-the-differences-between-vpn-and-proxy/" target="_blank" rel="noopener">VPN 和代理的区别的有哪些</a>和<a href="https://www.vpn-china.org/what-is-a-proxy-server/" target="_blank" rel="noopener">代理服务器Proxy是什么</a>这两篇文章中提到过代理，而目前的机场本质上也是代理。之前我们提倡用VPN而不是代理，因为VPN更安全，但经过几年的发展，机场类代理软件的安全性得到了提高，得益于引入了<strong>TLS安全协议</strong>，使得用户的匿名度和加密性能够和VPN不相上下。</p>
+<p>如果读者从未接触过机场类翻墙软件，简单省时间不走弯路的方法是找个靠谱的视频教程来操作，油管上其实有很多，搜一些即可，比如“V2Ray教程”，中国是FQ第一大国，油管上的中文视频UP主对这类技术的跟踪非常快，不妨持续关注一些频道，你会发现即使只搜技术名称，出来的内容也基本上也是中文的。这类翻墙软件几乎都是开源的，在Github上公开代码，很容易搜到，比如Github上的Clash相关代码库，有技术基础的朋友也可以从那里开始。开源代码的好处是，你总是能找到软件的源头，只要从源头下载，就不用担心有人在软件里种植黑客木马，而开源作者的代码总是受到各路人马的审查，稍微有点不对劲就身败名裂了，这种同业评审制度能够保证产品的安全性和可靠性。</p>
+<p>这里有一份机场类软件客户端的列表，基本涵盖了最主流的机场类软件。下载地址基本都是github源开发者地址。</p>
+<p><a href="https://www.vpn-china.org/the-difference-between-airport-and-vpn/" target="_blank" rel="noopener">机场是什么意思_机场和VPN的区别是什么_机场和VPN选哪个好 | 【2023-4月更新】- VPN中国 (vpn-china.org)</a><br>机场类软件客户端</p>
+<h2 id="机场未来的趋势"><a href="#机场未来的趋势" class="headerlink" title="机场未来的趋势"></a>机场未来的趋势</h2><p>根据目前的现状，我们判断机场可能会比传统VPN具有更广泛的未来。机场更灵活，更容易迁移服务商，从价格上来说也更廉价。而且开源社区对机场类代理软件的支持非常强大，一直在不停的更新技术，这就比传统VPN厂商更有活力。所以我们有理由相信机场类代理软件能够获得更强的生命力。</p>
+<p>更重要的是，有很多人在免费的提供机场代理的服务，这是一种无私的社区动力，使我们能够很容易获得短期的翻墙访问，从而促进了社区的活力。</p>
+<h2 id="机场存在的问题"><a href="#机场存在的问题" class="headerlink" title="机场存在的问题"></a>机场存在的问题</h2><p>在我们看来，作为一种新兴的翻墙技术，机场本身没有问题，开源社区也很好。但机场的问题主要是出在机场的代理服务商。</p>
+<p>想要搭理一个机场支持的跨境服务器并不难，开源社区已经准备好了一切，所以想要从中赚钱的代理服务商的门槛变低了，任何人都可以租几台服务器开一个”机场代理“，并宣称自己是速度最快的。由于门槛低，那么欺诈事件就层出不穷。代理商本身并没有很好的技术能力，访问速度完全是由IDC服务商的服务器质量决定的，如果一个代理商宣称自己用的是最好的服务器，诱导用户付费后，用户会发现其实速度很糟糕，时好时断。</p>
+<p>更恶劣的还有跑路，代理商免费提供测试服务器，但是当你付费后，就再也联系不上代理商了，你的钱就被黑掉了。很多代理商用一套开源网站页面+一台测试服务器就骗取了大量的金钱，一时间满地都是骗子（主要是中国人）开的假代理服务，网页的样子看起来都差不多，套路也都一样。</p>
+<p>如果要选择机场服务商，需要谨记这几点：</p>
+<ul>
+<li>任何一个机场都可能跑路：因为这两年这种事太多了，你最好假设购买的机场明天就会跑路，购买套餐的时候，宁可稍微贵一点，也不要买长期套餐（包括本站推荐的机场服务），除非你觉得损失长期套餐那点钱对你来说不算什么，那请随意</li>
+<li>几乎所有的机场都有中国背景：有很多机场的老板肉身就在中国，我相信出卖客户绝非他们本意，但你应该理解他们根本上无法为你的数据和人身安全负责，不排除有些机场主很讲道义，在特定情势下，宁可格掉服务器也不交出数据，但你不该假设所有人都是这样，注册时你不该提供国内邮箱/微信/支付宝账号等任何可以直接追查到你个人身份的特征信息，你应该选择隐私的途径获得机场服务，用国外邮箱，通过数据存于海外的支付方式付款</li>
+<li>功能限制：几乎所有的机场都不能痛快开BT/P2P下载，介意的朋友绕道，各个机场有自己的流量审计规则， 也就是机场服务器屏蔽的服务，不了解的买之前务必问清楚</li>
+<li>机场类服务商基本上是不支持退款的，不仅仅是他们不愿意退款，而是缺乏正规的退款金融渠道</li>
+<li>隐私政策：和一线VPN类翻墙软件的零日志政策不同，据我了解，机场普遍会记录真实IP，某些机场记录的可能远远不止IP，风险在于作为普通用户，急于找到高性价比能FQ的工具，往往忽略隐私安全，绝大多数用户可能根本不在乎这个，但用户需要理解连上机场以后，你的上网流量都会经过陌生人维护的服务器，你的个人数据被如何实用，实际上只受维护人的良心制约，这是个极不可靠的事，特别是一个有良心的人受到某种胁迫的时候</li>
+</ul>
+<p>所以这些才是令人担心的问题。这也是我们决定要开始进行机场类代理软件的评测，我们甚至决定启用黑名单制度，提前警告用户不要落入骗钱的全套。<strong>我们通过评测找出真正优秀和稳定的代理服务商，不仅仅是为了读者，因为我们自己也要用</strong>。</p>
+<h2 id="Clash客户端"><a href="#Clash客户端" class="headerlink" title="Clash客户端"></a>Clash客户端</h2><p>Clash 是一个使用 Go 语言编写，基于规则的跨平台代理软件核心程序。<br>Clash for Windows 是目前在 Windows 上最好用的图形化分支。通过 Clash API 来配置和控制 Clash 核心程序，降低了 Clash 的使用成本，小白也能轻松入门使用。<br><a href="https://doc.miyun.app/app/clash-win-detail/" target="_blank" rel="noopener">Clash for Windows 使用教程（详解，全流程） 🌟 觅云🔥 (miyun.app)</a></p>
+<h2 id="互联网服务商Internet-Server-Provider（ISP）"><a href="#互联网服务商Internet-Server-Provider（ISP）" class="headerlink" title="互联网服务商Internet Server Provider（ISP）"></a>互联网服务商Internet Server Provider（ISP）</h2><p><a href="https://www.cnblogs.com/onepixel/p/10238221.html" target="_blank" rel="noopener">国内四大骨干网与十大ISP服务商 - 一像素 - 博客园 (cnblogs.com)</a></p>
+<h1 id="如何建一个机场，如何和客户端对接"><a href="#如何建一个机场，如何和客户端对接" class="headerlink" title="如何建一个机场，如何和客户端对接"></a>如何建一个机场，如何和客户端对接</h1><p><a href="https://www.youtube.com/watch?v=OWcwU76Zin8" target="_blank" rel="noopener">【CC字幕】超暴利行业：机场VPN月入十万，百万？机场主vpn是暴利行业？VPN的利润能有多大？机场主vpn会坐牢吗？为什么机场主vpn总跑路？ - YouTube</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">jlcxxzj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/jlcxxzj/blog.github.io/2023/04/25/1-xiang-mu/vpn-da-jian-xiang-mu/shi-yong-vps-da-jian-yi-ge-ke-fu-wu-duo-ren-de-ji-chang/">https://github.com/jlcxxzj/blog.github.io/2023/04/25/1-xiang-mu/vpn-da-jian-xiang-mu/shi-yong-vps-da-jian-yi-ge-ke-fu-wu-duo-ren-de-ji-chang/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">jlcxxzj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/论坛/">
+                                    <span class="chip bg-color">论坛</span>
+                                </a>
+                            
+                                <a href="/tags/后端/">
+                                    <span class="chip bg-color">后端</span>
+                                </a>
+                            
+                                <a href="/tags/好玩的技术/">
+                                    <span class="chip bg-color">好玩的技术</span>
+                                </a>
+                            
+                                <a href="/tags/技术备份/">
+                                    <span class="chip bg-color">技术备份</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的认可是我前行的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'eS18aVskMBwtTucX2DXka8Gx-gzGzoHsz',
+        appKey: 'ItADFrP6BD1J0kLY3e8CdtGg',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '昵称填写qq可以显示qq头像和昵称哦~'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/04/25/3-zong-jie/diy-zu-zhuang-dian-nao-qing-dan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="diy组装电脑清单 | 跟踪价格变化">
+                        
+                        <span class="card-title">diy组装电脑清单 | 跟踪价格变化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/动手/" class="post-category">
+                                    动手
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Diy/">
+                        <span class="chip bg-color">Diy</span>
+                    </a>
+                    
+                    <a href="/tags/组装电脑/">
+                        <span class="chip bg-color">组装电脑</span>
+                    </a>
+                    
+                    <a href="/tags/硬件选择/">
+                        <span class="chip bg-color">硬件选择</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/04/10/4-tong-yong-pei-zhi/pei-zhi-docker-huan-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="配置Docker环境">
+                        
+                        <span class="card-title">配置Docker环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="8434513507"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">jlcxxzj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">102.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime">载入运行时间...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "10";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jlcxxzj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2541597473@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2541597473" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2541597473" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 10) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+
+</html>

@@ -1,0 +1,1662 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="量化分析调试篇1|从源码上理解Freqtrade, JAVA AI DeepLearning ML  深度学习 AIGC">
+    <meta name="description" content="
+关注公众号【惜学塔】，每日知识干货马上就来！
+
+1.前言在上节在基础篇2里将源代码成功跑通，接下来按debug的方式来建立各个py文件的关系，为后面的加自己策略和增加自己的模块和调整代码奠定基础。
+还记得在最开始，创建用户文件夹的时候，我">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>量化分析调试篇1|从源码上理解Freqtrade | 泮池5号</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">泮池5号</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">泮池5号</div>
+        <div class="logo-desc">
+            
+            上海大学 | 机械电子工程 | 人工智能与故障诊断
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/animal/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">量化分析调试篇1|从源码上理解Freqtrade</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/VPS/">
+                                <span class="chip bg-color">VPS</span>
+                            </a>
+                        
+                            <a href="/tags/hexo博客/">
+                                <span class="chip bg-color">hexo博客</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/云服务器/">
+                                <span class="chip bg-color">云服务器</span>
+                            </a>
+                        
+                            <a href="/tags/Freqtrade/">
+                                <span class="chip bg-color">Freqtrade</span>
+                            </a>
+                        
+                            <a href="/tags/一些Linux小tip/">
+                                <span class="chip bg-color">一些Linux小tip</span>
+                            </a>
+                        
+                            <a href="/tags/源码/">
+                                <span class="chip bg-color">源码</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/量化分析/" class="post-category">
+                                量化分析
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-04-04
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-05-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>关注公众号【惜学塔】，每日知识干货马上就来！</p>
+</blockquote>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>在上节在基础篇2里将源代码成功跑通，接下来按debug的方式来建立各个py文件的关系，为后面的加自己策略和增加自己的模块和调整代码奠定基础。</p>
+<p>还记得在最开始，创建用户文件夹的时候，我们初始化了一个配置文件，其中有设置一个称为max_open_trades的参数，参数的意义是开单的次数，也就是交易的次数，上默认是3，我们修改了为10。这个trade是后面很重要的参数，毕竟金融，交易的流通性上来了才能开展策略。而其中的ip地址是为了搭建web页面使用的。</p>
+<p>同时，在创建用户文件夹和配置文件的时候，会产生一个初始化策略文件，策略通过pandas来实现，获得交易所的数据之后通过pandas来做各种条件判断</p>
+<h2 id="2-从main-py开始"><a href="#2-从main-py开始" class="headerlink" title="2.从main.py开始"></a>2.从main.py开始</h2><h3 id="垃圾回收，python的gc过程，在入口就设置了，能有效加快运行时间"><a href="#垃圾回收，python的gc过程，在入口就设置了，能有效加快运行时间" class="headerlink" title="垃圾回收，python的gc过程，在入口就设置了，能有效加快运行时间"></a>垃圾回收，python的gc过程，在入口就设置了，能有效加快运行时间</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span>  <span class="token function">gc_set_threshold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""
+Reduce number of GC runs to improve performance (explanation video)
+https://www.youtube.com/watch?v=p4Sn6UcFTOU
+# 减少GC运行次数来提高性能
+"""</span>
+<span class="token keyword">if</span>  platform<span class="token punctuation">.</span>python_implementation<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"CPython"</span><span class="token punctuation">:</span>
+<span class="token comment" spellcheck="true"># allocs, g1, g2 = gc.get_threshold()</span>
+gc<span class="token punctuation">.</span>set_threshold<span class="token punctuation">(</span>50_000<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"Adjusting python allocations to reduce GC runs"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当使用<code>python main.py  -h</code>的时候，你会发现，freqtrade的参数选择是真的多，args和config就让人眼花缭乱，先看看args：</p>
+<pre class="line-numbers language-linux"><code class="language-linux">{'command': 'trade', 'verbosity': 0, 'logfile': None, 'config': ['user_data/config.json'], 'datadir': 
+None, 'user_data_dir': None, 'strategy': 'SampleStrategy', 'strategy_path': None, 
+'recursive_strategy_search': False, 'freqaimodel': None, 'freqaimodel_path': None, 'db_url': None,
+ 'sd_notify': False, 'dry_run': False, 'dry_run_wallet': None, 'fee': None, 'func': <function 
+ start_trading at 0x7f1df7807550>}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>再看config的，更是让人摸不着头脑：</p>
+<pre class="line-numbers language-linux"><code class="language-linux">{'max_open_trades': 10, 'stake_currency': 'USDT', 'stake_amount': 
+'unlimited', 'tradable_balance_ratio': 0.99, 'fiat_display_currency': 'USD', 
+'dry_run': True, 'dry_run_wallet': 1000, 'cancel_open_orders_on_exit': False, 'trading_mode': <TradingMode.SPOT: 'spot'>, 'margin_mode': '', 
+'unfilledtimeout': {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit':
+ 'minutes'}, 'entry_pricing': {'price_side': 'same', 'use_order_book': True, 
+ 'order_book_top': 1, 'price_last_balance': 0.0, 'check_depth_of_market': 
+ {'enabled': False, 'bids_to_ask_delta': 1}}, 'exit_pricing': {'price_side': 
+ 'same', 'use_order_book': True, 'order_book_top': 1}, 'download_trades': 
+ True, 'exchange': {'name': 'kraken', 'key': '', 'secret': '', 'ccxt_config': 
+ {'enableRateLimit': True}, 'ccxt_async_config': {'enableRateLimit': True, 
+ 'rateLimit': 1000}, 'pair_whitelist': ['BTC/USDT'], 'pair_blacklist': []}, 
+ 'pairlists': [{'method': 'StaticPairList', 'number_assets': 20, 'sort_key': 
+ 'quoteVolume', 'min_value': 0, 'refresh_period': 1800}], 'telegram': 
+ {'enabled': True, 'token': '6098324163:AAGAsEFmZVtCAmHrDCyEu5k7wqV5MWhYdjU',
+  'chat_id': '6239011080'}, 'api_server': {'enabled': True, 
+  'listen_ip_address': '0.0.0.0', 'listen_port': 8080, 'verbosity': 'error',
+   'enable_openapi': False, 'jwt_secret_key': 
+   'aaeb8173e0bc0ff14101ae225529c2212db4c965dc7974d75f8539f053223e54', 
+   'ws_token': '_9kjyvYGADVtC8Hgy4_Qvuj0STqn0y-Jbg', 'CORS_origins': [], 
+   'username': 'freqtrader', 'password': 'jiang'}, 'bot_name': 'freqtrade', 
+   'initial_state': 'running', 'force_entry_enable': False, 'internals': 
+   {'process_throttle_secs': 5}, 'config_files': ['user_data/config.json'], 'original_config': {'max_open_trades': 10, 'stake_currency': 'USDT', 'stake_amount': 'unlimited', 'tradable_balance_ratio': 0.99, 'fiat_display_currency': 'USD', 'dry_run': True, 'dry_run_wallet': 1000, 'cancel_open_orders_on_exit': False, 'trading_mode': 'spot', 'margin_mode': '', 'unfilledtimeout': {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 
+   'unit': 'minutes'}, 'entry_pricing': {'price_side': 'same', 
+   'use_order_book': True, 'order_book_top': 1, 'price_last_balance': 0.0, 
+   'check_depth_of_market': {'enabled': False, 'bids_to_ask_delta': 1}}, 
+   'exit_pricing': {'price_side': 'same', 'use_order_book': True, 
+   'order_book_top': 1}, 'download_trades': True, 'exchange': {'name': 
+   'kraken', 'key': '', 'secret': '', 'ccxt_config': {'enableRateLimit': 
+   True}, 'ccxt_async_config': {'enableRateLimit': True, 'rateLimit': 1000}, 
+   'pair_whitelist': ['BTC/USDT'], 'pair_blacklist': []}, 'pairlists': 
+   [{'method': 'StaticPairList', 'number_assets': 20, 'sort_key': 'quoteVolume', 'min_value': 0, 'refresh_period': 1800}], 'telegram': {'enabled': True, 'token': '6098324163:AAGAsEFmZVtCAmHrDCyEu5k7wqV5MWhYdjU',
+    'chat_id': '6239011080'}, 'api_server': {'enabled': True, 
+    'listen_ip_address': '0.0.0.0', 'listen_port': 8080, 'verbosity': 
+    'error', 'enable_openapi': False, 'jwt_secret_key': 
+    'aaeb8173e0bc0ff14101ae225529c2212db4c965dc7974d75f8539f053223e54', 'ws_token': '_9kjyvYGADVtC8Hgy4_Qvuj0STqn0y-Jbg', 'CORS_origins': [], 
+    'username': 'freqtrader', 'password': 'jiang'}, 'bot_name': 'freqtrade', 
+    'initial_state': 'running', 'force_entry_enable': False, 'internals': 
+    {'process_throttle_secs': 5}, 'config_files': ['user_data/config.json']}, 'verbosity': 0, 'runmode': <RunMode.DRY_RUN: 'dry_run'>, 'strategy': 
+    'SampleStrategy', 'db_url': 'sqlite:///tradesv3.dryrun.sqlite', 
+    'user_data_dir': PosixPath('/root/freqtrade/freqtrade/user_data'), 'datadir': PosixPath('/root/freqtrade/freqtrade/user_data/data/kraken'), 
+    'exportfilename': PosixPath('/root/freqtrade/freqtrade/user_data/backtest_results'), 
+    'print_colorized': True, 'candle_type_def': <CandleType.SPOT: 'spot'>, 
+    'pairs': ['BTC/USDT']}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>那这么多命令，设置命令的时候是怎么和逻辑对应上的呢？其实在这里是通过命令行将参数传入的时候，通过<strong>模块</strong>来获取的，如<a href="https://www.runoob.com/python/python-command-line-arguments.html" target="_blank" rel="noopener">Python 命令行参数 | 菜鸟教程 (runoob.com)</a>所示，可通过使用 <strong>sys</strong> 的 <strong>sys.argv</strong> 来获取命令行参数，也可以通过argparse来获取命令行参数<a href="https://blog.csdn.net/qq_39839807/article/details/104155896" target="_blank" rel="noopener">(79条消息) Python 从命令行读取或解析（parser）参数（arguments、options、sub-commands）：sys.argv、argparse、docopt_python 读取命令行参数_周星星0_o的博客-CSDN博客</a></p>
+<p>将参数拿到以后由<code>commands/arguments.py</code>文件来进行参数处理，遇到哪个参数就执行对应的代码</p>
+<pre class="line-numbers language-python"><code class="language-python">setup_logging_pre<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 猜测这里是代码入口</span>
+arguments <span class="token operator">=</span> Arguments<span class="token punctuation">(</span>sysargv<span class="token punctuation">)</span>
+args <span class="token operator">=</span> arguments<span class="token punctuation">.</span>get_parsed_arg<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如在命令行输入trade参数，会转到执行start_trading</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Add trade subcommand</span>
+
+<span class="token comment" spellcheck="true"># 这里转入到执行start_trading</span>
+
+trade_cmd <span class="token operator">=</span> subparsers<span class="token punctuation">.</span>add_parser<span class="token punctuation">(</span><span class="token string">'trade'</span><span class="token punctuation">,</span> help<span class="token operator">=</span><span class="token string">'Trade module.'</span><span class="token punctuation">,</span>
+
+parents<span class="token operator">=</span><span class="token punctuation">[</span>_common_parser<span class="token punctuation">,</span> _strategy_parser<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+trade_cmd<span class="token punctuation">.</span>set_defaults<span class="token punctuation">(</span>func<span class="token operator">=</span>start_trading<span class="token punctuation">)</span>
+
+self<span class="token punctuation">.</span>_build_args<span class="token punctuation">(</span>optionlist<span class="token operator">=</span>ARGS_TRADE<span class="token punctuation">,</span> parser<span class="token operator">=</span>trade_cmd<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>进入start_trading以后就进入主入口了，先实例化worker通过之前的报错代码也可以看出，通过在worker.py里面进行configs参数的配置，然后将_config参数传给实例化FreqtradeBot机器人。<br>随后运行<code>worker.run()</code>，在循环中向交易所获取数据。</p>
+<pre class="line-numbers language-linux"><code class="language-linux"> File "/root/freqtrade/freqtrade/commands/trade_commands.py", line 25, in start_trading
+    worker = Worker(args)
+  File "/root/freqtrade/freqtrade/worker.py", line 37, in __init__
+    self._init(False)
+  File "/root/freqtrade/freqtrade/worker.py", line 54, in _init
+    self.freqtrade = FreqtradeBot(self._config)
+  File "/root/freqtrade/freqtrade/freqtradebot.py", line 74, in __init__
+    init_db(self.config['db_url'])
+  File "/root/freqtrade/freqtrade/persistence/models.py", line 82, in init_db
+    check_migrate(engine, decl_base=ModelBase, previous_tables=previous_tables)
+  File "/root/freqtrade/freqtrade/persistence/migrations.py", line 343, in check_migrate
+    fix_old_dry_orders(engine)
+  File "/root/freqtrade/freqtrade/persistence/migrations.py", line 282, in fix_old_dry_orders
+    connection.execute(stmt)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>代码核心还是在worker.py和freqtrade.py上，process是主流程</p>
+<h2 id="3-操作代码太麻烦。还是下载桌面程序"><a href="#3-操作代码太麻烦。还是下载桌面程序" class="headerlink" title="3. 操作代码太麻烦。还是下载桌面程序"></a>3. 操作代码太麻烦。还是下载桌面程序</h2><p><a href="https://www.vpsrb.com/3186.html" target="_blank" rel="noopener">https://www.vpsrb.com/3186.html</a></p>
+<h3 id="argparse参数解读"><a href="#argparse参数解读" class="headerlink" title="argparse参数解读"></a>argparse参数解读</h3><p><a href="https://docs.python.org/zh-cn/3/library/argparse.html" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3/library/argparse.html</a><br><a href="https://www.jianshu.com/p/27ce67dab97e" target="_blank" rel="noopener">https://www.jianshu.com/p/27ce67dab97e</a><br><a href="https://www.jianshu.com/p/27ce67dab97e" target="_blank" rel="noopener">https://www.jianshu.com/p/27ce67dab97e</a><br><code>limit: float</code>表示变量名和变量类型；<br>python 需要实例化的类要有<code>_init</code>方法，被import进来的类调用方法可不用<code>_init</code>方法，程序的入口要有main方法：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">if</span>  __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># pragma: no cover</span>
+      main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="4-运行新的策略文件"><a href="#4-运行新的策略文件" class="headerlink" title="4. 运行新的策略文件"></a>4. 运行新的策略文件</h2><pre class="line-numbers language-linux"><code class="language-linux">freqtrade trade --strategy AwesomeStrategy --strategy-path /some/directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>策略文件仓库</p>
+<pre class="line-numbers language-linux"><code class="language-linux">python main.py trade --config user_data/config.json --strategy PowerTower --strategy-path user_data/strategies/strategies<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a href="https://github.com/jlcxxzj/freqtrade-strategies">jlcxxzj/freqtrade-strategies: Free trading strategies for Freqtrade bot (github.com)</a></p>
+<h2 id="5-参考文献"><a href="#5-参考文献" class="headerlink" title="5. 参考文献"></a>5. 参考文献</h2><p><a href="https://pythondict.com/quant/freqtrade/" target="_blank" rel="noopener">FreqTrade—又强又简单的Python加密货币自动交易机器人-Python 实用宝典 (pythondict.com)</a><br><a href="https://zhuanlan.zhihu.com/p/91135577" target="_blank" rel="noopener">OHLCV 数据 - 知乎 (zhihu.com)</a><br><a href="https://www.bgegao.com/2022/05/2306.html" target="_blank" rel="noopener">https://www.bgegao.com/2022/05/2306.html</a><br><a href="http://c.biancheng.net/view/2262.html" target="_blank" rel="noopener">Python lambda表达式（匿名函数）及用法 (biancheng.net)</a><br><a href="https://www.bilibili.com/video/BV1ng411R7tq/?spm_id_from=333.337.search-card.all.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">不懂K线图，你就是究极韭菜！今天6分钟讲完K线组合，轻松捕获涨停_哔哩哔哩_bilibili</a><br><a href="https://www.bilibili.com/video/BV1gN4y1A71b/?spm_id_from=333.337.search-card.all.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">数据可视化示例_K线图_哔哩哔哩_bilibili</a><br><a href="https://www.bilibili.com/video/BV1kS4y1z7JH/?spm_id_from=333.337.search-card.all.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">T5 数据分析三剑客——用Python绘制股票K线图_哔哩哔哩_bilibili</a><br><a href="https://zhuanlan.zhihu.com/p/587075465" target="_blank" rel="noopener">【OpenFE】全自动特征生成器 — 助力Kaggle竞赛取得更好成绩 - 知乎 (zhihu.com)</a><br><strong><a href="https://blog.csdn.net/Shepherdppz/article/details/117575286?spm=1001.2014.3001.5501" target="_blank" rel="noopener">(79条消息) Python量化投资——mplfinance最佳实践：动态交互式高级K线图(蜡烛图)【源码+详解】_Shepherdppz的博客-CSDN博客</a></strong><br><a href="https://blog.csdn.net/Shepherdppz?type=blog" target="_blank" rel="noopener">https://blog.csdn.net/Shepherdppz?type=blog</a><br><a href="https://blog.csdn.net/Shepherdppz?type=blog" target="_blank" rel="noopener">(79条消息) Shepherdppz的博客_CSDN博客-python,量化投资,QR Code领域博主</a></p>
+<h2 id="6-其他项目和文献资料"><a href="#6-其他项目和文献资料" class="headerlink" title="6. 其他项目和文献资料"></a>6. 其他项目和文献资料</h2><p><a href="https://linux.cn/article-11380-1.html" target="_blank" rel="noopener">技术|在 Linux 中如何移动文件</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">jlcxxzj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/jlcxxzj/blog.github.io/2023/04/04/1-xiang-mu/liang-hua-fen-xi-xiang-mu/liang-hua-fen-xi-diao-shi-pian-1/">https://github.com/jlcxxzj/blog.github.io/2023/04/04/1-xiang-mu/liang-hua-fen-xi-xiang-mu/liang-hua-fen-xi-diao-shi-pian-1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">jlcxxzj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/VPS/">
+                                    <span class="chip bg-color">VPS</span>
+                                </a>
+                            
+                                <a href="/tags/hexo博客/">
+                                    <span class="chip bg-color">hexo博客</span>
+                                </a>
+                            
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
+                                </a>
+                            
+                                <a href="/tags/云服务器/">
+                                    <span class="chip bg-color">云服务器</span>
+                                </a>
+                            
+                                <a href="/tags/Freqtrade/">
+                                    <span class="chip bg-color">Freqtrade</span>
+                                </a>
+                            
+                                <a href="/tags/一些Linux小tip/">
+                                    <span class="chip bg-color">一些Linux小tip</span>
+                                </a>
+                            
+                                <a href="/tags/源码/">
+                                    <span class="chip bg-color">源码</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的认可是我前行的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'eS18aVskMBwtTucX2DXka8Gx-gzGzoHsz',
+        appKey: 'ItADFrP6BD1J0kLY3e8CdtGg',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '昵称填写qq可以显示qq头像和昵称哦~'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/04/05/1-xiang-mu/liang-hua-fen-xi-xiang-mu/liang-hua-fen-xi-jin-rong-xue-li-lun-ji-chu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/animal/0.jpg" class="responsive-img" alt="量化分析金融学理论基础|小白篇">
+                        
+                        <span class="card-title">量化分析金融学理论基础|小白篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/量化分析/" class="post-category">
+                                    量化分析
+                                </a>
+                            
+                            <a href="/categories/量化分析/金融/" class="post-category">
+                                    金融
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo博客/">
+                        <span class="chip bg-color">hexo博客</span>
+                    </a>
+                    
+                    <a href="/tags/调研/">
+                        <span class="chip bg-color">调研</span>
+                    </a>
+                    
+                    <a href="/tags/策略/">
+                        <span class="chip bg-color">策略</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/04/04/1-xiang-mu/liang-hua-fen-xi-xiang-mu/liang-hua-fen-xi-ru-men-pian-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/architect/1.jpg" class="responsive-img" alt="量化分析入门篇2|从源码上理解Freqtrade">
+                        
+                        <span class="card-title">量化分析入门篇2|从源码上理解Freqtrade</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/量化分析/" class="post-category">
+                                    量化分析
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VPS/">
+                        <span class="chip bg-color">VPS</span>
+                    </a>
+                    
+                    <a href="/tags/hexo博客/">
+                        <span class="chip bg-color">hexo博客</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/云服务器/">
+                        <span class="chip bg-color">云服务器</span>
+                    </a>
+                    
+                    <a href="/tags/Freqtrade/">
+                        <span class="chip bg-color">Freqtrade</span>
+                    </a>
+                    
+                    <a href="/tags/一些Linux小tip/">
+                        <span class="chip bg-color">一些Linux小tip</span>
+                    </a>
+                    
+                    <a href="/tags/源码/">
+                        <span class="chip bg-color">源码</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="8434513507"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">jlcxxzj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">102.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime">载入运行时间...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "10";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jlcxxzj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2541597473@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2541597473" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2541597473" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 10) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+
+</html>

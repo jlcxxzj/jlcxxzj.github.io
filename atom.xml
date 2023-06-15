@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>泮池5号</title>
+  
+  <subtitle>海边的冬格列克</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/jlcxxzj/blog.github.io/"/>
+  <updated>2023-06-15T12:09:24.271Z</updated>
+  <id>https://github.com/jlcxxzj/blog.github.io/</id>
+  
+  <author>
+    <name>jlcxxzj</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MathPix调研</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/15/mathpix-diao-yan/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/15/mathpix-diao-yan/</id>
+    <published>2023-06-15T11:30:31.000Z</published>
+    <updated>2023-06-15T12:09:24.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;MathPix&quot;&gt;&lt;a href=&quot;#MathPix&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="调研" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E8%B0%83%E7%A0%94/"/>
+    
+    
+      <category term="公式编辑工具" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="MathPix" scheme="https://github.com/jlcxxzj/blog.github.io/tags/MathPix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OCR公式img识别为latex模型(im2latex)</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/</id>
+    <published>2023-06-15T11:30:31.000Z</published>
+    <updated>2023-06-15T11:21:37.413Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;模型调试&quot;&gt;&lt;a href=&quot;#模型调试&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="调研" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E8%B0%83%E7%A0%94/"/>
+    
+    
+      <category term="公式编辑工具" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="latex" scheme="https://github.com/jlcxxzj/blog.github.io/tags/latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PDF及图片公式转可编辑形式的方法调研</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/11/pdf-ji-tu-pian-gong-shi-zhuan-ke-bian-ji-xing-shi-de-fang-fa-diao-yan/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/11/pdf-ji-tu-pian-gong-shi-zhuan-ke-bian-ji-xing-shi-de-fang-fa-diao-yan/</id>
+    <published>2023-06-11T11:30:31.000Z</published>
+    <updated>2023-06-15T12:55:02.744Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;需求来源&quot;&gt;&lt;a href=&quot;#需求来源&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="调研" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E8%B0%83%E7%A0%94/"/>
+    
+    
+      <category term="面向科研开发" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E9%9D%A2%E5%90%91%E7%A7%91%E7%A0%94%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="PDF工具开发" scheme="https://github.com/jlcxxzj/blog.github.io/tags/PDF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PDF处理工具</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/11/pdf-chu-li-gong-ju/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/11/pdf-chu-li-gong-ju/</id>
+    <published>2023-06-11T11:30:31.000Z</published>
+    <updated>2023-06-15T11:46:08.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;pdf处理工具&quot;&gt;&lt;a href=&quot;#pdf处理工具&quot; class=&quot;headerlink&quot; title=&quot;pdf处理工具&quot;&gt;&lt;/a&gt;pdf处理工具&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.ilovepdf.com/zh-cn&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="调研" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E8%B0%83%E7%A0%94/"/>
+    
+    
+      <category term="面向科研开发" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E9%9D%A2%E5%90%91%E7%A7%91%E7%A0%94%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="PDF工具开发" scheme="https://github.com/jlcxxzj/blog.github.io/tags/PDF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>涡轮泵基础知识！</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/07/wo-lun-beng-ji-chu-zhi-shi/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/07/wo-lun-beng-ji-chu-zhi-shi/</id>
+    <published>2023-06-07T11:30:31.000Z</published>
+    <updated>2023-06-07T14:26:08.954Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;家用离心泵&quot;&gt;&lt;a href=&quot;#家用离心泵&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="机械" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E6%9C%BA%E6%A2%B0/"/>
+    
+    
+      <category term="机械" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%9C%BA%E6%A2%B0/"/>
+    
+      <category term="涡轮泵" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%B6%A1%E8%BD%AE%E6%B3%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不借助主题渲染HTML页面</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/03/1-xiang-mu/bo-ke-xiang-mu/bu-jie-zhu-zhu-ti-xuan-ran-html-ye-mian/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/06/03/1-xiang-mu/bo-ke-xiang-mu/bu-jie-zhu-zhu-ti-xuan-ran-html-ye-mian/</id>
+    <published>2023-06-03T11:30:31.000Z</published>
+    <updated>2023-06-04T08:12:00.282Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;项目文件和渲染效果&quot;&gt;&lt;a href=&quot;#项目文件和渲染效果&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="网页" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%BD%91%E9%A1%B5/"/>
+    
+    
+      <category term="博客" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="html" scheme="https://github.com/jlcxxzj/blog.github.io/tags/html/"/>
+    
+      <category term="网页" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%BD%91%E9%A1%B5/"/>
+    
+      <category term="渲染" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开发一个Electron项目|学习几个好玩的Electron项目</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/30/tu-pian/kai-fa-di-yi-ge-electron-ying-yong/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/30/tu-pian/kai-fa-di-yi-ge-electron-ying-yong/</id>
+    <published>2023-05-30T11:30:31.000Z</published>
+    <updated>2023-06-04T07:49:18.760Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;项目1说明&quot;&gt;&lt;a href=&quot;#项目1说明&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Electron" scheme="https://github.com/jlcxxzj/blog.github.io/categories/Electron/"/>
+    
+    
+      <category term="入门源码" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%85%A5%E9%97%A8%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="学习" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="脑图项目mind-map" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E8%84%91%E5%9B%BE%E9%A1%B9%E7%9B%AEmind-map/"/>
+    
+      <category term="音乐项目Less-Player-Desktop" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E9%9F%B3%E4%B9%90%E9%A1%B9%E7%9B%AELess-Player-Desktop/"/>
+    
+      <category term="Electron项目入门" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Electron%E9%A1%B9%E7%9B%AE%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在picgo项目上的环境配置问题</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/29/tu-pian/zai-picgo-xiang-mu-shang-de-huan-jing-pei-zhi-wen-ti/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/29/tu-pian/zai-picgo-xiang-mu-shang-de-huan-jing-pei-zhi-wen-ti/</id>
+    <published>2023-05-29T11:30:31.000Z</published>
+    <updated>2023-06-04T07:50:00.998Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;环境配置&quot;&gt;&lt;a href=&quot;#环境配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="项目" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="Picgo上传图床项目" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Picgo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E5%BA%8A%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="项目环境配置" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="vue3" scheme="https://github.com/jlcxxzj/blog.github.io/tags/vue3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023年Austin项目的一些变化</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/28/1-xiang-mu/java-xiang-mu/austin-xiang-mu/2023-nian-austin-xiang-mu-de-yi-xie-bian-hua/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/28/1-xiang-mu/java-xiang-mu/austin-xiang-mu/2023-nian-austin-xiang-mu-de-yi-xie-bian-hua/</id>
+    <published>2023-05-28T04:08:56.000Z</published>
+    <updated>2023-05-28T14:14:12.357Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;重启消息推送平台项目出现的问题&quot;&gt;&lt;a href=&quot;#重启消息推送平台项目出现的问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java项目" scheme="https://github.com/jlcxxzj/blog.github.io/categories/Java%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="域名" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+      <category term="消息下发队列" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%B6%88%E6%81%AF%E4%B8%8B%E5%8F%91%E9%98%9F%E5%88%97/"/>
+    
+      <category term="Host配置" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Host%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="数据库" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建域名-配置图床-连接Typora</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/25/4-tong-yong-pei-zhi/chuang-jian-yu-ming-pei-zhi-tu-chuang-lian-jie-typora/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/25/4-tong-yong-pei-zhi/chuang-jian-yu-ming-pei-zhi-tu-chuang-lian-jie-typora/</id>
+    <published>2023-05-25T04:08:56.000Z</published>
+    <updated>2023-06-15T12:18:08.303Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近在整理博客的时候发现，很多存储在本地的图片在&lt;code&gt;hexo&lt;/code&gt;中不能被显示出来，而通过链接放入的网络图片反而能显示，这是因为其他作者将图片配
+        
+      
+    
+    </summary>
+    
+      <category term="配置图床" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/"/>
+    
+    
+      <category term="图床" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+      <category term="Typora" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Typora/"/>
+    
+      <category term="域名" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+      <category term="七牛云" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客matery主题配置教程| 以开发的角度来说明！</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/</id>
+    <published>2023-05-23T11:30:31.000Z</published>
+    <updated>2023-06-04T07:45:33.830Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-hexo和前端框架具有相似性&quot;&gt;&lt;a href=&quot;#1-hexo和前端框架具有相似性&quot; class=&quot;headerlink&quot; title=&quot;1.
+        
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://github.com/jlcxxzj/blog.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://github.com/jlcxxzj/blog.github.io/tags/hexo/"/>
+    
+      <category term="博客搭建" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="前端UI框架" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%89%8D%E7%AB%AFUI%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java语言的序列化和反序列化 | 深入理解</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/20/2-diao-yan-xue-xi-si-kao/java-yu-yan-de-xu-lie-hua-he-fan-xu-lie-hua/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/20/2-diao-yan-xue-xi-si-kao/java-yu-yan-de-xu-lie-hua-he-fan-xu-lie-hua/</id>
+    <published>2023-05-20T11:30:31.000Z</published>
+    <updated>2023-05-24T07:29:55.510Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;序列化和反序列化概念&quot;&gt;&lt;a href=&quot;#序列化和反序列化概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Java" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Java/"/>
+    
+      <category term="序列化和反序列化" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见编程语言语法特性和库方法对比 | CHATGPT问答</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/20/2-diao-yan-xue-xi-si-kao/bu-tong-bian-cheng-yu-yan-yu-fa-te-xing-he-ku-dui-bi/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/20/2-diao-yan-xue-xi-si-kao/bu-tong-bian-cheng-yu-yan-yu-fa-te-xing-he-ku-dui-bi/</id>
+    <published>2023-05-20T11:30:31.000Z</published>
+    <updated>2023-05-24T07:26:47.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;1-目前有哪些主流的编程语言？&quot;&gt;&lt;a href=&quot;#1-目前有哪些主流的编程语言？&quot; class=&quot;headerlink&quot; title=&quot;1.
+        
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="总结" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Java" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Java/"/>
+    
+      <category term="python" scheme="https://github.com/jlcxxzj/blog.github.io/tags/python/"/>
+    
+      <category term="c++" scheme="https://github.com/jlcxxzj/blog.github.io/tags/c/"/>
+    
+      <category term="c" scheme="https://github.com/jlcxxzj/blog.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>electron爬虫项目 | node.js环境搭建</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/20/1-xiang-mu/easyspider-pa-chong-xiang-mu/guan-yu-electron-de-yi-xie-an-zhuang-yi-ji-xiang-mu-pei-zhi-wen-ti/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/20/1-xiang-mu/easyspider-pa-chong-xiang-mu/guan-yu-electron-de-yi-xie-an-zhuang-yi-ji-xiang-mu-pei-zhi-wen-ti/</id>
+    <published>2023-05-20T11:30:31.000Z</published>
+    <updated>2023-05-24T07:26:07.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;一、项目介绍及electron安装&quot;&gt;&lt;a href=&quot;#一、项目介绍及electron安装&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="项目" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="electron" scheme="https://github.com/jlcxxzj/blog.github.io/tags/electron/"/>
+    
+      <category term="node.js" scheme="https://github.com/jlcxxzj/blog.github.io/tags/node-js/"/>
+    
+      <category term="爬虫" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="桌面应用" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux使用规范 | 平时使用的一些小细节</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/18/2-diao-yan-xue-xi-si-kao/linux-shi-yong-gui-fan/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/18/2-diao-yan-xue-xi-si-kao/linux-shi-yong-gui-fan/</id>
+    <published>2023-05-18T11:30:31.000Z</published>
+    <updated>2023-05-24T07:52:36.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;linux根目录-和用户目录&quot;&gt;&lt;a href=&quot;#linux根目录-和用户目录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="总结" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Linux基础" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Linux%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="VPS" scheme="https://github.com/jlcxxzj/blog.github.io/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>临近毕业，得整理一下电脑了</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/18/zhi-shi-ju/lin-jin-bi-ye-de-zheng-li-yi-xia-dian-nao-liao/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/18/zhi-shi-ju/lin-jin-bi-ye-de-zheng-li-yi-xia-dian-nao-liao/</id>
+    <published>2023-05-18T11:30:31.000Z</published>
+    <updated>2023-05-25T14:24:49.822Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;临近毕业，得整理一下电脑了&quot;&gt;&lt;a href=&quot;#临近毕业，得整理一下电脑了&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%94%B5%E8%84%91/"/>
+    
+      <category term="整理" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%95%B4%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Vscode上搭建C和C++的环境|实现hello world</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/18/zhi-shi-ju/zai-vscode-shang-da-jian-c-he-c-de-huan-jing/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/18/zhi-shi-ju/zai-vscode-shang-da-jian-c-he-c-de-huan-jing/</id>
+    <published>2023-05-18T11:30:31.000Z</published>
+    <updated>2023-05-24T07:45:13.216Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-安装教程&quot;&gt;&lt;a href=&quot;#1-安装教程&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="环境配置" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="C/C++" scheme="https://github.com/jlcxxzj/blog.github.io/tags/C-C/"/>
+    
+      <category term="VScode" scheme="https://github.com/jlcxxzj/blog.github.io/tags/VScode/"/>
+    
+      <category term="搭建基础" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Visual Studio Code安装和环境配置</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/16/zhi-shi-ju/visual-studio-code-shi-yong-zi-shi/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/16/zhi-shi-ju/visual-studio-code-shi-yong-zi-shi/</id>
+    <published>2023-05-16T11:30:31.000Z</published>
+    <updated>2023-05-24T07:33:26.231Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Visual-Studio-Code安装和环境配置&quot;&gt;&lt;a href=&quot;#Visual-Studio-Code安装和环境配置&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Visual Studio Code" scheme="https://github.com/jlcxxzj/blog.github.io/categories/Visual-Studio-Code/"/>
+    
+    
+      <category term="Visual Studio Code" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Visual-Studio-Code/"/>
+    
+      <category term="编程环境" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows系统探究</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/windows-xi-tong-tan-jiu/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/windows-xi-tong-tan-jiu/</id>
+    <published>2023-05-14T11:30:31.000Z</published>
+    <updated>2023-05-24T09:12:17.992Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-windows系统探究&quot;&gt;&lt;a href=&quot;#1-windows系统探究&quot; class=&quot;headerlink&quot; title=&quot;1.
+        
+      
+    
+    </summary>
+    
+      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+      <category term="Windows系统" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Windows%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%94%B5%E8%84%91/"/>
+    
+      <category term="基础" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录的一些好网站 | 参观学习！</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/</id>
+    <published>2023-05-14T11:30:31.000Z</published>
+    <updated>2023-05-24T09:09:41.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-网站推荐&quot;&gt;&lt;a href=&quot;#1-网站推荐&quot; class=&quot;headerlink&quot; title=&quot;1. 网站推荐&quot;&gt;&lt;/a&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="网站" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%BD%91%E7%AB%99/"/>
+    
+    
+      <category term="博客" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="网站" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+</feed>

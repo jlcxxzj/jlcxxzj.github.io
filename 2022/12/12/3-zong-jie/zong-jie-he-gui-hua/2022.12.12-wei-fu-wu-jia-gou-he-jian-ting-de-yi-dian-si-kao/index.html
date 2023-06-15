@@ -1,0 +1,1567 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="游戏里面为什么不用微服务|监听和告警, JAVA AI DeepLearning ML  深度学习 AIGC">
+    <meta name="description" content="
+关注公众号【惜学塔】，每日知识干货马上就来！
+
+
+微服务架构为什么在游戏领域知之甚少？为什么游戏公司的server不愿意微服务化？要回答这个问题，首先得说明微服务化的好处在哪里，还得看在游戏开发中是否适用服务端微服务化的好处可以归结为以下">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>游戏里面为什么不用微服务|监听和告警 | 泮池5号</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        body{
+            background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">泮池5号</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">泮池5号</div>
+        <div class="logo-desc">
+            
+            上海大学 | 机械电子工程 | 人工智能与故障诊断
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/jlcxxzj/jlcxxzj.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/architect/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">游戏里面为什么不用微服务|监听和告警</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/博客/">
+                                <span class="chip bg-color">博客</span>
+                            </a>
+                        
+                            <a href="/tags/记录/">
+                                <span class="chip bg-color">记录</span>
+                            </a>
+                        
+                            <a href="/tags/心声/">
+                                <span class="chip bg-color">心声</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/记录/" class="post-category">
+                                记录
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-12-13
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>关注公众号【惜学塔】，每日知识干货马上就来！</p>
+</blockquote>
+<p><img src="/medias/contact.jpg" alt></p>
+<h1 id="微服务架构为什么在游戏领域知之甚少？"><a href="#微服务架构为什么在游戏领域知之甚少？" class="headerlink" title="微服务架构为什么在游戏领域知之甚少？"></a>微服务架构为什么在游戏领域知之甚少？</h1><p>为什么游戏公司的server不愿意微服务化？<br>要回答这个问题，首先得说明微服务化的好处在哪里，还得看在游戏开发中是否适用<br>服务端微服务化的好处可以归结为以下几点：方便测试、方便维护、方便升级、服务之间松耦合、可多语言开发、自动扩容等等<br>但是，在游戏的开发中，服务端不太需要微服务，这是因为游戏中更在乎的是实时性，微服务将原来一个进程的模块拆分成不同的服务，会显著的增加额外的网络开销，让游戏延迟时间增加，这是游戏里面不适用微服务的最重要的原因。</p>
+<h2 id="比如棋牌游戏为例"><a href="#比如棋牌游戏为例" class="headerlink" title="比如棋牌游戏为例"></a>比如棋牌游戏为例</h2><ol>
+<li>微服务本身是为了应对服务逻辑的复杂，需要新的组织接口的方式。而游戏本身逻辑其实没有这么复杂，比如大厅里面就是一些基本的功能，修改账号，登录等。游戏最重要的是游戏本身的逻辑。</li>
+<li>游戏逻辑服务器本身（比如斗地主等棋牌）因为网络响应性能要求问题（游戏玩家对每个操作的反馈时长敏感性远高于业务系统），所以游戏服务器都是有状态的，有状态就会存在内存 ，偶尔会接受redis,mysql是绝对不可以接受的，关系型数据库仅用来定时异步持久化数据，仅游戏服务器而言持久化在redis即可。</li>
+<li>服务间通信rpc首先ribbon,feign等并不是很合适，因为都是基于http的，用http存在一个消息乱序的问题，比如玩家出牌两次，在http就可能出现次序不一致的情况。游戏服务器集群一般使用长连接互联。可能需要dubbo长连接</li>
+<li>游戏逻辑服务器（比如斗地主服务器），一般是不能用spring mvc做的，因为线程模型完全不同。多线程模型处理游戏性能还非常复杂，一般都是使用单进程/线程 驱动固定数量房间的方式（这也是为何服务器一定要有状态，一定不能读写MySQL）</li>
+<li>自动扩容在游戏这边叫做开服，早就有固定流程和工具和限流方式了</li>
+<li>游戏很多操作不存在服务降级熔断，不行就直接报错给用户。</li>
+<li>大厅服务器登录注册等的确可以做微服务，但是也其实并不是做微服务，就是几个接口还有自动水平扩容的方案即可。服务注册发现用处也不大，开服都是确定的事情，还有一系列运营手段配合，关服也是绝对不能随便关的。</li>
+<li>游戏处理的流量真的不算多，你在线1w的棋牌游戏已经很赚钱了，10w就是一个特别厉害的产品了。</li>
+<li>一些独立的服务器比如充值之类的服务需要微服务化吗？很明显场景还不够多。<h1 id="为什么微服务必须要有网关？"><a href="#为什么微服务必须要有网关？" class="headerlink" title="为什么微服务必须要有网关？"></a>为什么微服务必须要有网关？</h1>下图是一个微服务架构，仅供参考：<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/d11772c0-7a84-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>网关是微服务架构中的一个关键的角色，用来保护、增强和控制对于微服务的访问；</li>
+</ol>
+<p>网关是一个处于应用程序或服务之前的系统，用来管理授权、访问控制和流量限制等，这样微服务就会被微服务网关保护起来，对所用的调用者透明。因此，隐藏在微服务网关后面的业务系统就可以更加专注于业务本身。同时，，微服务网关还可以为服务提供和沉淀更多的附件功能。</p>
+<p>下面是微服务网关的主要作用：<br>请求接入：管理所有的接入请求，作为所有API接口的请求入口；<br>业务聚合：所有微服务后端可以注册在API网关，通过API网关统一暴露服务；<br>拦截策略：可以提供统一的增加安全、路由、流控等公共服务组件；<br>统一管理：提供统一的监控工具，配置管理工具，Swagger工具等基础设施；</p>
+<h1 id="普罗米修斯-prometheus-和Grafana？"><a href="#普罗米修斯-prometheus-和Grafana？" class="headerlink" title="普罗米修斯(prometheus)和Grafana？"></a>普罗米修斯(prometheus)和Grafana？</h1><p><a href="https://blog.didispace.com/devops-for-small-team/" target="_blank" rel="noopener">https://blog.didispace.com/devops-for-small-team/</a></p>
+<ol>
+<li>prometheus server 负责监控数据收集和存储</li>
+<li>Prometheus alert manager 负责根据告警规则进行告警，可集成很多告警通道</li>
+<li>node-exporter 的作用就是从机器读取指标，然后暴露一个 http 服务，Prometheus 就是从这个服务中收集监控指标。当然 Prometheus 官方还有各种各样的 exporter。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/bd7c9c90-7a0c-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>有了监控数据后，我们就可以对数据进行可视化，Grafana 和 Prometheus 集成得非常好，所以，我们又部署了 Grafana:<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/0efa1810-7a10-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>在 Grafana 上查看 nodex-exporter 收集的数据的效果图大概如下：<img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/1391a190-7a10-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>可是，我们不可能24小时盯着屏幕看CPU负载有没有超吧？这时候就要上告警了，Promehtues 默认集成了 N 多告警渠道。可惜没有集成钉钉。但也没有关系，有好心的同学开源了钉钉集成 Prometheus 告警的组件：prometheus-webhook-dingtalk。接着，我们告警也上了：<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/a7f41ef0-7a8b-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>完成以上工作后，我们的基础监控的架子就完成了。为我们后期上 Redis 监控、JVM 监控等更上层的监控做好了准备。</li>
+</ol>
+<h1 id="prometheus的原理和前景"><a href="#prometheus的原理和前景" class="headerlink" title="prometheus的原理和前景"></a>prometheus的原理和前景</h1><h2 id="容器集群可观测现状"><a href="#容器集群可观测现状" class="headerlink" title="容器集群可观测现状"></a>容器集群可观测现状</h2><p><a href="https://help.aliyun.com/practice_detail/467109#:~:text=Promethues%20%E7%9B%91%E6%8E%A7%E6%9C%8D%E5%8A%A1%E5%8F%AF%E6%9C%89%E6%95%88%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%8C%87%E6%A0%87%E3%80%81%E5%BA%94%E7%94%A8%E5%B1%82%E6%8C%87%E6%A0%87%E3%80%81%E4%B8%9A%E5%8A%A1%E5%B1%82%E6%8C%87%E6%A0%87%E7%AD%89%EF%BC%8C%E9%87%87%E9%9B%86%E7%9B%91%E6%8E%A7%E6%8C%87%E6%A0%87%E5%90%8E%E8%BF%9B%E8%A1%8C%E5%AD%98%E5%82%A8%EF%BC%8C%E6%90%AD%E9%85%8D,Grafana%20%E5%8F%AF%E5%AE%9E%E7%8E%B0%E7%9B%91%E6%8E%A7%E6%8C%87%E6%A0%87%E7%9A%84%E5%B1%95%E7%A4%BA%E5%92%8C%E5%91%8A%E8%AD%A6%E7%AD%89%E3%80%82" target="_blank" rel="noopener">统一观测｜Prometheus 监控多云容器集群 (aliyun.com)</a><br>随着Kubernetes(K8s)容器编排工具已经成为事实上的行业通用技术底座，容器集群监控经历多种方案实践之后，prometheus最终成为容器集群监控的事实标准。</p>
+<p>Prometheus监控服务可有效监控系统层指标、应用层指标、业务层指标等等，采集监控指标后进行存储，搭配grafana可实现监控指标的展示和告警等。</p>
+<p>Prometheus + Grafana 方案可有效进行容器集群监控指标采集、存储、展示、告警等，有效帮助业务发现和定位问题，为云原生下的应用保驾护航，已经成为业内容器集群监控标准组合方案。</p>
+<p>目前企业运维容器集群，有两种方案可以选择，第一种选择自建监控体系；第二种选择云厂商提供的监控产品。</p>
+<p>第一种自建监控体系：Prometheus + Grafana 入门使用并不难，但基于此方案进行自建整套监控体系且达到生产可用水平绝非易事，不仅需要投入一定量研发和运维人员，而且需要关注监控体系中各部分的协作，例如指标采集配置、指标存储、指标展示、有效大盘配置、告警配置、无效告警过滤等等诸多事项，这让很多开发和运维人员头痛和头秃，甚至最终走上从入门到放弃之路，赔了夫人又折兵。</p>
+<p>第二种使用云厂商提供的监控产品：其中阿里云提供的 Prometheus 监控产品，有包年包月和按量付费两种模式，可减少自行搭建告警体系的前期投入的成本，也提供后续的技术运维支持，可以极大地减少运维成本。</p>
+<h1 id="prometheus原理"><a href="#prometheus原理" class="headerlink" title="prometheus原理"></a>prometheus原理</h1><p><a href="https://www.dockone.io/article/347688" target="_blank" rel="noopener">终于有人把Prometheus入门讲明白了 - DockOne.io</a><br><a href="https://www.cnblogs.com/cjsblog/p/11585145.html" target="_blank" rel="noopener">5分钟了解Prometheus - 废物大师兄 - 博客园 (cnblogs.com)</a></p>
+<h1 id="自动化测试系统厂家和学习资料"><a href="#自动化测试系统厂家和学习资料" class="headerlink" title="自动化测试系统厂家和学习资料"></a>自动化测试系统厂家和学习资料</h1><p><a href="https://www.namisoft.com/AboutUs/360.html" target="_blank" rel="noopener">纳米软件简介-关于纳米软件-专业的测试仪器软件开发公司-西安天宇微纳 (namisoft.com)</a><br><a href="https://blog.csdn.net/Namisooft?type=blog" target="_blank" rel="noopener">(62条消息) 纳米软件的博客_CSDN博客-智能检测,程控软件,检测软件领域博主</a></p>
+<h1 id="电子元器件自动测试系统"><a href="#电子元器件自动测试系统" class="headerlink" title="电子元器件自动测试系统"></a>电子元器件自动测试系统</h1><p>纳米软件自动测试系统提供商<br><a href="https://blog.csdn.net/Namisooft/article/details/122500361" target="_blank" rel="noopener">(62条消息) 电子元器件自动测试系统_纳米软件的博客-CSDN博客_电子元件自动化检测</a></p>
+<p>1.系统优势</p>
+<blockquote>
+<p>本系统连接采用测试板的方式，不同器件采用统一接口在测试板插座上插拔，同时软硬件具有钳位保护，整个测试可以更加简易、高效、安全的进行。<br>与仪器之间采用VISA通信，保证对多台仪器通信的并行处理，使各个仪器的数据不会相互干扰，并能全程保持通讯状态，不会丢包。<br>ALL IN ONE模式的系统满足对不同种类的二极管、三极管、场效应管、DC-DC模块的基本指标的自动化测试，并采用菜单填表式的编程模式，提供各类型典型器件测试模板。<br>所有仪器的连接可在硬件设置界面通过自动检测的功能实现，并支持仪器更换品牌型号的兼容。<br>所有测试线缆均采用同轴线缆，有效的避免外界电磁干扰对系统采集数据的影响，使数据更精准。<br>系统测试过程中实时显示测试进度和测试状态，也具有对测试数据的自动化保存和历史数据的随时查看的功能。<br>系统确保数据的准确性和运行的稳定性，为用户提供报告模板，实现报告的多样化和灵活性。</p>
+<ol start="2">
+<li>系统概述<br>NSAT-2000电子元器件自动测试系统主要对电子系统的某些关键器件、设备及芯片，在加速寿命退化后，对代表其性能退化的电参量进行测试，获取测试数据，保证获取数据的实时性和可靠性。<br>该系统可用于各类二极管、三极管、绝缘栅型场效应管、结型场效应管、单向和双向可控硅、普通和高速光耦、整流桥、共阴共阳二极管及多阵列器件等各类分立器件的功能和交参数测试。<br>系统可实现二极管极性的自动识别极性、最大整流电流、正向压降测试；三极管直流电流放大倍数、穿透电流测试等；场效应管饱和漏电流、夹断电压、开启电压等测试）。</li>
+<li>测试基于硬件<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/55cbaeb0-7a8e-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+<li>产品结构<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/88def050-7a8e-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+<li>系统流程图<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/86d10d00-7a90-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+<li>系统界面<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/9c24f360-7a90-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+<li>应用场景<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/a8e0fdb0-7a90-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+</ol>
+</blockquote>
+<h1 id="通信设备自动测试系统"><a href="#通信设备自动测试系统" class="headerlink" title="通信设备自动测试系统"></a>通信设备自动测试系统</h1><ol>
+<li>系统组成<br>通信设备自动测试系统由工控机、CMA180无线电综合测试仪、仪器与PC通讯线缆、显示器组成。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/04f3c760-7a9e-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><blockquote>
+<p>什么是工控机?<br>工控机是指工业控制计算机，分为IPC（PC总线工业电脑）、PLC（可编程控制系统）、DCS（分散型控制系统）、FCS（现场总线系统）及CNC（数控系统）五种，工控机通俗的说就是专门为工业现场而设计的计算机。<br>工控机也是电脑，只是比普通电脑更稳定，抗潮性、抗震性、抗磁性更好些，连续24小时开机运行都没有问题。工控机不带显示器，可以配显示器使用。一般使用于恶劣环境或者对机器性能要求比较高的地方。<br>既然拥有工业级别的稳定性，那么，我们普通用户是否可以拿工控机来作为家用电脑呢？<br>1、工控机硬件相对固定，普通用户一般承受不起定制化费用。里面的HDMI等接口数量一般为固定的，这种固定的模式也限制住用户自己DIY的梦想了。<br>2、配套设施不齐全。工控机一般采取Linux、Unix等开放性操作系统。里面的配套软件是不包含影音娱乐，系统具有封闭性，这是为了保证企业使用的数据安全性，但也很容易造成这台电脑及其无聊，上面什么玩意儿都玩不了。<br>3、价格昂贵，一台笨重的工控机动辄上万，不符合普通人的承受范围。<br>随之5G、自动驾驶、物联网、人工智能等新技术发展，工控机也迎来了自己的高光时刻，传统笨重的工控机也渐渐被高性能的边缘计算盒子代替了。</p>
+<blockquote>
+<p>边缘计算盒子是一款体积小巧，性能强大的边缘计算产品,相比众所周知的云计算把数据上传云端服务器进行处理，边缘计算就是在“边缘端”对数据进行处理，部署在前端数据采集和云服务器中心之间，而支撑在边缘计算具有AI学习能力的硬件设备就是“AI边缘计算盒子”。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>系统功能<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/0c37fa50-7a9e-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><blockquote>
+<p>1、系统可通过网口或USB口对特定型号的无线电综合测试仪进行控制；<br>2、系统可进行发射机功率、频率准确度、频率稳定度、调制度、带外抑制比、接收机灵敏度等指标进行测试，可进行测试结果合格范围设定、测试信息录入与测试项目选择。<br>3、系统可以通过对测试仪器的相关参数配置，完成自动化测试（发射机功率、频率准确度、频率稳定度、调制度、带外抑制比、接收机灵敏度）并同时显示实时测试数据及波形。<br>4、系统具备数据存储、数据查询、报告生成等功能，可完成对测试数据的存储、查询、智能化分析。<br>5、系统提供安装部署联调服务。</p>
+</blockquote>
+</li>
+<li>基于硬件<blockquote>
+<p>1、工控机<br>主要用于安装测试系统控制软件。<br>2、CMA180无线电综合测试仪<br>CMA180适用于工作在100kHz至3GHz频率范围的无线电系统，可以解调和调制所有常见的模拟射频信号。<br>3、仪器与PC通讯线缆<br>仪器与PC之间的连接线缆，可以实现测试仪器与测试工控机的物理交互、被测典型元器件与测试仪器的物理交互以及测试仪器装置之间的物理交互。<br>4、显示器<br>显示器与工控机连接，用于将测试系统的界面以及数据波形图、数据表显示，用户可以直观的观察测试数据。</p>
+</blockquote>
+</li>
+<li>软件功能<br>系统通过程控CMA180无线综合测试仪，完成对发射机功率、频率准确度、频率稳定度、调制度、外带抑制比和接收机灵敏度的测试，可以对测试结果合格范围设定、相关测试信息录入，测试数据实时显示并绘制波形。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/d5044910-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>软件主界面：软件主界面包括运行测试、数据查询和关于我们，点击相应的功能后进入到软件相应的功能界面。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/db5653d0-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>仪器连接界面：点击主界面的仪器连接按钮进入仪器连接和测试项目选择界面。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/df4f7a70-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>参数设置界面：点击选择测试项目下拉菜单进行波道的选择、频率的设置、业务设置、模式选择、工作类型和抗干扰方式的设置。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/e4053a50-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>运行测试界面：在此界面中可以对已经选择和设置好的项目进行测试，点击开始测试按钮进行测试。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/e9004090-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>测试结果显示：测量结果会实时显示测试数据和绘制测试波形。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/ed469cd0-7a9f-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt><br>数据导出：测试完成后点击生成报告按钮，选择测试数据模板，进行数据的保存。<br><img src="//github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/017208c0-7aa0-11ed-aa4d-fdeb71e777c3.jpeg?v=1&type=image" alt></li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">jlcxxzj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/">https://github.com/jlcxxzj/blog.github.io/2022/12/12/3-zong-jie/zong-jie-he-gui-hua/2022.12.12-wei-fu-wu-jia-gou-he-jian-ting-de-yi-dian-si-kao/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">jlcxxzj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/博客/">
+                                    <span class="chip bg-color">博客</span>
+                                </a>
+                            
+                                <a href="/tags/记录/">
+                                    <span class="chip bg-color">记录</span>
+                                </a>
+                            
+                                <a href="/tags/心声/">
+                                    <span class="chip bg-color">心声</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的认可是我前行的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'eS18aVskMBwtTucX2DXka8Gx-gzGzoHsz',
+        appKey: 'ItADFrP6BD1J0kLY3e8CdtGg',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '昵称填写qq可以显示qq头像和昵称哦~'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/12/17/1-xiang-mu/qian-ru-shi-xi-tong-xiang-guan-xiang-mu/hang-kong-he-huo-jian-fa-dong-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/animal/22.jpg" class="responsive-img" alt="航空和火箭发动机知识 | 认识火箭">
+                        
+                        <span class="card-title">航空和火箭发动机知识 | 认识火箭</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/机械/">
+                        <span class="chip bg-color">机械</span>
+                    </a>
+                    
+                    <a href="/tags/涡轮泵/">
+                        <span class="chip bg-color">涡轮泵</span>
+                    </a>
+                    
+                    <a href="/tags/发动机/">
+                        <span class="chip bg-color">发动机</span>
+                    </a>
+                    
+                    <a href="/tags/火箭/">
+                        <span class="chip bg-color">火箭</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/09/3-zong-jie/zong-jie-he-gui-hua/hou-yi-qing-shi-dai-leng-nuan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="后疫情时代|世间冷暖">
+                        
+                        <span class="card-title">后疫情时代|世间冷暖</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/记录/" class="post-category">
+                                    记录
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/博客/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                    <a href="/tags/记录/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/心声/">
+                        <span class="chip bg-color">心声</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="8434513507"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">jlcxxzj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">102.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime">载入运行时间...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "10";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jlcxxzj" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2541597473@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2541597473" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2541597473" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 10) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+
+</html>
