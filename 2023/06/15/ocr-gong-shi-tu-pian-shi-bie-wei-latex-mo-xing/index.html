@@ -8,10 +8,9 @@
     <meta name="description" content="
 关注公众号【惜学塔】，每日知识干货马上就来！
 
-模型调试https://github.com/luopeixiang/im2latex
+模型调试 模型仓库：https://github.com/luopeixiang/im2latex
 
-克隆下来以后，首先是相关依赖的安装：pip install -r requirement.txt
-下">
+克隆下来以后，首先是相关依赖的安装：pip install -r requirement">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -415,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-15
+                    2023-06-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    483
+                    950
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -452,37 +451,70 @@
                 <blockquote>
 <p>关注公众号【惜学塔】，每日知识干货马上就来！</p>
 </blockquote>
-<h2 id="模型调试"><a href="#模型调试" class="headerlink" title="模型调试"></a>模型调试</h2><p><code>https://github.com/luopeixiang/im2latex</code></p>
+<h2 id="模型调试"><a href="#模型调试" class="headerlink" title="模型调试"></a>模型调试</h2><p> 模型仓库：<code>https://github.com/luopeixiang/im2latex</code></p>
 <ol>
-<li>克隆下来以后，首先是相关依赖的安装：<br><code>pip install -r requirement.txt</code></li>
-<li>下载数据集：<pre class="line-numbers language-shell"><code class="language-shell"> cd data
+<li><p>克隆下来以后，首先是相关依赖的安装：<br><code>pip install -r requirement.txt</code></p>
+</li>
+<li><p>下载数据集：</p>
+<pre class="line-numbers language-shell"><code class="language-shell"> cd data
  wget http://lstm.seas.harvard.edu/latex/data/im2latex_validate_filter.lst
  wget http://lstm.seas.harvard.edu/latex/data/im2latex_train_filter.lst
  wget http://lstm.seas.harvard.edu/latex/data/im2latex_test_filter.lst
  wget http://lstm.seas.harvard.edu/latex/data/formula_images_processed.tar.gz
  wget http://lstm.seas.harvard.edu/latex/data/im2latex_formulas.norm.lst
  tar -zxvf formula_images_processed.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
- 下载数据集时发现，使用<code>wget</code>下载数据集时无法解压，包错信息为：<pre class="line-numbers language-shell"><code class="language-shell">  gzip: stdin: not in gzip format
+<p> 下载数据集时发现，使用<code>wget</code>下载数据集时无法解压，包错信息为：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">  gzip: stdin: not in gzip format
   tar: Child returned status 1
   tar: Error exit delayed from previous errors <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
- 原因是下载下来压缩包的方式是损坏的，官网上也无法下载源数据了。于是在<code>https://im2markup.yuntiandeng.com/data/</code>上找到了备份的数据集，在<code>windows</code>系统上的<code>Windows PowerShell</code>上使用：<br> <code>tar -zcvf 压缩文件名  .tar.gz 被压缩文件名</code>解压<br> 注：Windows PowerShell是Windows上的Linux环境。</li>
-<li>处理数据集<br>运行<code>python preprocess.py</code>将原始数据集构建为模型更好处理的<code>pkl</code>格式，<code>pkl</code>可以将python项目过程中用到的一些暂时变量、或者需要提取、暂存的字符串、列表、字典等数据保存起来。<a href="https://blog.csdn.net/Dontla/article/details/103381523" target="_blank" rel="noopener">python pkl是什么类型的文件？</a></li>
-<li>构建词向量<br>运行<code>python build_vocab.py</code>构建词向量，这是一个NLP模型，需要构建词向量。</li>
-<li>训练模型<pre class="line-numbers language-python"><code class="language-python">  python train<span class="token punctuation">.</span>py \
+<p> 原因是下载下来压缩包的方式是损坏的，官网上也无法下载源数据了。于是在<code>https://im2markup.yuntiandeng.com/data/</code>上找到了备份的数据集，在<code>windows</code>系统上的<code>Windows PowerShell</code>上使用：<br> <code>tar -zcvf 压缩文件名  .tar.gz 被压缩文件名</code>解压<br> 注：Windows PowerShell是Windows上的Linux环境。</p>
+</li>
+<li><p>处理数据集<br>运行<code>python preprocess.py</code>将原始数据集构建为模型更好处理的<code>pkl</code>格式，<code>pkl</code>可以将python项目过程中用到的一些暂时变量、或者需要提取、暂存的字符串、列表、字典等数据保存起来。<a href="https://blog.csdn.net/Dontla/article/details/103381523" target="_blank" rel="noopener">python pkl是什么类型的文件？</a></p>
+</li>
+<li><p>构建词向量<br>运行<code>python build_vocab.py</code>构建词向量，这是一个NLP模型，需要构建词向量。</p>
+</li>
+<li><p>训练模型</p>
+<pre class="line-numbers language-python"><code class="language-python">  python train<span class="token punctuation">.</span>py \
        <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \
        <span class="token operator">-</span><span class="token operator">-</span>save_dir<span class="token operator">=</span><span class="token punctuation">[</span>the dir <span class="token keyword">for</span> saving ckpts<span class="token punctuation">]</span> \
        <span class="token operator">-</span><span class="token operator">-</span>dropout<span class="token operator">=</span><span class="token number">0.2</span> <span class="token operator">-</span><span class="token operator">-</span>add_position_features \
        <span class="token operator">-</span><span class="token operator">-</span>epoches<span class="token operator">=</span><span class="token number">25</span> <span class="token operator">-</span><span class="token operator">-</span>max_len<span class="token operator">=</span><span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li>验证模型<pre class="line-numbers language-python"><code class="language-python"> python evaluate<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>split<span class="token operator">=</span>test \
+<li><p>验证模型</p>
+<pre class="line-numbers language-python"><code class="language-python"> python evaluate<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>split<span class="token operator">=</span>test \
       <span class="token operator">-</span><span class="token operator">-</span>model_path<span class="token operator">=</span><span class="token punctuation">[</span>the path to model<span class="token punctuation">]</span> \
       <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \
       <span class="token operator">-</span><span class="token operator">-</span>batch_size<span class="token operator">=</span><span class="token number">32</span> \
       <span class="token operator">-</span><span class="token operator">-</span>ref_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store reference<span class="token punctuation">]</span> \
       <span class="token operator">-</span><span class="token operator">-</span>result_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store decoding result<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-调整过程中遇到的问题是pytorch报错:<br><code>BrokenPipeError: [Errno 32] Broken pipe</code><br>原因是：<code>Windows</code>使用<code>DataLoader</code>时设置<code>num_workers</code>的问题，将<code>num_workers</code>设置为0可解决。</li>
+</li>
+<li><p>运行结果</p>
+<pre class="line-numbers language-cmd"><code class="language-cmd"> Loaded 8089 formulas from results\reference.txt
+ beam search result: {'BLEU-4': 56.99906131826565, 'EM': 4.2156014340python VisitApi.py --split=test --model_path=ckpts\ckpt-16-0.3896.pt --data_path=daLoad vocab including 394 words!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p> 调整过程中遇到的问题是pytorch报错:<br> <code>BrokenPipeError: [Errno 32] Broken pipe</code><br> 原因是：<code>Windows</code>使用<code>DataLoader</code>时设置<code>num_workers</code>的问题，将<code>num_workers</code>设置为0可解决。</p>
+<h2 id="CUDA-out-of-memory"><a href="#CUDA-out-of-memory" class="headerlink" title="CUDA out of memory"></a>CUDA out of memory</h2><p><a href="https://blog.csdn.net/frigidwinter/article/details/130033162" target="_blank" rel="noopener">(88条消息) 【已解决】探究CUDA out of memory背后原因，如何释放GPU显存？_cuda清理指定gpu内存_Mr.Winter`的博客-CSDN博客</a></p>
+</li>
+<li><p>GPU显存占用率和存入的数据尺寸成正相关，越大的数据占用显存越多</p>
+</li>
+<li><p>只要使用了GPU，就至少会占x xx M的显存，且这部分显存无法被释放</p>
+</li>
+<li><p>当一块内存不再被变量所引用时，这块内存就由激活内存转为失活内存，但它仍然存在于这个数据队列中</p>
+</li>
+<li><p>当数据队列达到某个阈值时，CUDA会触发垃圾回收机制，清理失活内存运行torch.cuda.empty_cache()可以手动清理失活内存</p>
+<h2 id="pytorch版本不对导致出现问题"><a href="#pytorch版本不对导致出现问题" class="headerlink" title="pytorch版本不对导致出现问题"></a>pytorch版本不对导致出现问题</h2><p><a href="https://blog.csdn.net/zhongruizhe/article/details/121059558" target="_blank" rel="noopener">(88条消息) gather_out_cuda(): Expected dtype int64 for index_zhongruizhe的博客-CSDN博客</a><br><a href="https://zhuanlan.zhihu.com/p/114669778" target="_blank" rel="noopener">十分钟读懂Beam Search 1：基础 - 知乎 (zhihu.com)</a><br>解决方法：<br>借鉴<a href="https://blog.csdn.net/zhongruizhe/article/details/121059558" target="_blank" rel="noopener">gather_out_cuda(): Expected dtype int64 for index</a>，给出的方法，将<code>model\beam_search.py</code>文件中219行的</p>
+<pre class="line-numbers language-python"><code class="language-python">backpointer  <span class="token operator">=</span>  restricted_beam_indices  <span class="token operator">/</span>  self<span class="token punctuation">.</span>per_node_beam_size<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>改为：</p>
+<pre class="line-numbers language-python"><code class="language-python">backpointer  <span class="token operator">=</span>  restricted_beam_indices  <span class="token operator">//</span>  self<span class="token punctuation">.</span>per_node_beam_size<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可解决由于pytorch版本不符导致的<code>gather_out_cuda(): Expected dtype int64 for index</code>问题</p>
+</li>
 </ol>
+<h2 id="图片加载，并提供访问接口"><a href="#图片加载，并提供访问接口" class="headerlink" title="图片加载，并提供访问接口"></a>图片加载，并提供访问接口</h2><p>Image.open<br><a href="https://blog.csdn.net/icamera0/article/details/50666815" target="_blank" rel="noopener">(88条消息) Python图像处理库PIL的Image模块介绍（二）_image.open_icamera0的博客-CSDN博客</a><br><a href="https://blog.csdn.net/qq_41166909/article/details/126528775" target="_blank" rel="noopener">(88条消息) PIL.image保存图片_pil.image.image_andrew P的博客-CSDN博客</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#打开图片</span>
+img <span class="token operator">=</span> Image<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">"imgs/img1.png"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span>
+img<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://blog.csdn.net/weixin_42213622/article/details/109110140" target="_blank" rel="noopener">(88条消息) 图像读取的Image.open()和cv2.imread()的区别_Carol_小菜鸟的博客-CSDN博客</a></p>
 <h2 id="OCR公式识别材料"><a href="#OCR公式识别材料" class="headerlink" title="OCR公式识别材料"></a>OCR公式识别材料</h2><p><a href="https://zhuanlan.zhihu.com/p/183182208" target="_blank" rel="noopener">基于Seq2Seq的公式识别引擎 - 知乎 (zhihu.com)</a><br><a href="https://github.com/luopeixiang/im2latex">https://github.com/luopeixiang/im2latex</a><br><a href="https://www.runoob.com/note/28603" target="_blank" rel="noopener">Linux 下 *.tar.gz 文件解压缩命令 (runoob.com)</a><br><a href="https://im2markup.yuntiandeng.com/data/" target="_blank" rel="noopener">https://im2markup.yuntiandeng.com/data/</a></p>
+<h2 id="python符号"><a href="#python符号" class="headerlink" title="python符号"></a>python符号</h2><p><a href="https://blog.csdn.net/weixin_38981172/article/details/90176525" target="_blank" rel="noopener">(88条消息) python中的各种符号（欢迎补充）_python符号大全_杉木人的博客-CSDN博客</a><br><a href="https://juejin.cn/post/6995855590769557540" target="_blank" rel="noopener">Pytorch 入门与提高(3)—tensor 的 reshape 操作 - 掘金 (juejin.cn)</a></p>
 
                 
             </div>
@@ -1183,7 +1215,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">102.7k</span>&nbsp;字
+                class="white-color">104.2k</span>&nbsp;字
             
             
             

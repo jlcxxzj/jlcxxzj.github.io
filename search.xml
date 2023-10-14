@@ -4,11 +4,98 @@
   
     
     <entry>
+      <title>FPGA与Flash的交互</title>
+      <link href="/2023/10/15/0-xin-de-gong-zuo-lu-cheng/fpga-yu-flash-de-jiao-hu/"/>
+      <url>/2023/10/15/0-xin-de-gong-zuo-lu-cheng/fpga-yu-flash-de-jiao-hu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>片选信号<br>读使能<br>写使能<br>时钟信号（一般低于最大时钟频率，二分频，四分频）</p><h2 id="FPGA-SPI"><a href="#FPGA-SPI" class="headerlink" title="FPGA SPI"></a>FPGA SPI</h2><p>SPI是总线<br>数据和信号的区别：<strong>数据是持续变化的信号，相对于信号携带的信息更多。</strong><br>数据：在C++的数据类型中，1个字节为char，4个字节为int，8个字节为double。<br>如果选择在时钟的上升沿去采集数据（存数据），则在时钟的下降沿变化数据的时候最稳定，刚好在两个上升沿中间。即在下降沿改变数据，上升沿去采集数据。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> FPGA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> FPGA </tag>
+            
+            <tag> Flash </tag>
+            
+            <tag> SPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>工作之后的一点感想</title>
+      <link href="/2023/10/15/0-xin-de-gong-zuo-lu-cheng/gong-zuo-zhi-hou-de-yi-dian-gan-xiang/"/>
+      <url>/2023/10/15/0-xin-de-gong-zuo-lu-cheng/gong-zuo-zhi-hou-de-yi-dian-gan-xiang/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="工作之后的一点感想"><a href="#工作之后的一点感想" class="headerlink" title="工作之后的一点感想"></a>工作之后的一点感想</h2><p>好久没有打开个人博客了，之前信誓旦旦一天更新的一次博客的的豪言壮语也像毕业之后越走越远的同学一样，因为现实的工作量而淡出了自己的生活。</p><p>转眼毕业已经四个月，工作也近三个月，学校的生活有纵有不舍，也需要整理行囊步入新的旅程。总结过去三年在上大的日子，最大的成就是敢于直面计算机这个从前望而生畏的领域，磕磕绊绊学了三年的JAVA最后在工作中0.01也用不上，也可以波澜不惊的学习新的技术了。</p><p>工作之后最大的转变是，需要面临更多的选择，机会和挑战时刻并存，选择的结果决定了未来好多年的职业道路和发展机遇。目前所在公司的主流技术是FPGA，而我在拿到offer前并不知道FPGA是什么，在进入公司前，不知道其具体应用领域。因为我的岗位是测试系统集成开发，具体工作内容是对调试测试现场进行数字化改造，虽然岗位和FPGA没有紧密的联系，但是调测的内容很多都是围绕FPGA进行的，学习FPGA就成为了解需求场景，挖掘数字化改造需要的必然要求。这也就是说，我之前可以忽视，甚至有点排斥的硬件领域也得捡起来了，多少有点让人意外。</p><h2 id="未来较短一段时间的工作安排"><a href="#未来较短一段时间的工作安排" class="headerlink" title="未来较短一段时间的工作安排"></a>未来较短一段时间的工作安排</h2><p>6个月的试用期还有三个多月，未来半年到一年的时间需要从数字造改造需求出发，挖掘能落地的自动化测试系统开发。事实上，近一个月一直在试图找到一个短期的改造需求，绞尽脑子也没有合理化的方案。由于有FPGA的学习需要，接下来在学习FPGA的同时，重心是研究硬件方案+软件方案的数字化和自动化的可能性、可行性。</p><h2 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h2><p>还没有想清楚</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> FPGA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作之后的一点感想 </tag>
+            
+            <tag> 未来较短一段时间的工作安排 </tag>
+            
+            <tag> 未来规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FPGA与Flash的交互</title>
+      <link href="/2023/09/15/fpga-yu-flash-de-jiao-hu/"/>
+      <url>/2023/09/15/fpga-yu-flash-de-jiao-hu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>片选信号<br>读使能<br>写使能<br>时钟信号（一般低于最大时钟频率，二分频，四分频）</p><h2 id="FPGA-SPI"><a href="#FPGA-SPI" class="headerlink" title="FPGA SPI"></a>FPGA SPI</h2><p>SPI是总线<br>数据和信号的区别：<strong>数据是持续变化的信号，相对于信号携带的信息更多。</strong><br>数据：在C++的数据类型中，1个字节为char，4个字节为int，8个字节为double。<br>如果选择在时钟的上升沿去采集数据（存数据），则在时钟的下降沿变化数据的时候最稳定，刚好在两个上升沿中间。即在下降沿改变数据，上升沿去采集数据。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> FPGA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> FPGA </tag>
+            
+            <tag> Flash </tag>
+            
+            <tag> SPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MathPix调研</title>
       <link href="/2023/06/15/mathpix-diao-yan/"/>
       <url>/2023/06/15/mathpix-diao-yan/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="MathPix"><a href="#MathPix" class="headerlink" title="MathPix"></a>MathPix</h2><p><a href="https://mathpix.com/" target="_blank" rel="noopener">Mathpix: Document cloud for research</a></p><h2 id="Latex何以这么优秀"><a href="#Latex何以这么优秀" class="headerlink" title="Latex何以这么优秀"></a>Latex何以这么优秀</h2><p><a href="https://zhuanlan.zhihu.com/p/110756681" target="_blank" rel="noopener">LaTeX 公式篇 - 知乎 (zhihu.com)</a></p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="MathPix"><a href="#MathPix" class="headerlink" title="MathPix"></a>MathPix</h2><p><a href="https://mathpix.com/" target="_blank" rel="noopener">Mathpix: Document cloud for research</a><br><a href="https://blog.csdn.net/zhouchen1998/article/details/103297144#:~:text=%E4%BD%86%E6%98%AF%E5%A4%8D%E6%9D%82%E7%9A%84Latex%E8%AF%AD%E6%B3%95%E4%BB%8E%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%99%E5%85%AC%E5%BC%8F%E4%BC%BC%E4%B9%8E%E6%9C%89%E4%BA%9B%E5%A4%8D%E6%9D%82%EF%BC%8C%E5%BE%88%E5%A4%9A%E6%97%B6%E5%80%99%E6%88%91%E4%BB%AC%E5%B8%8C%E6%9C%9B%E5%9C%A8%E4%B8%80%E4%BA%9B%E5%85%AC%E5%BC%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9%EF%BC%8C%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E8%AE%BA%E6%96%87%E6%88%96%E8%80%85%E7%BD%91%E9%A1%B5%E7%9A%84%E5%85%AC%E5%BC%8F%E6%BA%90%E7%A0%81%EF%BC%8C%E7%8E%B0%E5%9C%A8Mathpix%E8%A7%A3%E5%86%B3%E4%BA%86%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E5%8F%AA%E8%A6%81%E6%98%AF%E5%9B%BE%E7%89%87%EF%BC%8C%E6%97%A0%E8%AE%BA%E6%98%AF,%E8%AE%BA%E6%96%87%E6%88%AA%E5%9B%BE%E3%80%81%E7%BD%91%E9%A1%B5%E6%88%AA%E5%9B%BE%E3%80%81%E6%89%8B%E5%86%99%E7%9A%84%E5%85%AC%E5%BC%8F%20%EF%BC%8CMathpix%E9%83%BD%E5%8F%AF%E4%BB%A5%E4%BB%A5%E8%BE%83%E9%AB%98%E7%9A%84%E5%87%86%E7%A1%AE%E7%8E%87%E8%AF%86%E5%88%AB%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%95%B4%E7%90%86%E6%88%90%E5%A4%9A%E7%A7%8D%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88Latex%E5%85%AC%E5%BC%8F%E3%80%81Markdown%E5%85%AC%E5%BC%8F%EF%BC%89%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%8F%92%E5%85%A5%E5%88%B0Markdown%E3%80%81Word%E3%80%81Latex%E6%96%87%E6%A1%A3%E4%B8%AD%E3%80%82" target="_blank" rel="noopener">(88条消息) Mathpix教程_周先森爱吃素的博客-CSDN博客</a><br><a href="https://blog.csdn.net/sinat_37574187/article/details/121381293" target="_blank" rel="noopener">(88条消息) 公式识别 – 百面OCR_AI生成曾小健的博客-CSDN博客</a><br><a href="https://zhuanlan.zhihu.com/p/380433944" target="_blank" rel="noopener">神器mathpix收费了？教你轻松调用API获得每个月500次免费识别！ - 知乎 (zhihu.com)</a></p><h2 id="Latex何以这么优秀"><a href="#Latex何以这么优秀" class="headerlink" title="Latex何以这么优秀"></a>Latex何以这么优秀</h2><p><a href="https://zhuanlan.zhihu.com/p/110756681" target="_blank" rel="noopener">LaTeX 公式篇 - 知乎 (zhihu.com)</a></p>]]></content>
       
       
       <categories>
@@ -35,7 +122,7 @@
       <link href="/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/"/>
       <url>/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="模型调试"><a href="#模型调试" class="headerlink" title="模型调试"></a>模型调试</h2><p><code>https://github.com/luopeixiang/im2latex</code></p><ol><li>克隆下来以后，首先是相关依赖的安装：<br><code>pip install -r requirement.txt</code></li><li>下载数据集：<pre class="line-numbers language-shell"><code class="language-shell"> cd data wget http://lstm.seas.harvard.edu/latex/data/im2latex_validate_filter.lst wget http://lstm.seas.harvard.edu/latex/data/im2latex_train_filter.lst wget http://lstm.seas.harvard.edu/latex/data/im2latex_test_filter.lst wget http://lstm.seas.harvard.edu/latex/data/formula_images_processed.tar.gz wget http://lstm.seas.harvard.edu/latex/data/im2latex_formulas.norm.lst tar -zxvf formula_images_processed.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre> 下载数据集时发现，使用<code>wget</code>下载数据集时无法解压，包错信息为：<pre class="line-numbers language-shell"><code class="language-shell">  gzip: stdin: not in gzip format  tar: Child returned status 1  tar: Error exit delayed from previous errors <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre> 原因是下载下来压缩包的方式是损坏的，官网上也无法下载源数据了。于是在<code>https://im2markup.yuntiandeng.com/data/</code>上找到了备份的数据集，在<code>windows</code>系统上的<code>Windows PowerShell</code>上使用：<br> <code>tar -zcvf 压缩文件名  .tar.gz 被压缩文件名</code>解压<br> 注：Windows PowerShell是Windows上的Linux环境。</li><li>处理数据集<br>运行<code>python preprocess.py</code>将原始数据集构建为模型更好处理的<code>pkl</code>格式，<code>pkl</code>可以将python项目过程中用到的一些暂时变量、或者需要提取、暂存的字符串、列表、字典等数据保存起来。<a href="https://blog.csdn.net/Dontla/article/details/103381523" target="_blank" rel="noopener">python pkl是什么类型的文件？</a></li><li>构建词向量<br>运行<code>python build_vocab.py</code>构建词向量，这是一个NLP模型，需要构建词向量。</li><li>训练模型<pre class="line-numbers language-python"><code class="language-python">  python train<span class="token punctuation">.</span>py \       <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \       <span class="token operator">-</span><span class="token operator">-</span>save_dir<span class="token operator">=</span><span class="token punctuation">[</span>the dir <span class="token keyword">for</span> saving ckpts<span class="token punctuation">]</span> \       <span class="token operator">-</span><span class="token operator">-</span>dropout<span class="token operator">=</span><span class="token number">0.2</span> <span class="token operator">-</span><span class="token operator">-</span>add_position_features \       <span class="token operator">-</span><span class="token operator">-</span>epoches<span class="token operator">=</span><span class="token number">25</span> <span class="token operator">-</span><span class="token operator">-</span>max_len<span class="token operator">=</span><span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>验证模型<pre class="line-numbers language-python"><code class="language-python"> python evaluate<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>split<span class="token operator">=</span>test \      <span class="token operator">-</span><span class="token operator">-</span>model_path<span class="token operator">=</span><span class="token punctuation">[</span>the path to model<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>batch_size<span class="token operator">=</span><span class="token number">32</span> \      <span class="token operator">-</span><span class="token operator">-</span>ref_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store reference<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>result_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store decoding result<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>调整过程中遇到的问题是pytorch报错:<br><code>BrokenPipeError: [Errno 32] Broken pipe</code><br>原因是：<code>Windows</code>使用<code>DataLoader</code>时设置<code>num_workers</code>的问题，将<code>num_workers</code>设置为0可解决。</li></ol><h2 id="OCR公式识别材料"><a href="#OCR公式识别材料" class="headerlink" title="OCR公式识别材料"></a>OCR公式识别材料</h2><p><a href="https://zhuanlan.zhihu.com/p/183182208" target="_blank" rel="noopener">基于Seq2Seq的公式识别引擎 - 知乎 (zhihu.com)</a><br><a href="https://github.com/luopeixiang/im2latex">https://github.com/luopeixiang/im2latex</a><br><a href="https://www.runoob.com/note/28603" target="_blank" rel="noopener">Linux 下 *.tar.gz 文件解压缩命令 (runoob.com)</a><br><a href="https://im2markup.yuntiandeng.com/data/" target="_blank" rel="noopener">https://im2markup.yuntiandeng.com/data/</a></p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="模型调试"><a href="#模型调试" class="headerlink" title="模型调试"></a>模型调试</h2><p> 模型仓库：<code>https://github.com/luopeixiang/im2latex</code></p><ol><li><p>克隆下来以后，首先是相关依赖的安装：<br><code>pip install -r requirement.txt</code></p></li><li><p>下载数据集：</p><pre class="line-numbers language-shell"><code class="language-shell"> cd data wget http://lstm.seas.harvard.edu/latex/data/im2latex_validate_filter.lst wget http://lstm.seas.harvard.edu/latex/data/im2latex_train_filter.lst wget http://lstm.seas.harvard.edu/latex/data/im2latex_test_filter.lst wget http://lstm.seas.harvard.edu/latex/data/formula_images_processed.tar.gz wget http://lstm.seas.harvard.edu/latex/data/im2latex_formulas.norm.lst tar -zxvf formula_images_processed.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p> 下载数据集时发现，使用<code>wget</code>下载数据集时无法解压，包错信息为：</p><pre class="line-numbers language-shell"><code class="language-shell">  gzip: stdin: not in gzip format  tar: Child returned status 1  tar: Error exit delayed from previous errors <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p> 原因是下载下来压缩包的方式是损坏的，官网上也无法下载源数据了。于是在<code>https://im2markup.yuntiandeng.com/data/</code>上找到了备份的数据集，在<code>windows</code>系统上的<code>Windows PowerShell</code>上使用：<br> <code>tar -zcvf 压缩文件名  .tar.gz 被压缩文件名</code>解压<br> 注：Windows PowerShell是Windows上的Linux环境。</p></li><li><p>处理数据集<br>运行<code>python preprocess.py</code>将原始数据集构建为模型更好处理的<code>pkl</code>格式，<code>pkl</code>可以将python项目过程中用到的一些暂时变量、或者需要提取、暂存的字符串、列表、字典等数据保存起来。<a href="https://blog.csdn.net/Dontla/article/details/103381523" target="_blank" rel="noopener">python pkl是什么类型的文件？</a></p></li><li><p>构建词向量<br>运行<code>python build_vocab.py</code>构建词向量，这是一个NLP模型，需要构建词向量。</p></li><li><p>训练模型</p><pre class="line-numbers language-python"><code class="language-python">  python train<span class="token punctuation">.</span>py \       <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \       <span class="token operator">-</span><span class="token operator">-</span>save_dir<span class="token operator">=</span><span class="token punctuation">[</span>the dir <span class="token keyword">for</span> saving ckpts<span class="token punctuation">]</span> \       <span class="token operator">-</span><span class="token operator">-</span>dropout<span class="token operator">=</span><span class="token number">0.2</span> <span class="token operator">-</span><span class="token operator">-</span>add_position_features \       <span class="token operator">-</span><span class="token operator">-</span>epoches<span class="token operator">=</span><span class="token number">25</span> <span class="token operator">-</span><span class="token operator">-</span>max_len<span class="token operator">=</span><span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>验证模型</p><pre class="line-numbers language-python"><code class="language-python"> python evaluate<span class="token punctuation">.</span>py <span class="token operator">-</span><span class="token operator">-</span>split<span class="token operator">=</span>test \      <span class="token operator">-</span><span class="token operator">-</span>model_path<span class="token operator">=</span><span class="token punctuation">[</span>the path to model<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>data_path<span class="token operator">=</span><span class="token punctuation">[</span>data dir<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>batch_size<span class="token operator">=</span><span class="token number">32</span> \      <span class="token operator">-</span><span class="token operator">-</span>ref_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store reference<span class="token punctuation">]</span> \      <span class="token operator">-</span><span class="token operator">-</span>result_path<span class="token operator">=</span><span class="token punctuation">[</span>the file to store decoding result<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>运行结果</p><pre class="line-numbers language-cmd"><code class="language-cmd"> Loaded 8089 formulas from results\reference.txt beam search result: {'BLEU-4': 56.99906131826565, 'EM': 4.2156014340python VisitApi.py --split=test --model_path=ckpts\ckpt-16-0.3896.pt --data_path=daLoad vocab including 394 words!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p> 调整过程中遇到的问题是pytorch报错:<br> <code>BrokenPipeError: [Errno 32] Broken pipe</code><br> 原因是：<code>Windows</code>使用<code>DataLoader</code>时设置<code>num_workers</code>的问题，将<code>num_workers</code>设置为0可解决。</p><h2 id="CUDA-out-of-memory"><a href="#CUDA-out-of-memory" class="headerlink" title="CUDA out of memory"></a>CUDA out of memory</h2><p><a href="https://blog.csdn.net/frigidwinter/article/details/130033162" target="_blank" rel="noopener">(88条消息) 【已解决】探究CUDA out of memory背后原因，如何释放GPU显存？_cuda清理指定gpu内存_Mr.Winter`的博客-CSDN博客</a></p></li><li><p>GPU显存占用率和存入的数据尺寸成正相关，越大的数据占用显存越多</p></li><li><p>只要使用了GPU，就至少会占x xx M的显存，且这部分显存无法被释放</p></li><li><p>当一块内存不再被变量所引用时，这块内存就由激活内存转为失活内存，但它仍然存在于这个数据队列中</p></li><li><p>当数据队列达到某个阈值时，CUDA会触发垃圾回收机制，清理失活内存运行torch.cuda.empty_cache()可以手动清理失活内存</p><h2 id="pytorch版本不对导致出现问题"><a href="#pytorch版本不对导致出现问题" class="headerlink" title="pytorch版本不对导致出现问题"></a>pytorch版本不对导致出现问题</h2><p><a href="https://blog.csdn.net/zhongruizhe/article/details/121059558" target="_blank" rel="noopener">(88条消息) gather_out_cuda(): Expected dtype int64 for index_zhongruizhe的博客-CSDN博客</a><br><a href="https://zhuanlan.zhihu.com/p/114669778" target="_blank" rel="noopener">十分钟读懂Beam Search 1：基础 - 知乎 (zhihu.com)</a><br>解决方法：<br>借鉴<a href="https://blog.csdn.net/zhongruizhe/article/details/121059558" target="_blank" rel="noopener">gather_out_cuda(): Expected dtype int64 for index</a>，给出的方法，将<code>model\beam_search.py</code>文件中219行的</p><pre class="line-numbers language-python"><code class="language-python">backpointer  <span class="token operator">=</span>  restricted_beam_indices  <span class="token operator">/</span>  self<span class="token punctuation">.</span>per_node_beam_size<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>改为：</p><pre class="line-numbers language-python"><code class="language-python">backpointer  <span class="token operator">=</span>  restricted_beam_indices  <span class="token operator">//</span>  self<span class="token punctuation">.</span>per_node_beam_size<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>可解决由于pytorch版本不符导致的<code>gather_out_cuda(): Expected dtype int64 for index</code>问题</p></li></ol><h2 id="图片加载，并提供访问接口"><a href="#图片加载，并提供访问接口" class="headerlink" title="图片加载，并提供访问接口"></a>图片加载，并提供访问接口</h2><p>Image.open<br><a href="https://blog.csdn.net/icamera0/article/details/50666815" target="_blank" rel="noopener">(88条消息) Python图像处理库PIL的Image模块介绍（二）_image.open_icamera0的博客-CSDN博客</a><br><a href="https://blog.csdn.net/qq_41166909/article/details/126528775" target="_blank" rel="noopener">(88条消息) PIL.image保存图片_pil.image.image_andrew P的博客-CSDN博客</a></p><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#打开图片</span>img <span class="token operator">=</span> Image<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">"imgs/img1.png"</span><span class="token punctuation">,</span> <span class="token string">"r"</span><span class="token punctuation">)</span>img<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><a href="https://blog.csdn.net/weixin_42213622/article/details/109110140" target="_blank" rel="noopener">(88条消息) 图像读取的Image.open()和cv2.imread()的区别_Carol_小菜鸟的博客-CSDN博客</a></p><h2 id="OCR公式识别材料"><a href="#OCR公式识别材料" class="headerlink" title="OCR公式识别材料"></a>OCR公式识别材料</h2><p><a href="https://zhuanlan.zhihu.com/p/183182208" target="_blank" rel="noopener">基于Seq2Seq的公式识别引擎 - 知乎 (zhihu.com)</a><br><a href="https://github.com/luopeixiang/im2latex">https://github.com/luopeixiang/im2latex</a><br><a href="https://www.runoob.com/note/28603" target="_blank" rel="noopener">Linux 下 *.tar.gz 文件解压缩命令 (runoob.com)</a><br><a href="https://im2markup.yuntiandeng.com/data/" target="_blank" rel="noopener">https://im2markup.yuntiandeng.com/data/</a></p><h2 id="python符号"><a href="#python符号" class="headerlink" title="python符号"></a>python符号</h2><p><a href="https://blog.csdn.net/weixin_38981172/article/details/90176525" target="_blank" rel="noopener">(88条消息) python中的各种符号（欢迎补充）_python符号大全_杉木人的博客-CSDN博客</a><br><a href="https://juejin.cn/post/6995855590769557540" target="_blank" rel="noopener">Pytorch 入门与提高(3)—tensor 的 reshape 操作 - 掘金 (juejin.cn)</a></p>]]></content>
       
       
       <categories>
@@ -298,7 +385,7 @@
       <link href="/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/"/>
       <url>/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="1-hexo和前端框架具有相似性"><a href="#1-hexo和前端框架具有相似性" class="headerlink" title="1. hexo和前端框架具有相似性"></a>1. hexo和前端框架具有相似性</h2><p>如果小伙伴之前接触过前端框架的化，对hexo个人博客的搭建是挺好理解的，在node.js的js运行环境中，<code>package.json</code>是作为项目配置文件的入口而存在的，<code>package-lock.json</code>则是对依赖的版本控制，也就是说在其他环境中，以该文件安装各种依赖，能保证项目的成功运行。<br><a href="https://juejin.cn/post/7145759868010364959" target="_blank" rel="noopener">package.json 配置完全解读 - 掘金 (juejin.cn)</a></p><h3 id="electron项目"><a href="#electron项目" class="headerlink" title="electron项目"></a>electron项目</h3><p>hexo和electron依赖于前端部署环境node.js的桌面式应用开发一样，也是在node.js的基础上开发的前端框架，也依赖于各种本地模块，所不同的是electron依赖于chromium而hexo依赖于GitHub。<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/7/11/1733cad1af15b700~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="img1.jpg"></p><h2 id="2-hexo运行时是如何调用各种文件的"><a href="#2-hexo运行时是如何调用各种文件的" class="headerlink" title="2. hexo运行时是如何调用各种文件的"></a>2. hexo运行时是如何调用各种文件的</h2><p><a href="https://blog.avdancedu.com/2ef51851/" target="_blank" rel="noopener">hexo博客系统的实现原理与搭建 | 音视跳动科技 (avdancedu.com)</a><br>hexo项目会在根目录的配置目录上配置全局的信息，如看板娘、title、主题、部署位置等。<br>而在主题的配置文件中,通过如下的菜单栏来进行站内的页面显示效果，在站内点击相应的位置会跳转到相应的路径，根据路径中的<code>md</code>文件配置加载出相应的文档，如标签页加载出文档中的标签属性相关材料。特别需要注意的是，在根目录下的<code>_data</code>文件夹中的<code>json</code>文件也会根据描述被同步到站点内，如同<code>_posts</code>目录下的文档被解析为<code>json</code>然后被同步一样。<br>其他如图片、音乐、视频、樱花效果、评论等也都在主题内被设置。</p><pre class="line-numbers language-yml"><code class="language-yml"># main menu navigation url and icon  # 配置菜单导航的名称、路径和图标icon.  menu:    Index:      url: /      icon: fas fa-home    Tags:      url: /tags      icon: fas fa-tags    Categories:      url: /categories      icon: fas fa-bookmark    Archives:      url: /archives      icon: fas fa-archive    About:      url: /about      icon: fas fa-user-circle    Contact:      url: /contact      icon: fas fa-comments    Friends:      url: /friends      icon: fas fa-address-book<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="3-项目上传一直报超时错误"><a href="#3-项目上传一直报超时错误" class="headerlink" title="3. 项目上传一直报超时错误"></a>3. 项目上传一直报超时错误</h2><pre class="line-numbers language-git"><code class="language-git">git config --global http.lowSpeedLimit 1000git config --global http.lowSpeedTime 600<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>以上配置后，只有十分钟（600秒）传输速率都低于 1KB/s 的话才会 timeout，但是设置完发现和github的连接断了，则可以取消http或者https代理：</p><pre class="line-numbers language-git"><code class="language-git">//取消http代理git config --global --unset http.proxy//取消https代理 git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://blog.csdn.net/good_good_xiu/article/details/118567249" target="_blank" rel="noopener">(86条消息) git提交或克隆报错fatal: unable to access ‘https://github.com/tata20191003/autowrite.git/‘: Failed to connec_good_good_xiu的博客-CSDN博客</a></p><h2 id="4-matery主题搭建"><a href="#4-matery主题搭建" class="headerlink" title="4. matery主题搭建"></a>4. matery主题搭建</h2><p><a href="https://zhuanlan.zhihu.com/p/104336960" target="_blank" rel="noopener">基于Hexo的matery主题搭建博客并深度优化 - 知乎 (zhihu.com)</a><br><a href="https://www.cnblogs.com/guixinchn/p/13542439.html" target="_blank" rel="noopener">Hexo-Matery主题美化 - 咕咕星 - 博客园 (cnblogs.com)</a></p><h2 id="5-站点信息显示不全"><a href="#5-站点信息显示不全" class="headerlink" title="5. 站点信息显示不全"></a>5. 站点信息显示不全</h2><p><a href="https://muyuuuu.github.io/2019/11/22/busuanzi-notdisplay/" target="_blank" rel="noopener">https://muyuuuu.github.io/2019/11/22/busuanzi-notdisplay/</a><br><a href="https://blog.csdn.net/qq_45738810/article/details/105973779" target="_blank" rel="noopener">(86条消息) 解决hexo 博客无法加载不蒜子不显示计数_不蒜子bad request_OY..的博客-CSDN博客</a><br><a href="https://blog.bluesky01st.eu.org/posts/d76019f8.html" target="_blank" rel="noopener">https://blog.bluesky01st.eu.org/posts/d76019f8.html</a><br><a href="https://open.toutiao.com/a6992456857474449934/?label=related_news&utm_campaign=open&utm_medium=webview&utm_source=o_llq_api&req_id=20210910150332010212144152258FAA7C&dt=PCHM10&crypt=7885&a_t=4016015322681658398093835278b7ea&gy=80e68a24aaed3c3404e6ea179fdddbffdb40d4f3e221e9f9dfaf803c85566c4757384263aebae182943b9519469443b1762dd3dd5ba1194ef20a44357d653f82651132a818b38ee7ee45077da0183fc235fb0e8f6bccd6a0c17b7f6ea99efdf1fc2a7bc6a0ec05d5bad97b7b7d42b23f7f336c2a628439bff384f63f2767f6f519405b2b6c86e08c795ba4203ac1da64&item_id=6992456857474449934&__docId__=6845224069135073796&__barStyle__=1_1&__statParams__=sourceMedia&__fromId__=__all__&__source__=toutiao&sourceMedia=toutiao&__cmtCnt__=3&__styleType__=1&__publisher_id__=3951869867&openv=&__pf__=detail&fr=normal&from_gid=6958742410356703781&channel_id=88805669586&oppo_anchor=" target="_blank" rel="noopener">Hexo+Github: 个人博客网站搭建完全教程(看这篇就够了) (toutiao.com)</a></p><h2 id="6-为matery增加评论模块"><a href="#6-为matery增加评论模块" class="headerlink" title="6. 为matery增加评论模块"></a>6. 为matery增加评论模块</h2><p><a href="https://blog.csdn.net/slow_sparrow/article/details/117753100" target="_blank" rel="noopener">(86条消息) 为使用matery主题的hexo增加Valine评论系统_howyoung525的博客-CSDN博客</a><br><a href="https://blog.csdn.net/slow_sparrow/article/details/117753100" target="_blank" rel="noopener">https://blog.csdn.net/slow_sparrow/article/details/117753100</a><br><a href="https://console.leancloud.cn/apps/eS18aVskMBwtTucX2DXka8Gx-gzGzoHsz/storage/data/Comment" target="_blank" rel="noopener">Comment · 数据存储 · blog (leancloud.cn)</a></p><h2 id="7-为matery主题增加音乐播放器"><a href="#7-为matery主题增加音乐播放器" class="headerlink" title="7. 为matery主题增加音乐播放器"></a>7. 为matery主题增加音乐播放器</h2><p><a href="https://zhuanlan.zhihu.com/p/259665807" target="_blank" rel="noopener">hexo-matery主题美化(三)-音乐播放器 - 知乎 (zhihu.com)</a><br><a href="https://www.hconan.com/posts/228cb782.html" target="_blank" rel="noopener">0003-关于hexo-theme-matery主题音乐播放器不显示问题 | HConan - 前端ＣＶ师</a></p><h2 id="8-为matery主题下修改文件，可实时看到预览效果"><a href="#8-为matery主题下修改文件，可实时看到预览效果" class="headerlink" title="8. 为matery主题下修改文件，可实时看到预览效果"></a>8. 为matery主题下修改文件，可实时看到预览效果</h2><p>每次修改文件内容的时候，在本地服务器运行时，会时时更新，不用重复生成项目。但是修改文件名时，就需要启动项目了。</p><h2 id="9-matery主题图片不显示的原因"><a href="#9-matery主题图片不显示的原因" class="headerlink" title="9. matery主题图片不显示的原因"></a>9. matery主题图片不显示的原因</h2><p><a href="https://www.suyuanblog.xyz/2021/10/14/%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" target="_blank" rel="noopener">解决Hexo文章图片无法显示问题 | 夙渊 (suyuanblog.xyz)</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档 | Hexo</a><br>在按教程安装依赖和修改配置以后，仍然无法显示图片的原因<br>是因为安装依赖之后读取路径变为<br><strong></strong><br>脉络：</p><pre class="line-numbers language-txt"><code class="language-txt">1. 如下面所示的方法，在轻应用或者typora都无法显示，正常来讲hexo生成之后应该会显示的，实际上并未显示。![图片描述](./last-news/n8gbxo.jpg)2. 而通过图片ctrl+cv的方式粘贴到markdown编辑器里，在编辑器里显示，但是hexo也不显示![kandinsky-download-1683547478839](D:\Desktop\kandinsky-download-1683547478839.png)3. 最后通过修改配置文件和安装依赖的方式成功显示图片，但是问题是，书写方式不够一目了然，而且编辑器上也不显示根目录下配置文件`_config.yml` 中有 `post_asset_folder:false改为true`安装依赖 npm install https://github.com/7ym0n/hexo-asset-image save在`md` 文件% asset_img test.jpg This is an test image %来插入图片，并显示在hexo上<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>建议:还是配置图床吧</p><h2 id="10-解决hexo主题本地图片显示"><a href="#10-解决hexo主题本地图片显示" class="headerlink" title="10. 解决hexo主题本地图片显示"></a>10. 解决hexo主题本地图片显示</h2><p><a href="https://blog.csdn.net/weixin_42030522/article/details/123075824" target="_blank" rel="noopener">(86条消息) 解决Hexo无法显示图片的几种方案_hexo 图片-CSDN博客</a><br>可在<code>source</code>文件夹下新建<code>images</code>文件夹，通过<code>/images/image.png</code>的方式实现图片的加载。</p><h2 id="11-解决hexo主题公式不显示的问题"><a href="#11-解决hexo主题公式不显示的问题" class="headerlink" title="11. 解决hexo主题公式不显示的问题"></a>11. 解决hexo主题公式不显示的问题</h2><p>修改本主题的配置文件公式信息</p><h2 id="12-解决hexo主题C-代码不高亮的问题"><a href="#12-解决hexo主题C-代码不高亮的问题" class="headerlink" title="12. 解决hexo主题C++代码不高亮的问题"></a>12. 解决hexo主题C++代码不高亮的问题</h2><p>将</p><pre class="line-numbers language-c++"><code class="language-c++">C++代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>改为</p><pre class="line-numbers language-c"><code class="language-c">C<span class="token operator">++</span>代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="1-hexo和前端框架具有相似性"><a href="#1-hexo和前端框架具有相似性" class="headerlink" title="1. hexo和前端框架具有相似性"></a>1. hexo和前端框架具有相似性</h2><p>如果小伙伴之前接触过前端框架的化，对hexo个人博客的搭建是挺好理解的，在node.js的js运行环境中，<code>package.json</code>是作为项目配置文件的入口而存在的，<code>package-lock.json</code>则是对依赖的版本控制，也就是说在其他环境中，以该文件安装各种依赖，能保证项目的成功运行。<br><a href="https://juejin.cn/post/7145759868010364959" target="_blank" rel="noopener">package.json 配置完全解读 - 掘金 (juejin.cn)</a></p><h3 id="electron项目"><a href="#electron项目" class="headerlink" title="electron项目"></a>electron项目</h3><p>hexo和electron依赖于前端部署环境node.js的桌面式应用开发一样，也是在node.js的基础上开发的前端框架，也依赖于各种本地模块，所不同的是electron依赖于chromium而hexo依赖于GitHub。<br><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/7/11/1733cad1af15b700~tplv-t2oaga2asx-zoom-in-crop-mark:4536:0:0:0.image" alt="img1.jpg"></p><h2 id="2-hexo运行时是如何调用各种文件的"><a href="#2-hexo运行时是如何调用各种文件的" class="headerlink" title="2. hexo运行时是如何调用各种文件的"></a>2. hexo运行时是如何调用各种文件的</h2><p><a href="https://blog.avdancedu.com/2ef51851/" target="_blank" rel="noopener">hexo博客系统的实现原理与搭建 | 音视跳动科技 (avdancedu.com)</a><br>hexo项目会在根目录的配置目录上配置全局的信息，如看板娘、title、主题、部署位置等。<br>而在主题的配置文件中,通过如下的菜单栏来进行站内的页面显示效果，在站内点击相应的位置会跳转到相应的路径，根据路径中的<code>md</code>文件配置加载出相应的文档，如标签页加载出文档中的标签属性相关材料。特别需要注意的是，在根目录下的<code>_data</code>文件夹中的<code>json</code>文件也会根据描述被同步到站点内，如同<code>_posts</code>目录下的文档被解析为<code>json</code>然后被同步一样。<br>其他如图片、音乐、视频、樱花效果、评论等也都在主题内被设置。</p><pre class="line-numbers language-yml"><code class="language-yml"># main menu navigation url and icon  # 配置菜单导航的名称、路径和图标icon.  menu:    Index:      url: /      icon: fas fa-home    Tags:      url: /tags      icon: fas fa-tags    Categories:      url: /categories      icon: fas fa-bookmark    Archives:      url: /archives      icon: fas fa-archive    About:      url: /about      icon: fas fa-user-circle    Contact:      url: /contact      icon: fas fa-comments    Friends:      url: /friends      icon: fas fa-address-book<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="3-项目上传一直报超时错误"><a href="#3-项目上传一直报超时错误" class="headerlink" title="3. 项目上传一直报超时错误"></a>3. 项目上传一直报超时错误</h2><pre class="line-numbers language-git"><code class="language-git">git config --global http.lowSpeedLimit 1000git config --global http.lowSpeedTime 600<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>以上配置后，只有十分钟（600秒）传输速率都低于 1KB/s 的话才会 timeout，但是设置完发现和github的连接断了，则可以取消http或者https代理：</p><pre class="line-numbers language-git"><code class="language-git">//取消http代理git config --global --unset http.proxy//取消https代理 git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://blog.csdn.net/good_good_xiu/article/details/118567249" target="_blank" rel="noopener">(86条消息) git提交或克隆报错fatal: unable to access ‘https://github.com/tata20191003/autowrite.git/‘: Failed to connec_good_good_xiu的博客-CSDN博客</a></p><h2 id="4-matery主题搭建"><a href="#4-matery主题搭建" class="headerlink" title="4. matery主题搭建"></a>4. matery主题搭建</h2><p><a href="https://zhuanlan.zhihu.com/p/104336960" target="_blank" rel="noopener">基于Hexo的matery主题搭建博客并深度优化 - 知乎 (zhihu.com)</a><br><a href="https://www.cnblogs.com/guixinchn/p/13542439.html" target="_blank" rel="noopener">Hexo-Matery主题美化 - 咕咕星 - 博客园 (cnblogs.com)</a></p><h2 id="5-站点信息显示不全"><a href="#5-站点信息显示不全" class="headerlink" title="5. 站点信息显示不全"></a>5. 站点信息显示不全</h2><p><a href="https://muyuuuu.github.io/2019/11/22/busuanzi-notdisplay/" target="_blank" rel="noopener">https://muyuuuu.github.io/2019/11/22/busuanzi-notdisplay/</a><br><a href="https://blog.csdn.net/qq_45738810/article/details/105973779" target="_blank" rel="noopener">(86条消息) 解决hexo 博客无法加载不蒜子不显示计数_不蒜子bad request_OY..的博客-CSDN博客</a><br><a href="https://blog.bluesky01st.eu.org/posts/d76019f8.html" target="_blank" rel="noopener">https://blog.bluesky01st.eu.org/posts/d76019f8.html</a><br><a href="https://open.toutiao.com/a6992456857474449934/?label=related_news&utm_campaign=open&utm_medium=webview&utm_source=o_llq_api&req_id=20210910150332010212144152258FAA7C&dt=PCHM10&crypt=7885&a_t=4016015322681658398093835278b7ea&gy=80e68a24aaed3c3404e6ea179fdddbffdb40d4f3e221e9f9dfaf803c85566c4757384263aebae182943b9519469443b1762dd3dd5ba1194ef20a44357d653f82651132a818b38ee7ee45077da0183fc235fb0e8f6bccd6a0c17b7f6ea99efdf1fc2a7bc6a0ec05d5bad97b7b7d42b23f7f336c2a628439bff384f63f2767f6f519405b2b6c86e08c795ba4203ac1da64&item_id=6992456857474449934&__docId__=6845224069135073796&__barStyle__=1_1&__statParams__=sourceMedia&__fromId__=__all__&__source__=toutiao&sourceMedia=toutiao&__cmtCnt__=3&__styleType__=1&__publisher_id__=3951869867&openv=&__pf__=detail&fr=normal&from_gid=6958742410356703781&channel_id=88805669586&oppo_anchor=" target="_blank" rel="noopener">Hexo+Github: 个人博客网站搭建完全教程(看这篇就够了) (toutiao.com)</a></p><h2 id="6-为matery增加评论模块"><a href="#6-为matery增加评论模块" class="headerlink" title="6. 为matery增加评论模块"></a>6. 为matery增加评论模块</h2><p><a href="https://blog.csdn.net/slow_sparrow/article/details/117753100" target="_blank" rel="noopener">(86条消息) 为使用matery主题的hexo增加Valine评论系统_howyoung525的博客-CSDN博客</a><br><a href="https://blog.csdn.net/slow_sparrow/article/details/117753100" target="_blank" rel="noopener">https://blog.csdn.net/slow_sparrow/article/details/117753100</a><br><a href="https://console.leancloud.cn/apps/eS18aVskMBwtTucX2DXka8Gx-gzGzoHsz/storage/data/Comment" target="_blank" rel="noopener">Comment · 数据存储 · blog (leancloud.cn)</a></p><h2 id="7-为matery主题增加音乐播放器"><a href="#7-为matery主题增加音乐播放器" class="headerlink" title="7. 为matery主题增加音乐播放器"></a>7. 为matery主题增加音乐播放器</h2><p><a href="https://zhuanlan.zhihu.com/p/259665807" target="_blank" rel="noopener">hexo-matery主题美化(三)-音乐播放器 - 知乎 (zhihu.com)</a><br><a href="https://www.hconan.com/posts/228cb782.html" target="_blank" rel="noopener">0003-关于hexo-theme-matery主题音乐播放器不显示问题 | HConan - 前端ＣＶ师</a></p><h2 id="8-为matery主题下修改文件，可实时看到预览效果"><a href="#8-为matery主题下修改文件，可实时看到预览效果" class="headerlink" title="8. 为matery主题下修改文件，可实时看到预览效果"></a>8. 为matery主题下修改文件，可实时看到预览效果</h2><p>每次修改文件内容的时候，在本地服务器运行时，会时时更新，不用重复生成项目。但是修改文件名时，就需要启动项目了。</p><h2 id="9-matery主题图片不显示的原因"><a href="#9-matery主题图片不显示的原因" class="headerlink" title="9. matery主题图片不显示的原因"></a>9. matery主题图片不显示的原因</h2><p><a href="https://www.suyuanblog.xyz/2021/10/14/%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" target="_blank" rel="noopener">解决Hexo文章图片无法显示问题 | 夙渊 (suyuanblog.xyz)</a><br><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档 | Hexo</a><br>在按教程安装依赖和修改配置以后，仍然无法显示图片的原因<br>是因为安装依赖之后读取路径变为<br><strong></strong><br>脉络：</p><pre class="line-numbers language-txt"><code class="language-txt">1. 如下面所示的方法，在轻应用或者typora都无法显示，正常来讲hexo生成之后应该会显示的，实际上并未显示。![图片描述](./last-news/n8gbxo.jpg)2. 而通过图片ctrl+cv的方式粘贴到markdown编辑器里，在编辑器里显示，但是hexo也不显示![kandinsky-download-1683547478839](D:\Desktop\kandinsky-download-1683547478839.png)3. 最后通过修改配置文件和安装依赖的方式成功显示图片，但是问题是，书写方式不够一目了然，而且编辑器上也不显示根目录下配置文件`_config.yml` 中有 `post_asset_folder:false改为true`安装依赖 npm install https://github.com/7ym0n/hexo-asset-image save在`md` 文件% asset_img test.jpg This is an test image %来插入图片，并显示在hexo上<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>建议:还是配置图床吧</p><h2 id="10-解决hexo主题本地图片显示"><a href="#10-解决hexo主题本地图片显示" class="headerlink" title="10. 解决hexo主题本地图片显示"></a>10. 解决hexo主题本地图片显示</h2><p><a href="https://blog.csdn.net/weixin_42030522/article/details/123075824" target="_blank" rel="noopener">(86条消息) 解决Hexo无法显示图片的几种方案_hexo 图片-CSDN博客</a><br>可在<code>source</code>文件夹下新建<code>images</code>文件夹，通过<code>/images/image.png</code>的方式实现图片的加载。</p><h2 id="11-解决hexo主题公式不显示的问题"><a href="#11-解决hexo主题公式不显示的问题" class="headerlink" title="11. 解决hexo主题公式不显示的问题"></a>11. 解决hexo主题公式不显示的问题</h2><p>修改本主题的配置文件公式信息</p><h2 id="12-解决hexo主题C-代码不高亮的问题"><a href="#12-解决hexo主题C-代码不高亮的问题" class="headerlink" title="12. 解决hexo主题C++代码不高亮的问题"></a>12. 解决hexo主题C++代码不高亮的问题</h2><p>将</p><pre class="line-numbers language-c++"><code class="language-c++">C++代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>改为</p><pre class="line-numbers language-c"><code class="language-c">C<span class="token operator">++</span>代码<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>后台项目地址：<a href="https://gitee.com/yorickromantic/yorick_disk" target="_blank" rel="noopener">https://gitee.com/yorickromantic/yorick_disk</a> 前端项目地址：<a href="https://gitee.com/yorickromantic/yorick_disk_web" target="_blank" rel="noopener">https://gitee.com/yorickromantic/yorick_disk_web</a> 我的Gitee：主页<a href="https://gitee.com/yorickromantic" target="_blank" rel="noopener">https://gitee.com/yorickromantic</a></p>]]></content>
       
       
       <categories>
@@ -555,33 +642,6 @@
     
     
     <entry>
-      <title>记录的一些好网站 | 参观学习！</title>
-      <link href="/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/"/>
-      <url>/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="1-网站推荐"><a href="#1-网站推荐" class="headerlink" title="1. 网站推荐"></a>1. 网站推荐</h2><p><a href="https://wpxz.org/" target="_blank" rel="noopener">网盘小站-阿里云盘资源共享第一站 (wpxz.org)</a></p><p><a href="https://bbs.z7zz.cn/links" target="_blank" rel="noopener">网址导航 – 竹子综合 (z7zz.cn)</a></p><p><a href="https://rainchan.win/link/" target="_blank" rel="noopener">友情链接 | RainChan的小博客</a></p><p><a href="https://aimerneige.com/en/friends/" target="_blank" rel="noopener">Friends 🧑‍🤝‍🧑 | Aimer’s Blog (aimerneige.com)</a></p><p><a href="https://www.xuthus.cc/" target="_blank" rel="noopener">我的学习分享 (xuthus.cc)</a></p><p><a href="https://blog.fissssssh.com/posts/recommended-software/" target="_blank" rel="noopener">软件推荐 | fissssssh</a>、</p><p><a href="https://ipaper.today/" target="_blank" rel="noopener">进步屋 (ipaper.today)</a></p><p><a href="https://geekhe-p.github.io/" target="_blank" rel="noopener">🔨のblog (geekhe-p.github.io)</a></p><p><a href="https://convertio.co/zh/" target="_blank" rel="noopener">Convertio — 文件转换器</a></p><p><a href="https://www.holk.tech/2019/12/06/VSCode编写C-C-的基础入门教程/" target="_blank" rel="noopener">win下使用VSCode编写C/C++的基础入门教程 - holk’s blog</a></p><p><a href="https://blog.dreace.top/" target="_blank" rel="noopener">DreaceのBlog</a></p><p><a href="https://blog.dreace.top/2022/Calling-C-C-Shared-Library-Libraries-in-Python/" target="_blank" rel="noopener">在 Python 中调用 C/C++ 共享库 - DreaceのBlog</a></p><p><a href="https://ying1ying.github.io/" target="_blank" rel="noopener">Hexo (ying1ying.github.io)</a></p><p><a href="https://hanbings.io/" target="_blank" rel="noopener">Hanbings – Cat On Cloud</a></p><p><a href="https://blog.krysztal.dev/2021/08/02/在树莓派上编译OpenCV/" target="_blank" rel="noopener">在树莓派上编译 OpenCV - Krysztal的小柜子</a></p><p><a href="http://blog.dazecake.moe/2022/03/28/使用VSCode和sdcc进行现代化单片机开发/" target="_blank" rel="noopener">使用VSCode和sdcc进行现代化单片机开发 | DazeCake的工坊</a></p><p><a href="https://www.hackerchai.com/" target="_blank" rel="noopener">Hackerchai</a></p><p><a href="https://lylelove.top/2022/08/14/我用过的笔记软件汇总/" target="_blank" rel="noopener">我用过的笔记软件汇总 – 竟何 (lylelove.top)</a></p><p><a href="https://widcard.win/" target="_blank" rel="noopener">widcardw</a></p><p><a href="https://matheart.github.io/matheart-note/" target="_blank" rel="noopener">Welcome to Matheart’s Note ! - Matheart’s Note</a></p><p>** <a href="https://newabug.top/" target="_blank" rel="noopener">UnLessのBlog - 个人练习Bug时长两年半 (newabug.top)</a></p><p><a href="https://zxblog.eu.org/" target="_blank" rel="noopener">知行博客 - zxblog.eu.org | 电脑浏览,体验拉满</a></p><p><a href="https://zxblog.eu.org/posts/97f1/" target="_blank" rel="noopener">变相裁员的8种手段，提前了解清楚，这5招教你如何应对！ | 知行博客 (zxblog.eu.org)</a></p><p><a href="https://www.auriel.top/" target="_blank" rel="noopener">Aurielの主页</a></p><p><a href="https://www.cxl2020mc.top/" target="_blank" rel="noopener">陈鑫磊的博客 (cxl2020mc.top)</a></p><p><a href="https://www.cxl2020mc.top/post/更新Hexo及插件版本/" target="_blank" rel="noopener">更新Hexo及插件版本 | 陈鑫磊的博客 (cxl2020mc.top)</a></p><p><a href="https://www.longtao.fun/" target="_blank" rel="noopener">LongTao - LongTao</a></p><p><a href="https://zhangshuqiao.org/" target="_blank" rel="noopener">米米的博客 (zhangshuqiao.org)</a></p><p><a href="https://zhangshuqiao.org/friends/" target="_blank" rel="noopener">朋友们 | 米米的博客 (zhangshuqiao.org)</a></p><p><a href="https://geminiplanet.cn/" target="_blank" rel="noopener">GeminiPlanet | Hello，My Little Prince !</a></p><p><a href="https://kenvix.com/categories/树莓派/" target="_blank" rel="noopener">类别: 树莓派 | Kenvix’s Blog</a></p><p><a href="https://kenvix.com/post/rpi-monitor/" target="_blank" rel="noopener">使用树莓派实现定时拍照监控并发送邮件到邮箱 | Kenvix’s Blog</a></p><p><a href="https://hexo.io/zh-tw/" target="_blank" rel="noopener">Hexo</a></p><p><a href="https://longtao.fun/metaverse/cpu/" target="_blank" rel="noopener">CPU简介 | LongTao</a></p><p><a href="https://longtao.fun/metaverse/computerprinciples/" target="_blank" rel="noopener">计算机基本组成 | LongTao</a></p><p><a href="https://www.rickylss.site/others/2022/03/18/about-interview/#" target="_blank" rel="noopener">快回来哦~~ (rickylss.site)</a></p><p><a href="https://www.golangroadmap.com/" target="_blank" rel="noopener">GOLANG ROADMAP</a></p><p><a href="https://jianger.space/" target="_blank" rel="noopener">Jianger’s Blog</a></p><p><a href="https://jianger.space/java-collections-part-two/" target="_blank" rel="noopener">读懂Java集合（二） | Jianger’s Blog</a></p><p><a href="https://www.sitstars.com/archives/121/" target="_blank" rel="noopener">打算捡起博客 - Shu’s Garden (sitstars.com)</a></p><p><a href="https://www.addesp.com/archives/5603" target="_blank" rel="noopener">为什么需要 “API 网关”？ | 寂静花园 (addesp.com)</a></p><p><a href="https://www.jdeal.cn/409.html" target="_blank" rel="noopener">改装一台旧笔记本电脑 - Jdeal | Life is like a Design.</a></p><p>** <a href="https://www.iszy.cc/links/" target="_blank" rel="noopener">友情链接 | 随遇而安 (iszy.cc)</a></p><p>** <a href="https://pengrl.com/link/" target="_blank" rel="noopener">友链 | yoko blog (pengrl.com)</a></p><p><a href="https://xargin.com/complete-deah-for-middleplatform/" target="_blank" rel="noopener">中台 2023 (xargin.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/138470455" target="_blank" rel="noopener">什么是中台？看完你就知道了？ - 知乎 (zhihu.com)</a></p><p><a href="https://xargin.com/diagram-tools-intro/" target="_blank" rel="noopener">那些画图工具们 (xargin.com)</a></p><p>** <a href="https://xargin.com/notes-on-logic-writing/" target="_blank" rel="noopener">《写作的逻辑》简单读书笔记 (xargin.com)</a></p><p><a href="https://xargin.com/blog-upgraded/" target="_blank" rel="noopener">blog 升级了。。 (xargin.com)</a></p><p><a href="https://xargin.com/about-ofo/" target="_blank" rel="noopener">关于 ofo (xargin.com)</a></p><p><a href="https://xargin.com/rookie-programmer-faults/" target="_blank" rel="noopener">初级程序员常犯错误一览 (xargin.com)</a></p><p><a href="https://xargin.com/about-microservice-1/" target="_blank" rel="noopener">漫谈服务化、微服务(一) (xargin.com)</a></p><p><a href="https://coolshell.cn/" target="_blank" rel="noopener">酷壳 – CoolShell.cn</a></p><p><a href="https://coolshell.cn/articles/20977.html" target="_blank" rel="noopener">程序员如何把控自己的职业 | 酷 壳 - CoolShell</a></p><p><a href="https://coolshell.cn/articles/20793.html" target="_blank" rel="noopener">与程序员相关的CPU缓存知识 | 酷 壳 - CoolShell</a></p><p><a href="https://coolshell.cn/page/4" target="_blank" rel="noopener">酷壳 – CoolShell.cn - Part 4</a></p><p><a href="https://coolshell.cn/articles/19840.html" target="_blank" rel="noopener">HTTP的前世今生 | 酷 壳 - CoolShell</a></p><p><a href="https://blog.codingnow.com/2023/05/debug.html#more" target="_blank" rel="noopener">云风的 BLOG: 记一次艰难的 debug 历程 (codingnow.com)</a></p><p><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong><a href="https://pengrl.com/link/" target="_blank" rel="noopener">友链 | yoko blog (pengrl.com)</a></p><h2 id="2-什么是程序员的业务能力"><a href="#2-什么是程序员的业务能力" class="headerlink" title="2. 什么是程序员的业务能力"></a>2. 什么是程序员的业务能力</h2><p>开发的程序总是服务于某种业务：供应链、支付、金融、物流、交易、电商，对业务的理解就是业务能力。而技术能力是服务于业务的，业务能力是一种推理能力，是长期的，而技术是在不断更新换代的。</p><p>真正牛逼的程序员是写代码/架构代码/设计的脉络的，项目和管理都是可以外包出去的；</p><p><a href="https://xargin.com/value-of-platform/" target="_blank" rel="noopener">平台到底有什么价值 (xargin.com)</a></p><p><a href="https://xargin.com/how-to-learn/" target="_blank" rel="noopener">工程师应该怎么学习 (xargin.com)</a></p><p><a href="https://coolshell.cn/articles/21672.html" target="_blank" rel="noopener">我做系统架构的一些原则 | 酷 壳 - CoolShell</a></p><h2 id="3-能力"><a href="#3-能力" class="headerlink" title="3. 能力"></a>3. 能力</h2><p>人这一辈子，最重要的是能把路越走越宽。对于工程师来说，能够锻炼软技能的场合其实不是很多，但也不代表完全没有。即使没有也可以自己创造机会，例如组内、组间、部门内的技术分享都是不错的机会。</p><p>更大规模的技术分享可能因为主办方“势力眼”，在你级别不高或者影响力不大的时候，不提供给你这样的机会，但是作为一个向上的人，迟早会有走到这一步的一天。你所要做的是提前做好准备，在那一天到来的时候，在聚光灯下旁征博引，谈笑风生。</p><p><a href="https://coolshell.cn/articles/19085.html" target="_blank" rel="noopener">谈谈我的“三观” | 酷 壳 - CoolShell</a></p><h2 id="4-写作技巧"><a href="#4-写作技巧" class="headerlink" title="4. 写作技巧"></a>4. 写作技巧</h2><p>** *<a href="https://xargin.com/every-arch-will-finally-become-shit/" target="_blank" rel="noopener">架构的腐化是必然的 (xargin.com)</a></p><p><a href="https://coolshell.cn/articles/21589.html" target="_blank" rel="noopener">如何做一个有质量的技术分享 | 酷 壳 - CoolShell</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网站 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 博客 </tag>
-            
-            <tag> 网站 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>写技术文档的的注意点 | 方法记录</title>
       <link href="/2023/05/14/zhi-shi-ju/xie-ji-zhu-wen-dang-de-zhu-yi-fang-fa-ru-he-rang-ren-you-xing-qu-du-xia-qu/"/>
       <url>/2023/05/14/zhi-shi-ju/xie-ji-zhu-wen-dang-de-zhu-yi-fang-fa-ru-he-rang-ren-you-xing-qu-du-xia-qu/</url>
@@ -601,6 +661,33 @@
             <tag> 技术文档 </tag>
             
             <tag> 文章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记录的一些好网站 | 参观学习！</title>
+      <link href="/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/"/>
+      <url>/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h2 id="1-网站推荐"><a href="#1-网站推荐" class="headerlink" title="1. 网站推荐"></a>1. 网站推荐</h2><p><a href="https://wpxz.org/" target="_blank" rel="noopener">网盘小站-阿里云盘资源共享第一站 (wpxz.org)</a></p><p><a href="https://bbs.z7zz.cn/links" target="_blank" rel="noopener">网址导航 – 竹子综合 (z7zz.cn)</a></p><p><a href="https://rainchan.win/link/" target="_blank" rel="noopener">友情链接 | RainChan的小博客</a></p><p><a href="https://aimerneige.com/en/friends/" target="_blank" rel="noopener">Friends 🧑‍🤝‍🧑 | Aimer’s Blog (aimerneige.com)</a></p><p><a href="https://www.xuthus.cc/" target="_blank" rel="noopener">我的学习分享 (xuthus.cc)</a></p><p><a href="https://blog.fissssssh.com/posts/recommended-software/" target="_blank" rel="noopener">软件推荐 | fissssssh</a>、</p><p><a href="https://ipaper.today/" target="_blank" rel="noopener">进步屋 (ipaper.today)</a></p><p><a href="https://geekhe-p.github.io/" target="_blank" rel="noopener">🔨のblog (geekhe-p.github.io)</a></p><p><a href="https://convertio.co/zh/" target="_blank" rel="noopener">Convertio — 文件转换器</a></p><p><a href="https://www.holk.tech/2019/12/06/VSCode编写C-C-的基础入门教程/" target="_blank" rel="noopener">win下使用VSCode编写C/C++的基础入门教程 - holk’s blog</a></p><p><a href="https://blog.dreace.top/" target="_blank" rel="noopener">DreaceのBlog</a></p><p><a href="https://blog.dreace.top/2022/Calling-C-C-Shared-Library-Libraries-in-Python/" target="_blank" rel="noopener">在 Python 中调用 C/C++ 共享库 - DreaceのBlog</a></p><p><a href="https://ying1ying.github.io/" target="_blank" rel="noopener">Hexo (ying1ying.github.io)</a></p><p><a href="https://hanbings.io/" target="_blank" rel="noopener">Hanbings – Cat On Cloud</a></p><p><a href="https://blog.krysztal.dev/2021/08/02/在树莓派上编译OpenCV/" target="_blank" rel="noopener">在树莓派上编译 OpenCV - Krysztal的小柜子</a></p><p><a href="http://blog.dazecake.moe/2022/03/28/使用VSCode和sdcc进行现代化单片机开发/" target="_blank" rel="noopener">使用VSCode和sdcc进行现代化单片机开发 | DazeCake的工坊</a></p><p><a href="https://www.hackerchai.com/" target="_blank" rel="noopener">Hackerchai</a></p><p><a href="https://lylelove.top/2022/08/14/我用过的笔记软件汇总/" target="_blank" rel="noopener">我用过的笔记软件汇总 – 竟何 (lylelove.top)</a></p><p><a href="https://widcard.win/" target="_blank" rel="noopener">widcardw</a></p><p><a href="https://matheart.github.io/matheart-note/" target="_blank" rel="noopener">Welcome to Matheart’s Note ! - Matheart’s Note</a></p><p>** <a href="https://newabug.top/" target="_blank" rel="noopener">UnLessのBlog - 个人练习Bug时长两年半 (newabug.top)</a></p><p><a href="https://zxblog.eu.org/" target="_blank" rel="noopener">知行博客 - zxblog.eu.org | 电脑浏览,体验拉满</a></p><p><a href="https://zxblog.eu.org/posts/97f1/" target="_blank" rel="noopener">变相裁员的8种手段，提前了解清楚，这5招教你如何应对！ | 知行博客 (zxblog.eu.org)</a></p><p><a href="https://www.auriel.top/" target="_blank" rel="noopener">Aurielの主页</a></p><p><a href="https://www.cxl2020mc.top/" target="_blank" rel="noopener">陈鑫磊的博客 (cxl2020mc.top)</a></p><p><a href="https://www.cxl2020mc.top/post/更新Hexo及插件版本/" target="_blank" rel="noopener">更新Hexo及插件版本 | 陈鑫磊的博客 (cxl2020mc.top)</a></p><p><a href="https://www.longtao.fun/" target="_blank" rel="noopener">LongTao - LongTao</a></p><p><a href="https://zhangshuqiao.org/" target="_blank" rel="noopener">米米的博客 (zhangshuqiao.org)</a></p><p><a href="https://zhangshuqiao.org/friends/" target="_blank" rel="noopener">朋友们 | 米米的博客 (zhangshuqiao.org)</a></p><p><a href="https://geminiplanet.cn/" target="_blank" rel="noopener">GeminiPlanet | Hello，My Little Prince !</a></p><p><a href="https://kenvix.com/categories/树莓派/" target="_blank" rel="noopener">类别: 树莓派 | Kenvix’s Blog</a></p><p><a href="https://kenvix.com/post/rpi-monitor/" target="_blank" rel="noopener">使用树莓派实现定时拍照监控并发送邮件到邮箱 | Kenvix’s Blog</a></p><p><a href="https://hexo.io/zh-tw/" target="_blank" rel="noopener">Hexo</a></p><p><a href="https://longtao.fun/metaverse/cpu/" target="_blank" rel="noopener">CPU简介 | LongTao</a></p><p><a href="https://longtao.fun/metaverse/computerprinciples/" target="_blank" rel="noopener">计算机基本组成 | LongTao</a></p><p><a href="https://www.rickylss.site/others/2022/03/18/about-interview/#" target="_blank" rel="noopener">快回来哦~~ (rickylss.site)</a></p><p><a href="https://www.golangroadmap.com/" target="_blank" rel="noopener">GOLANG ROADMAP</a></p><p><a href="https://jianger.space/" target="_blank" rel="noopener">Jianger’s Blog</a></p><p><a href="https://jianger.space/java-collections-part-two/" target="_blank" rel="noopener">读懂Java集合（二） | Jianger’s Blog</a></p><p><a href="https://www.sitstars.com/archives/121/" target="_blank" rel="noopener">打算捡起博客 - Shu’s Garden (sitstars.com)</a></p><p><a href="https://www.addesp.com/archives/5603" target="_blank" rel="noopener">为什么需要 “API 网关”？ | 寂静花园 (addesp.com)</a></p><p><a href="https://www.jdeal.cn/409.html" target="_blank" rel="noopener">改装一台旧笔记本电脑 - Jdeal | Life is like a Design.</a></p><p>** <a href="https://www.iszy.cc/links/" target="_blank" rel="noopener">友情链接 | 随遇而安 (iszy.cc)</a></p><p>** <a href="https://pengrl.com/link/" target="_blank" rel="noopener">友链 | yoko blog (pengrl.com)</a></p><p><a href="https://xargin.com/complete-deah-for-middleplatform/" target="_blank" rel="noopener">中台 2023 (xargin.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/138470455" target="_blank" rel="noopener">什么是中台？看完你就知道了？ - 知乎 (zhihu.com)</a></p><p><a href="https://xargin.com/diagram-tools-intro/" target="_blank" rel="noopener">那些画图工具们 (xargin.com)</a></p><p>** <a href="https://xargin.com/notes-on-logic-writing/" target="_blank" rel="noopener">《写作的逻辑》简单读书笔记 (xargin.com)</a></p><p><a href="https://xargin.com/blog-upgraded/" target="_blank" rel="noopener">blog 升级了。。 (xargin.com)</a></p><p><a href="https://xargin.com/about-ofo/" target="_blank" rel="noopener">关于 ofo (xargin.com)</a></p><p><a href="https://xargin.com/rookie-programmer-faults/" target="_blank" rel="noopener">初级程序员常犯错误一览 (xargin.com)</a></p><p><a href="https://xargin.com/about-microservice-1/" target="_blank" rel="noopener">漫谈服务化、微服务(一) (xargin.com)</a></p><p><a href="https://coolshell.cn/" target="_blank" rel="noopener">酷壳 – CoolShell.cn</a></p><p><a href="https://coolshell.cn/articles/20977.html" target="_blank" rel="noopener">程序员如何把控自己的职业 | 酷 壳 - CoolShell</a></p><p><a href="https://coolshell.cn/articles/20793.html" target="_blank" rel="noopener">与程序员相关的CPU缓存知识 | 酷 壳 - CoolShell</a></p><p><a href="https://coolshell.cn/page/4" target="_blank" rel="noopener">酷壳 – CoolShell.cn - Part 4</a></p><p><a href="https://coolshell.cn/articles/19840.html" target="_blank" rel="noopener">HTTP的前世今生 | 酷 壳 - CoolShell</a></p><p><a href="https://blog.codingnow.com/2023/05/debug.html#more" target="_blank" rel="noopener">云风的 BLOG: 记一次艰难的 debug 历程 (codingnow.com)</a></p><p><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong><a href="https://pengrl.com/link/" target="_blank" rel="noopener">友链 | yoko blog (pengrl.com)</a></p><h2 id="2-什么是程序员的业务能力"><a href="#2-什么是程序员的业务能力" class="headerlink" title="2. 什么是程序员的业务能力"></a>2. 什么是程序员的业务能力</h2><p>开发的程序总是服务于某种业务：供应链、支付、金融、物流、交易、电商，对业务的理解就是业务能力。而技术能力是服务于业务的，业务能力是一种推理能力，是长期的，而技术是在不断更新换代的。</p><p>真正牛逼的程序员是写代码/架构代码/设计的脉络的，项目和管理都是可以外包出去的；</p><p><a href="https://xargin.com/value-of-platform/" target="_blank" rel="noopener">平台到底有什么价值 (xargin.com)</a></p><p><a href="https://xargin.com/how-to-learn/" target="_blank" rel="noopener">工程师应该怎么学习 (xargin.com)</a></p><p><a href="https://coolshell.cn/articles/21672.html" target="_blank" rel="noopener">我做系统架构的一些原则 | 酷 壳 - CoolShell</a></p><h2 id="3-能力"><a href="#3-能力" class="headerlink" title="3. 能力"></a>3. 能力</h2><p>人这一辈子，最重要的是能把路越走越宽。对于工程师来说，能够锻炼软技能的场合其实不是很多，但也不代表完全没有。即使没有也可以自己创造机会，例如组内、组间、部门内的技术分享都是不错的机会。</p><p>更大规模的技术分享可能因为主办方“势力眼”，在你级别不高或者影响力不大的时候，不提供给你这样的机会，但是作为一个向上的人，迟早会有走到这一步的一天。你所要做的是提前做好准备，在那一天到来的时候，在聚光灯下旁征博引，谈笑风生。</p><p><a href="https://coolshell.cn/articles/19085.html" target="_blank" rel="noopener">谈谈我的“三观” | 酷 壳 - CoolShell</a></p><h2 id="4-写作技巧"><a href="#4-写作技巧" class="headerlink" title="4. 写作技巧"></a>4. 写作技巧</h2><p>** *<a href="https://xargin.com/every-arch-will-finally-become-shit/" target="_blank" rel="noopener">架构的腐化是必然的 (xargin.com)</a></p><p><a href="https://coolshell.cn/articles/21589.html" target="_blank" rel="noopener">如何做一个有质量的技术分享 | 酷 壳 - CoolShell</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 网站 </tag>
             
         </tags>
       
@@ -774,8 +861,6 @@
       
         <tags>
             
-            <tag> 项目 </tag>
-            
             <tag> 编程基础 </tag>
             
             <tag> 物联网 </tag>
@@ -783,6 +868,8 @@
             <tag> 前后端 </tag>
             
             <tag> redis </tag>
+            
+            <tag> 项目 </tag>
             
         </tags>
       
@@ -840,13 +927,13 @@
       
         <tags>
             
+            <tag> 论坛 </tag>
+            
             <tag> python </tag>
             
             <tag> 基础深究 </tag>
             
             <tag> 脚本语言和编译性语言 </tag>
-            
-            <tag> 论坛 </tag>
             
         </tags>
       
@@ -900,9 +987,9 @@
       
         <tags>
             
-            <tag> 论坛 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 论坛 </tag>
             
             <tag> 好玩的技术 </tag>
             
@@ -995,11 +1082,11 @@
             
             <tag> 后端 </tag>
             
+            <tag> 博客 </tag>
+            
             <tag> AI </tag>
             
             <tag> 前端 </tag>
-            
-            <tag> 博客 </tag>
             
         </tags>
       
@@ -1379,9 +1466,9 @@
             
             <tag> 后端 </tag>
             
-            <tag> 工具 </tag>
-            
             <tag> 项目 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 书写 </tag>
             
@@ -1448,35 +1535,6 @@
     
     
     <entry>
-      <title>计算机高级编程语言是如何发展为如此庞杂的|C/C++/JAVA/PHP/RUBY,Rail/JAVAscript</title>
-      <link href="/2022/12/05/2-diao-yan-xue-xi-si-kao/gen-zong-ren-gong-zhi-neng-gpt-dui-ge-xing-de-gai-bian/ji-suan-ji-gao-ji-bian-cheng-yu-yan-shi-ru-he-fa-zhan-wei-ru-ci-pang-za-de/"/>
-      <url>/2022/12/05/2-diao-yan-xue-xi-si-kao/gen-zong-ren-gong-zhi-neng-gpt-dui-ge-xing-de-gai-bian/ji-suan-ji-gao-ji-bian-cheng-yu-yan-shi-ru-he-fa-zhan-wei-ru-ci-pang-za-de/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h1 id="计算机发展的三个时代"><a href="#计算机发展的三个时代" class="headerlink" title="计算机发展的三个时代"></a>计算机发展的三个时代</h1><p><a href="https://www.bilibili.com/video/BV1J24y1c7m3/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">一个动画告诉你，年代久远的C/C++为什么还没有被新时代给淘汰呢？_哔哩哔哩_bilibili</a></p><h2 id="桌面端时代（C-S结构）"><a href="#桌面端时代（C-S结构）" class="headerlink" title="桌面端时代（C/S结构）"></a>桌面端时代（C/S结构）</h2><p>C和C++的天下（word、excel）</p><h2 id="互联网时代（B-S结构）"><a href="#互联网时代（B-S结构）" class="headerlink" title="互联网时代（B/S结构）"></a>互联网时代（B/S结构）</h2><p>（Java虚拟机、PHP、ruby、python解释器底层都是C/C++写的）<br>Java（WEB页面、前后端），早期的霸主<br>php（Facebook、yahoo、维基百科）、ruby on rails（hulu、twitter、github)层出不穷<br>python(数据处理、科学计算、爬虫、数据挖掘、桌面程序)<br>服务端（Java、C#、python、ruby、php）<br>浏览器端（Javascript 、node.js、vue）</p><h2 id="大数据、云计算时代（程序部署到云端）"><a href="#大数据、云计算时代（程序部署到云端）" class="headerlink" title="大数据、云计算时代（程序部署到云端）"></a>大数据、云计算时代（程序部署到云端）</h2><p>hadoop、spark、kafka、flink都是建立在Java和scala基础之上的<br>scipy、numpy、matplotglib、pandas等数据分析都是建立在Java之上的<br>云计算时代的C语言，go语言<br><strong>Java</strong>是一种是基于类的，并发的和面向对象的编程<strong>语言</strong>。 它专门设计为包含很少的实现依赖项，其应用程序上的编译代码或字节码可以在大多数操作系统上运行，包括Linux，Mac操作系统和Linux。 <strong>Go</strong>是一种过程式编程<strong>语言</strong>，于2009年作为开源编程<strong>语言</strong>推出。程序通过使用包进行组装，以有效管理依赖关系。该语言还支持采用类似于动态语言的模式的环境。<br><a href="https://cloud.tencent.com/developer/article/1839604" target="_blank" rel="noopener">一文快速了解进程、线程与协程 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p><h2 id="web3时代"><a href="#web3时代" class="headerlink" title="web3时代"></a>web3时代</h2><h1 id="C语言、C-和C-的区别"><a href="#C语言、C-和C-的区别" class="headerlink" title="C语言、C++和C#的区别"></a>C语言、C++和C#的区别</h1><p><a href="https://www.bilibili.com/video/BV1h14y1x714/?spm_id_from=autoNext&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">C语言、C++和C#的区别竟是如此，看完视频我悟了！_哔哩哔哩_bilibili</a><br>C语言：高冷，速度超快<br>C++：交互强了很多，太罗嗦了，速度很快<br>C#：微软做的，对象创建方便，速度降低，和C++可代码逻辑交互</p><h1 id="集成开发环境（IDE-比较"><a href="#集成开发环境（IDE-比较" class="headerlink" title="集成开发环境（IDE)比较"></a>集成开发环境（IDE)比较</h1><p><strong>集成开发环境</strong>（Integrated Development Environment)<br><a href="https://haicoder.net/c/c-ide.html" target="_blank" rel="noopener">什么是IDE-嗨客网 (haicoder.net)</a><br><a href="https://www.infoq.cn/article/pwajbi4wzsvxdlk0tfav" target="_blank" rel="noopener">2021年要考虑的10种最佳IDE软件_语言 &amp; 开发_WebCreek_InfoQ精选文章</a><br><a href="https://blog.csdn.net/lsely/article/details/126230317" target="_blank" rel="noopener">(84条消息) 五个美观好用的全能性IDE推荐(更新）_好用的ide_lsely的博客-CSDN博客</a></p><h2 id="VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便"><a href="#VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便" class="headerlink" title="VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便"></a>VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便</h2><p><a href="https://matpool.com/blog/610751b75a27e902e6a022f4/" target="_blank" rel="noopener">超全面！15 种 Python IDE 工具使用对比 (matpool.com)</a><br><a href="https://www.linuxmi.com/java-ide.html" target="_blank" rel="noopener">7 个最好的 Java IDE 比较 - Linux迷 (linuxmi.com)</a><br><a href="https://www.incredibuild.cn/blog/best-c-ides" target="_blank" rel="noopener">2021 最佳 C++ IDE 排行 - Incredibuild</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习 </category>
-          
-          <category> 总结 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 计算机编程语言 </tag>
-            
-            <tag> 编程语言 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hexo项目部署|PUSH到Github有各种问题</title>
       <link href="/2022/12/05/1-xiang-mu/bo-ke-xiang-mu/ji-lu-yi-ci-hexo-xiang-mu-bu-shu-de-debug-guo-cheng/"/>
       <url>/2022/12/05/1-xiang-mu/bo-ke-xiang-mu/ji-lu-yi-ci-hexo-xiang-mu-bu-shu-de-debug-guo-cheng/</url>
@@ -1533,29 +1591,27 @@
     
     
     <entry>
-      <title>新闻一览|  web3、币圈、区块链</title>
-      <link href="/2022/12/05/qi-ta-huo-zhe-jiao-du-li-ling-yu/ke-ji-hu-lian-wang-lun-tan/web3-bi-quan/"/>
-      <url>/2022/12/05/qi-ta-huo-zhe-jiao-du-li-ling-yu/ke-ji-hu-lian-wang-lun-tan/web3-bi-quan/</url>
+      <title>计算机高级编程语言是如何发展为如此庞杂的|C/C++/JAVA/PHP/RUBY,Rail/JAVAscript</title>
+      <link href="/2022/12/05/2-diao-yan-xue-xi-si-kao/gen-zong-ren-gong-zhi-neng-gpt-dui-ge-xing-de-gai-bian/ji-suan-ji-gao-ji-bian-cheng-yu-yan-shi-ru-he-fa-zhan-wei-ru-ci-pang-za-de/"/>
+      <url>/2022/12/05/2-diao-yan-xue-xi-si-kao/gen-zong-ren-gong-zhi-neng-gpt-dui-ge-xing-de-gai-bian/ji-suan-ji-gao-ji-bian-cheng-yu-yan-shi-ru-he-fa-zhan-wei-ru-ci-pang-za-de/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h1 id="2022-12-05"><a href="#2022-12-05" class="headerlink" title="2022.12.05"></a>2022.12.05</h1><h1 id="2022-11-30"><a href="#2022-11-30" class="headerlink" title="2022.11.30"></a>2022.11.30</h1><p>综合红星新闻，极目新闻11月30日报道，俄罗斯亿万富翁，在良好天气的条件下突然坠机，成为最新一位死于神秘情况的加密货币商人。</p><p>有报道29日称，近日，53岁的俄罗斯亿万富翁维亚奇斯拉维·塔兰从瑞士飞往摩纳哥时，其搭乘的直升机在法国和意大利边境处坠毁。塔兰是机上唯一一名乘客，他与机上35岁的法国飞行员均遇难。目前，事故原因仍在调查中。据了解，俄罗斯驻法国大使馆已经证实了塔兰的死讯。</p><p>飞机坠毁事故原因仍在调查中 来源：红星新闻当地时间11月28日，福瑞斯金融集团发表官方声明称：“我们非常悲痛地确认联合创始人兼董事会主席维亚奇斯拉维·塔兰在直升机失事后去世。”据悉，当天塔兰是准备乘坐空中客车的H130机型从瑞士飞往摩纳哥。</p><p>原本这起坠机事故是场悲剧，但是一些巧合让人们对它有了许多疑惑。</p><p>有报道指出，事发时天气良好、飞行员经验丰富、当局也没有指出直升机存在操作不当的问题。更为神秘的是，塔兰坠机当天本来还有另外一位旅客原本计划搭乘这架直升机前往摩纳哥，但其在起飞前的最后一刻取消了这趟行程。目前暂不清楚该名旅客的具体信息。</p><p>此外，俄罗斯媒体在塔兰坠机后发表文章指出塔兰“有仇家”，他去世后留下了妻子和3个孩子。</p><p>11月25日，据Amber Group官网显示，联合创始人库兰德于11月23日在睡梦中意外去世，年仅30岁。他的公司和家人没有透露具体死因，只说了“非他杀”。今年10月底，29岁的加密货币开发商尼古拉·穆舍吉安（Nikolai Mushegian）在波多黎各的海滩上溺水身亡，此前他在推特上说，他担心有人会谋杀自己。</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h1 id="计算机发展的三个时代"><a href="#计算机发展的三个时代" class="headerlink" title="计算机发展的三个时代"></a>计算机发展的三个时代</h1><p><a href="https://www.bilibili.com/video/BV1J24y1c7m3/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">一个动画告诉你，年代久远的C/C++为什么还没有被新时代给淘汰呢？_哔哩哔哩_bilibili</a></p><h2 id="桌面端时代（C-S结构）"><a href="#桌面端时代（C-S结构）" class="headerlink" title="桌面端时代（C/S结构）"></a>桌面端时代（C/S结构）</h2><p>C和C++的天下（word、excel）</p><h2 id="互联网时代（B-S结构）"><a href="#互联网时代（B-S结构）" class="headerlink" title="互联网时代（B/S结构）"></a>互联网时代（B/S结构）</h2><p>（Java虚拟机、PHP、ruby、python解释器底层都是C/C++写的）<br>Java（WEB页面、前后端），早期的霸主<br>php（Facebook、yahoo、维基百科）、ruby on rails（hulu、twitter、github)层出不穷<br>python(数据处理、科学计算、爬虫、数据挖掘、桌面程序)<br>服务端（Java、C#、python、ruby、php）<br>浏览器端（Javascript 、node.js、vue）</p><h2 id="大数据、云计算时代（程序部署到云端）"><a href="#大数据、云计算时代（程序部署到云端）" class="headerlink" title="大数据、云计算时代（程序部署到云端）"></a>大数据、云计算时代（程序部署到云端）</h2><p>hadoop、spark、kafka、flink都是建立在Java和scala基础之上的<br>scipy、numpy、matplotglib、pandas等数据分析都是建立在Java之上的<br>云计算时代的C语言，go语言<br><strong>Java</strong>是一种是基于类的，并发的和面向对象的编程<strong>语言</strong>。 它专门设计为包含很少的实现依赖项，其应用程序上的编译代码或字节码可以在大多数操作系统上运行，包括Linux，Mac操作系统和Linux。 <strong>Go</strong>是一种过程式编程<strong>语言</strong>，于2009年作为开源编程<strong>语言</strong>推出。程序通过使用包进行组装，以有效管理依赖关系。该语言还支持采用类似于动态语言的模式的环境。<br><a href="https://cloud.tencent.com/developer/article/1839604" target="_blank" rel="noopener">一文快速了解进程、线程与协程 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p><h2 id="web3时代"><a href="#web3时代" class="headerlink" title="web3时代"></a>web3时代</h2><h1 id="C语言、C-和C-的区别"><a href="#C语言、C-和C-的区别" class="headerlink" title="C语言、C++和C#的区别"></a>C语言、C++和C#的区别</h1><p><a href="https://www.bilibili.com/video/BV1h14y1x714/?spm_id_from=autoNext&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">C语言、C++和C#的区别竟是如此，看完视频我悟了！_哔哩哔哩_bilibili</a><br>C语言：高冷，速度超快<br>C++：交互强了很多，太罗嗦了，速度很快<br>C#：微软做的，对象创建方便，速度降低，和C++可代码逻辑交互</p><h1 id="集成开发环境（IDE-比较"><a href="#集成开发环境（IDE-比较" class="headerlink" title="集成开发环境（IDE)比较"></a>集成开发环境（IDE)比较</h1><p><strong>集成开发环境</strong>（Integrated Development Environment)<br><a href="https://haicoder.net/c/c-ide.html" target="_blank" rel="noopener">什么是IDE-嗨客网 (haicoder.net)</a><br><a href="https://www.infoq.cn/article/pwajbi4wzsvxdlk0tfav" target="_blank" rel="noopener">2021年要考虑的10种最佳IDE软件_语言 &amp; 开发_WebCreek_InfoQ精选文章</a><br><a href="https://blog.csdn.net/lsely/article/details/126230317" target="_blank" rel="noopener">(84条消息) 五个美观好用的全能性IDE推荐(更新）_好用的ide_lsely的博客-CSDN博客</a></p><h2 id="VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便"><a href="#VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便" class="headerlink" title="VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便"></a>VScode和vs最大的区别是提供了丰富的插件选择，页面简洁，理解方便</h2><p><a href="https://matpool.com/blog/610751b75a27e902e6a022f4/" target="_blank" rel="noopener">超全面！15 种 Python IDE 工具使用对比 (matpool.com)</a><br><a href="https://www.linuxmi.com/java-ide.html" target="_blank" rel="noopener">7 个最好的 Java IDE 比较 - Linux迷 (linuxmi.com)</a><br><a href="https://www.incredibuild.cn/blog/best-c-ides" target="_blank" rel="noopener">2021 最佳 C++ IDE 排行 - Incredibuild</a></p>]]></content>
       
       
       <categories>
           
-          <category> 新闻 </category>
+          <category> 学习 </category>
+          
+          <category> 总结 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 前沿 </tag>
+            <tag> 计算机编程语言 </tag>
             
-            <tag> web3 </tag>
-            
-            <tag> 币圈 </tag>
-            
-            <tag> 区块链 </tag>
+            <tag> 编程语言 </tag>
             
         </tags>
       
@@ -1589,6 +1645,37 @@
             <tag> 技术前沿 </tag>
             
             <tag> 智能化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新闻一览|  web3、币圈、区块链</title>
+      <link href="/2022/12/05/qi-ta-huo-zhe-jiao-du-li-ling-yu/ke-ji-hu-lian-wang-lun-tan/web3-bi-quan/"/>
+      <url>/2022/12/05/qi-ta-huo-zhe-jiao-du-li-ling-yu/ke-ji-hu-lian-wang-lun-tan/web3-bi-quan/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h1 id="2022-12-05"><a href="#2022-12-05" class="headerlink" title="2022.12.05"></a>2022.12.05</h1><h1 id="2022-11-30"><a href="#2022-11-30" class="headerlink" title="2022.11.30"></a>2022.11.30</h1><p>综合红星新闻，极目新闻11月30日报道，俄罗斯亿万富翁，在良好天气的条件下突然坠机，成为最新一位死于神秘情况的加密货币商人。</p><p>有报道29日称，近日，53岁的俄罗斯亿万富翁维亚奇斯拉维·塔兰从瑞士飞往摩纳哥时，其搭乘的直升机在法国和意大利边境处坠毁。塔兰是机上唯一一名乘客，他与机上35岁的法国飞行员均遇难。目前，事故原因仍在调查中。据了解，俄罗斯驻法国大使馆已经证实了塔兰的死讯。</p><p>飞机坠毁事故原因仍在调查中 来源：红星新闻当地时间11月28日，福瑞斯金融集团发表官方声明称：“我们非常悲痛地确认联合创始人兼董事会主席维亚奇斯拉维·塔兰在直升机失事后去世。”据悉，当天塔兰是准备乘坐空中客车的H130机型从瑞士飞往摩纳哥。</p><p>原本这起坠机事故是场悲剧，但是一些巧合让人们对它有了许多疑惑。</p><p>有报道指出，事发时天气良好、飞行员经验丰富、当局也没有指出直升机存在操作不当的问题。更为神秘的是，塔兰坠机当天本来还有另外一位旅客原本计划搭乘这架直升机前往摩纳哥，但其在起飞前的最后一刻取消了这趟行程。目前暂不清楚该名旅客的具体信息。</p><p>此外，俄罗斯媒体在塔兰坠机后发表文章指出塔兰“有仇家”，他去世后留下了妻子和3个孩子。</p><p>11月25日，据Amber Group官网显示，联合创始人库兰德于11月23日在睡梦中意外去世，年仅30岁。他的公司和家人没有透露具体死因，只说了“非他杀”。今年10月底，29岁的加密货币开发商尼古拉·穆舍吉安（Nikolai Mushegian）在波多黎各的海滩上溺水身亡，此前他在推特上说，他担心有人会谋杀自己。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 新闻 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前沿 </tag>
+            
+            <tag> web3 </tag>
+            
+            <tag> 币圈 </tag>
+            
+            <tag> 区块链 </tag>
             
         </tags>
       
@@ -1690,6 +1777,37 @@
     
     
     <entry>
+      <title>华为秋招没我，漫漫江湖再见 | 纪念自己三年华为梦！</title>
+      <link href="/2022/12/02/3-zong-jie/hua-wei-tuan-jian-huo-dong/"/>
+      <url>/2022/12/02/3-zong-jie/hua-wei-tuan-jian-huo-dong/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h2 id="为什么要参加评选？"><a href="#为什么要参加评选？" class="headerlink" title="为什么要参加评选？"></a>为什么要参加评选？</h2><p>研究生入学以来，自己一直希望提高自己的各方面能力，因此也参加了一些比赛和活动，有这个机会能证明过去一段时间的成果，检验过去三年来的所得，自然是想争取住这次机会的！</p><p># </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后端 </tag>
+            
+            <tag> Bootstrap </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>犹抱琵琶半遮面 | 第四次工业革命科技树将点在哪！</title>
       <link href="/2022/12/02/2-diao-yan-xue-xi-si-kao/di-si-ci-gong-ye-ge-ming-zui-ke-neng-fa-sheng-zai-na/"/>
       <url>/2022/12/02/2-diao-yan-xue-xi-si-kao/di-si-ci-gong-ye-ge-ming-zui-ke-neng-fa-sheng-zai-na/</url>
@@ -1723,37 +1841,6 @@
     
     
     <entry>
-      <title>华为秋招没我，漫漫江湖再见 | 纪念自己三年华为梦！</title>
-      <link href="/2022/12/02/3-zong-jie/hua-wei-tuan-jian-huo-dong/"/>
-      <url>/2022/12/02/3-zong-jie/hua-wei-tuan-jian-huo-dong/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h2 id="为什么要参加评选？"><a href="#为什么要参加评选？" class="headerlink" title="为什么要参加评选？"></a>为什么要参加评选？</h2><p>研究生入学以来，自己一直希望提高自己的各方面能力，因此也参加了一些比赛和活动，有这个机会能证明过去一段时间的成果，检验过去三年来的所得，自然是想争取住这次机会的！</p><p># </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 项目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> 后端 </tag>
-            
-            <tag> 博客 </tag>
-            
-            <tag> Bootstrap </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>从邮件下发开始debug | 通过消息下发平台给自己发一份邮件</title>
       <link href="/2022/12/01/1-xiang-mu/java-xiang-mu/austin-xiang-mu/cong-you-jian-xia-fa-kai-shi-debug/"/>
       <url>/2022/12/01/1-xiang-mu/java-xiang-mu/austin-xiang-mu/cong-you-jian-xia-fa-kai-shi-debug/</url>
@@ -1777,37 +1864,6 @@
             <tag> Kafka </tag>
             
             <tag> 消息下发平台 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>centos虚拟机的使用 | 将程序备份到独立的虚拟机上面去</title>
-      <link href="/2022/11/30/2-diao-yan-xue-xi-si-kao/centos-xu-ni-ji-de-shi-yong/"/>
-      <url>/2022/11/30/2-diao-yan-xue-xi-si-kao/centos-xu-ni-ji-de-shi-yong/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h1 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h1><h2 id="先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？"><a href="#先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？" class="headerlink" title="先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？"></a>先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？</h2><p>我的思考是虚拟机拥有独立的内存的存储空间，是独立的空间，而docker本质上是一个程序，是一个进程，但是这个进程又较好的处理了底层的隔离性质，使得不会受操作系统的影响。</p><h1 id="在自己的电脑上部署一台自己的虚拟机"><a href="#在自己的电脑上部署一台自己的虚拟机" class="headerlink" title="在自己的电脑上部署一台自己的虚拟机"></a>在自己的电脑上部署一台自己的虚拟机</h1><h2 id="我使用的时2020年版的CentOS-7-64-位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本-安装教程："><a href="#我使用的时2020年版的CentOS-7-64-位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本-安装教程：" class="headerlink" title="我使用的时2020年版的CentOS 7 64 位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本,安装教程："></a>我使用的时2020年版的CentOS 7 64 位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本,安装教程：</h2><p><a href="https://blog.csdn.net/BADAO_LIUMANG_QIZHI/article/details/104803494" target="_blank" rel="noopener">(62条消息) CentOS7 64位下载配置与安装教程(超详细图文教程)_霸道流氓气质的博客-CSDN博客</a><br>按照教程安装完毕以后就可以使用注册的账号登录自己的虚拟机了；<br>而那些Linux的指令也可以用上 了，这边再回顾一下之前的Linux知识；</p><h2 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h2><p>熟悉我的编程经历的人可能知道，当我在经历了本科断断续续的学习C语言和Java的知识，当我在读研以后确定工作方向以后，我对计算机的了解还处于比一知半解还一知半解的阶段，非计算机科班对计算机知识的匮乏让好不容易接触到的一点关于编程的知识很容易就忘的九霄云外了。没有掌握好计算机知识的基础，自上而下的学习，当自己好不容易以为搭好了基础的知识框架，建立好计算机的大厦，只需要往里面填充新的技术栈时，一个突如其来的之前没有掌握的基础知识，让自己的知识框架便轰然倒坍，又得重新构建，这个过程周而复始，而自己身边又没有能理解到我的学习状态，帮我理清楚脉络的好兄弟，因此只有一点点往计算机的大厦下探，不断推倒重来，终于，在步入研三的那个暑假，终于结束了这个痛苦的过程，在计算机的根基上搭建好了自己的知识框架。以后任何新的技术栈还是成为代码屎山的应用，都能确定他所处的位置了；当然，知道的越多，不知道的东西也越多，但是经历过这个阶段的自己，早已“轻舟已过万重山”了。</p><p>当我度过了那个探底的通过过程以后，之前学习的几个小项目突然就不再是云里雾里的了，代码逻辑、模块功能、环境搭建、资源下载、bug解决都有一条线在告诉自己，或许这样做，可以把这个问题解决了。</p><p>于是乎，我想再找找项目做，这次要做的项目不是之前的漫无目的，什么商城项目、医疗平台等…….</p><p>一直就有一种归类和分享的欲望，因此做一个知识总结和分享的平台就成了我希望点开的自己能独立修改开源项目的第一个方向。</p><h1 id="开始自己接触到的是论坛而不是项目"><a href="#开始自己接触到的是论坛而不是项目" class="headerlink" title="开始自己接触到的是论坛而不是项目"></a>开始自己接触到的是论坛而不是项目</h1><p>需求导向，当我想做归类和分享的时候，凭感觉找到的关键词是论坛，于是在B站上我就搭建和修改了第一个独立项目，论坛项目</p><p>项目地址：<a href="https://github.com/codedrinker/community">https://github.com/codedrinker/community</a><br>B站学习地址为：<br><a href="https://www.bilibili.com/video/BV1r4411r7au/?spm_id_from=333.788.video.desc.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1r4411r7au/?spm_id_from=333.788.video.desc.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>而在本地的路径为D:\javafile\Austin\预研项目\开源论坛</p><p>在这个项目里，用到的技术栈为：<br>Springboot<br>H2数据库<br>Bootstrap前端渲染<br>templates前端显示</p><p>可以发现，这个项目用到的技术栈整体而言比较简单和老，但是当这个项目搭建起来以后，能够在论坛里面发言的时候还是成就感满满的</p><h1 id="为什么从论坛迁移到博客"><a href="#为什么从论坛迁移到博客" class="headerlink" title="为什么从论坛迁移到博客"></a>为什么从论坛迁移到博客</h1><p>本地地址：D:\javafile\Austin\预研项目\开源论坛<br>在做论坛的时候，自己修改的项目的缺点也逐渐暴露了出来，体现在以下几点：</p><ol><li>页面太过古老；由于技术栈比较老，整个论坛的页面呈现着10年的观感，当跑通项目以后的成就感慢慢消失之后，对这个项目的兴趣也就没有那么大了；</li><li>知识没有办法分类；由于是基础的版本，有互动性，却对自己发布的贴文不具有归档和分类功能，再次寻找就变的很困难；</li></ol><p>于是，当看到其他大佬，内容精彩，界面酷炫的博客以后，诞生了做自己博客的想法</p><h1 id="首先做的是平铺直叙的博客"><a href="#首先做的是平铺直叙的博客" class="headerlink" title="首先做的是平铺直叙的博客"></a>首先做的是平铺直叙的博客</h1><p>教学视频<br><a href="https://www.bilibili.com/video/BV1nE411r7TF/?spm_id_from=333.788.recommend_more_video.0&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener"><strong>https://www.bilibili.com/video/BV1nE411r7TF/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</strong></a><br>项目出处<br><a href="https://github.com/WuDaoJiuXiao/jx-blog"><strong>https://github.com/WuDaoJiuXiao/jx-blog</strong></a></p><p>技术栈：<br>Springboot<br>MYSQL数据库<br>Mybatis的orm<br>Bootstrap前端渲染<br>templates前端显示</p><p>选择的原因是：</p><ol><li><strong>后台登录和web部分分离的好，给人耳目一心的感觉</strong></li><li><strong>后台查看日志方便，用于统计后端的操作记录，方便debug,数据库操作清晰明了</strong></li></ol><p>缺点：<br>唯一的缺点就是前端显示页面不够酷炫</p><h1 id="果断上马主题好看酷炫的Hexo项目"><a href="#果断上马主题好看酷炫的Hexo项目" class="headerlink" title="果断上马主题好看酷炫的Hexo项目"></a>果断上马主题好看酷炫的Hexo项目</h1><p>这个项目一上马确实给人耳目一新的感觉，也确实方便增添文章，分享的搭建过程也很多了，目前的博客也是用的这个。<br>缺点：</p><ol><li>我的初心是一个后端开发工程师，我需要的不仅仅是一个展示页面的工具，我要的是前后端全流程的搭建过程，Hexo这种简单部署还是让我觉得少了点什么</li><li>上线部署的时候要传到github，由于被墙经常传不上去，使得整个部署过程很麻烦</li><li>文件一多了以后，大小太大，PUSH速度慢，还容易失败</li><li></li></ol><h1 id="新的Springboot-Vue的博客"><a href="#新的Springboot-Vue的博客" class="headerlink" title="新的Springboot+Vue的博客"></a>新的Springboot+Vue的博客</h1><p>个人博客为springboot+vue,问题是，vue文件之间的跳转存在问题，调试结果转段位是路径问题，在路径前多加了/,后续有需要可debug。路径为：<strong>D:\javafile\Austin\预研项目\个人博客</strong><br>之前没有跑通，vue文件的路径有问题，项目的BUG过多，就没有一直做下去</p><p><strong>而最近看到一个不错的Springboot+Vue的博客项目，有空可以学习以下：</strong><br>学习地址为：<br><a href="https://www.bilibili.com/video/BV1oP411T7hA/?spm_id_from=333.880.my_history.page.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1oP411T7hA/?spm_id_from=333.880.my_history.page.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>项目地址为：<br><a href="https://github.com/linhaojun857/aurora">https://github.com/linhaojun857/aurora</a><br>在本地文件夹的项目源码：<br>D:\javafile\Austin\预研项目\个人博客-还木有调</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 内核 </tag>
-            
-            <tag> 虚拟机 </tag>
-            
-            <tag> 操作系统 </tag>
-            
-            <tag> 教程 </tag>
             
         </tags>
       
@@ -1865,11 +1921,42 @@
             
             <tag> Java </tag>
             
-            <tag> 论坛 </tag>
-            
             <tag> 后端 </tag>
             
             <tag> Bootstrap </tag>
+            
+            <tag> 论坛 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos虚拟机的使用 | 将程序备份到独立的虚拟机上面去</title>
+      <link href="/2022/11/30/2-diao-yan-xue-xi-si-kao/centos-xu-ni-ji-de-shi-yong/"/>
+      <url>/2022/11/30/2-diao-yan-xue-xi-si-kao/centos-xu-ni-ji-de-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><h1 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h1><h2 id="先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？"><a href="#先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？" class="headerlink" title="先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？"></a>先引入一个思考，虚拟机的部署和docker的部署有什么区别呢？</h2><p>我的思考是虚拟机拥有独立的内存的存储空间，是独立的空间，而docker本质上是一个程序，是一个进程，但是这个进程又较好的处理了底层的隔离性质，使得不会受操作系统的影响。</p><h1 id="在自己的电脑上部署一台自己的虚拟机"><a href="#在自己的电脑上部署一台自己的虚拟机" class="headerlink" title="在自己的电脑上部署一台自己的虚拟机"></a>在自己的电脑上部署一台自己的虚拟机</h1><h2 id="我使用的时2020年版的CentOS-7-64-位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本-安装教程："><a href="#我使用的时2020年版的CentOS-7-64-位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本-安装教程：" class="headerlink" title="我使用的时2020年版的CentOS 7 64 位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本,安装教程："></a>我使用的时2020年版的CentOS 7 64 位，2022年末已经是最新版的，如果要下最新版的可以去官网下载最新版本,安装教程：</h2><p><a href="https://blog.csdn.net/BADAO_LIUMANG_QIZHI/article/details/104803494" target="_blank" rel="noopener">(62条消息) CentOS7 64位下载配置与安装教程(超详细图文教程)_霸道流氓气质的博客-CSDN博客</a><br>按照教程安装完毕以后就可以使用注册的账号登录自己的虚拟机了；<br>而那些Linux的指令也可以用上 了，这边再回顾一下之前的Linux知识；</p><h2 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h2><p>熟悉我的编程经历的人可能知道，当我在经历了本科断断续续的学习C语言和Java的知识，当我在读研以后确定工作方向以后，我对计算机的了解还处于比一知半解还一知半解的阶段，非计算机科班对计算机知识的匮乏让好不容易接触到的一点关于编程的知识很容易就忘的九霄云外了。没有掌握好计算机知识的基础，自上而下的学习，当自己好不容易以为搭好了基础的知识框架，建立好计算机的大厦，只需要往里面填充新的技术栈时，一个突如其来的之前没有掌握的基础知识，让自己的知识框架便轰然倒坍，又得重新构建，这个过程周而复始，而自己身边又没有能理解到我的学习状态，帮我理清楚脉络的好兄弟，因此只有一点点往计算机的大厦下探，不断推倒重来，终于，在步入研三的那个暑假，终于结束了这个痛苦的过程，在计算机的根基上搭建好了自己的知识框架。以后任何新的技术栈还是成为代码屎山的应用，都能确定他所处的位置了；当然，知道的越多，不知道的东西也越多，但是经历过这个阶段的自己，早已“轻舟已过万重山”了。</p><p>当我度过了那个探底的通过过程以后，之前学习的几个小项目突然就不再是云里雾里的了，代码逻辑、模块功能、环境搭建、资源下载、bug解决都有一条线在告诉自己，或许这样做，可以把这个问题解决了。</p><p>于是乎，我想再找找项目做，这次要做的项目不是之前的漫无目的，什么商城项目、医疗平台等…….</p><p>一直就有一种归类和分享的欲望，因此做一个知识总结和分享的平台就成了我希望点开的自己能独立修改开源项目的第一个方向。</p><h1 id="开始自己接触到的是论坛而不是项目"><a href="#开始自己接触到的是论坛而不是项目" class="headerlink" title="开始自己接触到的是论坛而不是项目"></a>开始自己接触到的是论坛而不是项目</h1><p>需求导向，当我想做归类和分享的时候，凭感觉找到的关键词是论坛，于是在B站上我就搭建和修改了第一个独立项目，论坛项目</p><p>项目地址：<a href="https://github.com/codedrinker/community">https://github.com/codedrinker/community</a><br>B站学习地址为：<br><a href="https://www.bilibili.com/video/BV1r4411r7au/?spm_id_from=333.788.video.desc.click&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1r4411r7au/?spm_id_from=333.788.video.desc.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>而在本地的路径为D:\javafile\Austin\预研项目\开源论坛</p><p>在这个项目里，用到的技术栈为：<br>Springboot<br>H2数据库<br>Bootstrap前端渲染<br>templates前端显示</p><p>可以发现，这个项目用到的技术栈整体而言比较简单和老，但是当这个项目搭建起来以后，能够在论坛里面发言的时候还是成就感满满的</p><h1 id="为什么从论坛迁移到博客"><a href="#为什么从论坛迁移到博客" class="headerlink" title="为什么从论坛迁移到博客"></a>为什么从论坛迁移到博客</h1><p>本地地址：D:\javafile\Austin\预研项目\开源论坛<br>在做论坛的时候，自己修改的项目的缺点也逐渐暴露了出来，体现在以下几点：</p><ol><li>页面太过古老；由于技术栈比较老，整个论坛的页面呈现着10年的观感，当跑通项目以后的成就感慢慢消失之后，对这个项目的兴趣也就没有那么大了；</li><li>知识没有办法分类；由于是基础的版本，有互动性，却对自己发布的贴文不具有归档和分类功能，再次寻找就变的很困难；</li></ol><p>于是，当看到其他大佬，内容精彩，界面酷炫的博客以后，诞生了做自己博客的想法</p><h1 id="首先做的是平铺直叙的博客"><a href="#首先做的是平铺直叙的博客" class="headerlink" title="首先做的是平铺直叙的博客"></a>首先做的是平铺直叙的博客</h1><p>教学视频<br><a href="https://www.bilibili.com/video/BV1nE411r7TF/?spm_id_from=333.788.recommend_more_video.0&vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener"><strong>https://www.bilibili.com/video/BV1nE411r7TF/?spm_id_from=333.788.recommend_more_video.0&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</strong></a><br>项目出处<br><a href="https://github.com/WuDaoJiuXiao/jx-blog"><strong>https://github.com/WuDaoJiuXiao/jx-blog</strong></a></p><p>技术栈：<br>Springboot<br>MYSQL数据库<br>Mybatis的orm<br>Bootstrap前端渲染<br>templates前端显示</p><p>选择的原因是：</p><ol><li><strong>后台登录和web部分分离的好，给人耳目一心的感觉</strong></li><li><strong>后台查看日志方便，用于统计后端的操作记录，方便debug,数据库操作清晰明了</strong></li></ol><p>缺点：<br>唯一的缺点就是前端显示页面不够酷炫</p><h1 id="果断上马主题好看酷炫的Hexo项目"><a href="#果断上马主题好看酷炫的Hexo项目" class="headerlink" title="果断上马主题好看酷炫的Hexo项目"></a>果断上马主题好看酷炫的Hexo项目</h1><p>这个项目一上马确实给人耳目一新的感觉，也确实方便增添文章，分享的搭建过程也很多了，目前的博客也是用的这个。<br>缺点：</p><ol><li>我的初心是一个后端开发工程师，我需要的不仅仅是一个展示页面的工具，我要的是前后端全流程的搭建过程，Hexo这种简单部署还是让我觉得少了点什么</li><li>上线部署的时候要传到github，由于被墙经常传不上去，使得整个部署过程很麻烦</li><li>文件一多了以后，大小太大，PUSH速度慢，还容易失败</li><li></li></ol><h1 id="新的Springboot-Vue的博客"><a href="#新的Springboot-Vue的博客" class="headerlink" title="新的Springboot+Vue的博客"></a>新的Springboot+Vue的博客</h1><p>个人博客为springboot+vue,问题是，vue文件之间的跳转存在问题，调试结果转段位是路径问题，在路径前多加了/,后续有需要可debug。路径为：<strong>D:\javafile\Austin\预研项目\个人博客</strong><br>之前没有跑通，vue文件的路径有问题，项目的BUG过多，就没有一直做下去</p><p><strong>而最近看到一个不错的Springboot+Vue的博客项目，有空可以学习以下：</strong><br>学习地址为：<br><a href="https://www.bilibili.com/video/BV1oP411T7hA/?spm_id_from=333.880.my_history.page.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1oP411T7hA/?spm_id_from=333.880.my_history.page.click&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>项目地址为：<br><a href="https://github.com/linhaojun857/aurora">https://github.com/linhaojun857/aurora</a><br>在本地文件夹的项目源码：<br>D:\javafile\Austin\预研项目\个人博客-还木有调</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 内核 </tag>
+            
+            <tag> 虚拟机 </tag>
+            
+            <tag> 操作系统 </tag>
+            
+            <tag> 教程 </tag>
             
         </tags>
       
@@ -1898,9 +1985,38 @@
             
             <tag> 后端 </tag>
             
+            <tag> Bootstrap </tag>
+            
             <tag> 博客 </tag>
             
-            <tag> Bootstrap </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>卫星洋口| 不一样的视角</title>
+      <link href="/2022/11/30/qi-ta-huo-zhe-jiao-du-li-ling-yu/hang-pai/wei-xing-yang-kou/"/>
+      <url>/2022/11/30/qi-ta-huo-zhe-jiao-du-li-ling-yu/hang-pai/wei-xing-yang-kou/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h1 id="BGM"><a href="#BGM" class="headerlink" title="BGM"></a>BGM</h1><p>BGM：景天-护甲 麦振鸿<br><a href="https://www.bilibili.com/video/BV17P4y1E7hx/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV17P4y1E7hx/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>BGM：故乡的原风景-宗次郎<br><a href="https://www.bilibili.com/video/BV1hq4y1k7dc/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1hq4y1k7dc/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a></p><h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 兴趣 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 娱乐 </tag>
+            
+            <tag> 卫星 </tag>
+            
+            <tag> 中国 </tag>
             
         </tags>
       
@@ -1969,35 +2085,6 @@
     
     
     <entry>
-      <title>卫星洋口| 不一样的视角</title>
-      <link href="/2022/11/30/qi-ta-huo-zhe-jiao-du-li-ling-yu/hang-pai/wei-xing-yang-kou/"/>
-      <url>/2022/11/30/qi-ta-huo-zhe-jiao-du-li-ling-yu/hang-pai/wei-xing-yang-kou/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>关注公众号【惜学塔】，每日知识干货马上就来！</p></blockquote><p><img src="/medias/contact.jpg" alt></p><h1 id="BGM"><a href="#BGM" class="headerlink" title="BGM"></a>BGM</h1><p>BGM：景天-护甲 麦振鸿<br><a href="https://www.bilibili.com/video/BV17P4y1E7hx/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV17P4y1E7hx/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a><br>BGM：故乡的原风景-宗次郎<br><a href="https://www.bilibili.com/video/BV1hq4y1k7dc/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1hq4y1k7dc/?spm_id_from=pageDriver&amp;vd_source=adc8ab19a7ced8573b74879e4d41557b</a></p><h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 兴趣 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 娱乐 </tag>
-            
-            <tag> 卫星 </tag>
-            
-            <tag> 中国 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>消息管理平台（1） | 我有那么多消息要收发吗？</title>
       <link href="/2022/11/30/1-xiang-mu/java-xiang-mu/austin-xiang-mu/austin-xiang-mu/"/>
       <url>/2022/11/30/1-xiang-mu/java-xiang-mu/austin-xiang-mu/austin-xiang-mu/</url>
@@ -2047,9 +2134,9 @@
             
             <tag> 后端 </tag>
             
-            <tag> 工具 </tag>
-            
             <tag> 项目 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 书写 </tag>
             
@@ -2078,9 +2165,9 @@
             
             <tag> 后端 </tag>
             
-            <tag> 工具 </tag>
-            
             <tag> 项目 </tag>
+            
+            <tag> 工具 </tag>
             
             <tag> 书写 </tag>
             
@@ -2134,9 +2221,9 @@
       
         <tags>
             
-            <tag> 博客 </tag>
-            
             <tag> 社团 </tag>
+            
+            <tag> 博客 </tag>
             
             <tag> 记录 </tag>
             

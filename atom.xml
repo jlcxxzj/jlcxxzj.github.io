@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/jlcxxzj/blog.github.io/"/>
-  <updated>2023-06-15T12:09:24.271Z</updated>
+  <updated>2023-10-14T05:47:15.895Z</updated>
   <id>https://github.com/jlcxxzj/blog.github.io/</id>
   
   <author>
@@ -17,11 +17,110 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FPGA与Flash的交互</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/10/15/0-xin-de-gong-zuo-lu-cheng/fpga-yu-flash-de-jiao-hu/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/10/15/0-xin-de-gong-zuo-lu-cheng/fpga-yu-flash-de-jiao-hu/</id>
+    <published>2023-10-15T11:30:31.000Z</published>
+    <updated>2023-10-14T05:47:15.895Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Flash&quot;&gt;&lt;a href=&quot;#Flash&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="FPGA" scheme="https://github.com/jlcxxzj/blog.github.io/categories/FPGA/"/>
+    
+    
+      <category term="FPGA" scheme="https://github.com/jlcxxzj/blog.github.io/tags/FPGA/"/>
+    
+      <category term="Flash" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Flash/"/>
+    
+      <category term="SPI" scheme="https://github.com/jlcxxzj/blog.github.io/tags/SPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作之后的一点感想</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/10/15/0-xin-de-gong-zuo-lu-cheng/gong-zuo-zhi-hou-de-yi-dian-gan-xiang/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/10/15/0-xin-de-gong-zuo-lu-cheng/gong-zuo-zhi-hou-de-yi-dian-gan-xiang/</id>
+    <published>2023-10-15T11:30:31.000Z</published>
+    <updated>2023-10-14T06:17:08.570Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;工作之后的一点感想&quot;&gt;&lt;a href=&quot;#工作之后的一点感想&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="FPGA" scheme="https://github.com/jlcxxzj/blog.github.io/categories/FPGA/"/>
+    
+    
+      <category term="工作之后的一点感想" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%B7%A5%E4%BD%9C%E4%B9%8B%E5%90%8E%E7%9A%84%E4%B8%80%E7%82%B9%E6%84%9F%E6%83%B3/"/>
+    
+      <category term="未来较短一段时间的工作安排" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%9C%AA%E6%9D%A5%E8%BE%83%E7%9F%AD%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%AE%89%E6%8E%92/"/>
+    
+      <category term="未来规划" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FPGA与Flash的交互</title>
+    <link href="https://github.com/jlcxxzj/blog.github.io/2023/09/15/fpga-yu-flash-de-jiao-hu/"/>
+    <id>https://github.com/jlcxxzj/blog.github.io/2023/09/15/fpga-yu-flash-de-jiao-hu/</id>
+    <published>2023-09-15T11:30:31.000Z</published>
+    <updated>2023-10-14T05:46:11.175Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Flash&quot;&gt;&lt;a href=&quot;#Flash&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="FPGA" scheme="https://github.com/jlcxxzj/blog.github.io/categories/FPGA/"/>
+    
+    
+      <category term="FPGA" scheme="https://github.com/jlcxxzj/blog.github.io/tags/FPGA/"/>
+    
+      <category term="Flash" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Flash/"/>
+    
+      <category term="SPI" scheme="https://github.com/jlcxxzj/blog.github.io/tags/SPI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MathPix调研</title>
     <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/15/mathpix-diao-yan/"/>
     <id>https://github.com/jlcxxzj/blog.github.io/2023/06/15/mathpix-diao-yan/</id>
     <published>2023-06-15T11:30:31.000Z</published>
-    <updated>2023-06-15T12:09:24.271Z</updated>
+    <updated>2023-06-17T11:11:50.840Z</updated>
     
     <summary type="html">
     
@@ -52,7 +151,7 @@
     <link href="https://github.com/jlcxxzj/blog.github.io/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/"/>
     <id>https://github.com/jlcxxzj/blog.github.io/2023/06/15/ocr-gong-shi-tu-pian-shi-bie-wei-latex-mo-xing/</id>
     <published>2023-06-15T11:30:31.000Z</published>
-    <updated>2023-06-15T11:21:37.413Z</updated>
+    <updated>2023-06-17T08:22:37.020Z</updated>
     
     <summary type="html">
     
@@ -63,7 +162,7 @@
           &lt;blockquote&gt;
 &lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;模型调试&quot;&gt;&lt;a href=&quot;#模型调试&quot; class=&quot;headerlink&quot;
+&lt;h2 id=&quot;模型调试&quot;&gt;&lt;a href=&quot;#模型调试&quot; class=&quot;headerlink&quot; title=&quot;模型调试&quot;&gt;&lt;/a&gt;模型调试&lt;/h2&gt;&lt;p&gt;
         
       
     
@@ -348,7 +447,7 @@
     <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/"/>
     <id>https://github.com/jlcxxzj/blog.github.io/2023/05/23/zhi-shi-ju/hexo-zhu-ti-pei-zhi-jiao-cheng/</id>
     <published>2023-05-23T11:30:31.000Z</published>
-    <updated>2023-06-04T07:45:33.830Z</updated>
+    <updated>2023-06-25T12:08:48.960Z</updated>
     
     <summary type="html">
     
@@ -573,101 +672,6 @@
       <category term="VScode" scheme="https://github.com/jlcxxzj/blog.github.io/tags/VScode/"/>
     
       <category term="搭建基础" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Visual Studio Code安装和环境配置</title>
-    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/16/zhi-shi-ju/visual-studio-code-shi-yong-zi-shi/"/>
-    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/16/zhi-shi-ju/visual-studio-code-shi-yong-zi-shi/</id>
-    <published>2023-05-16T11:30:31.000Z</published>
-    <updated>2023-05-24T07:33:26.231Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;Visual-Studio-Code安装和环境配置&quot;&gt;&lt;a href=&quot;#Visual-Studio-Code安装和环境配置&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Visual Studio Code" scheme="https://github.com/jlcxxzj/blog.github.io/categories/Visual-Studio-Code/"/>
-    
-    
-      <category term="Visual Studio Code" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Visual-Studio-Code/"/>
-    
-      <category term="编程环境" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows系统探究</title>
-    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/windows-xi-tong-tan-jiu/"/>
-    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/windows-xi-tong-tan-jiu/</id>
-    <published>2023-05-14T11:30:31.000Z</published>
-    <updated>2023-05-24T09:12:17.992Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-windows系统探究&quot;&gt;&lt;a href=&quot;#1-windows系统探究&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-      <category term="Windows系统" scheme="https://github.com/jlcxxzj/blog.github.io/tags/Windows%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="电脑" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%94%B5%E8%84%91/"/>
-    
-      <category term="基础" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录的一些好网站 | 参观学习！</title>
-    <link href="https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/"/>
-    <id>https://github.com/jlcxxzj/blog.github.io/2023/05/14/zhi-shi-ju/bo-ke-wang-zhan-di-zhi/</id>
-    <published>2023-05-14T11:30:31.000Z</published>
-    <updated>2023-05-24T09:09:41.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【惜学塔】，每日知识干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-网站推荐&quot;&gt;&lt;a href=&quot;#1-网站推荐&quot; class=&quot;headerlink&quot; title=&quot;1. 网站推荐&quot;&gt;&lt;/a&gt;1.
-        
-      
-    
-    </summary>
-    
-      <category term="网站" scheme="https://github.com/jlcxxzj/blog.github.io/categories/%E7%BD%91%E7%AB%99/"/>
-    
-    
-      <category term="博客" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="网站" scheme="https://github.com/jlcxxzj/blog.github.io/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
